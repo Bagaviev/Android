@@ -1,5 +1,6 @@
 Now:
 
 1) Курс от mail.ru Юрий Береза, Технотрек
+	- https://github.com/ybereza/technotrack-resources
 
 2) guides from developer.android.com
