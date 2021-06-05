@@ -6,7 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
@@ -24,5 +28,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
         // Get instance of Vibrator from current Context
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(2000);
+
+        WebView webview = findViewById(R.id.webView);
+        webview.setWebViewClient(new WebViewClient());
+        webview.loadUrl("https://yandex.ru");
     }
 }
