@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Cars">
+        <item>Volvo S40</item>
+        <item>Ferrari 590 FTO</item>
+        <item>Nissan GT-R</item>
+        <item>Mini Cooper</item>
+        <item>Ford Mustang</item>
+        <item>Porsche 911</item>
+        <item>Wiesmann XX</item>
+    </string-array>
+</resources>
