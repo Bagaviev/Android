@@ -1,6 +1,5 @@
 package com.example.secondexample;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder> {
+    public interface OnItemClickListener {      // своя доработка, чтобы сделать recyclerview кликабельным (из коробки нет)
+        void onItemClick(State state, int position);
+    }
+
+    private final OnItemClickListener onItemClickListener;
     private final List<State> states;
 
-    public StateAdapter(List<State> states) {
+    public StateAdapter(OnItemClickListener onItemClickListener, List<State> states) {
+        this.onItemClickListener = onItemClickListener;
         this.states = states;
     }
 
@@ -31,6 +36,13 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder> 
         State state = states.get(position);     // ох тут нихуя магия отрабатывает
         holder.getTextView().setText(state.getModel());
         holder.getImageView().setImageResource(state.getFlagResourse());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {     // тоже магия. Типо у ViewHolder стандартного есть поле такое
+            @Override
+            public void onClick(View v) {       // типа тут мы сами руками передаем вызов ссылки на кастомный листенер в другой стандартный листенер
+                onItemClickListener.onItemClick(state, position);   // а потом в основном классе протолкнем туда нужное поведение
+            }
+        });
     }
 
     @Override
