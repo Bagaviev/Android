@@ -34,6 +34,8 @@ public class MyRecyclerView extends AppCompatActivity {   // во первых �
         StateAdapter adapter = new StateAdapter(stateClickLister, getListResourses());
         recyclerView.setAdapter(adapter);
 
+        recyclerView.setHasFixedSize(true);     // оптимизация
+
         // свой красивый разделитель делаем
         DividerItemDecoration itemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
         itemDecoration.setDrawable(getDrawable(R.drawable.own_vertical_divider));
