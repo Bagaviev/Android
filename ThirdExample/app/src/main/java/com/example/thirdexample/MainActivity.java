@@ -2,6 +2,7 @@ package com.example.thirdexample;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,44 +13,43 @@ import android.widget.Switch;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MainActivity extends AppCompatActivity {       // делаем BottomNavigationMenu (отдельным .xml компоненты)
+    private Fragment fragment1 = new page1Fragment();
+    private Fragment fragment2 = new page2Fragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+
+        if (savedInstanceState != null)
+            fragment1 = getSupportFragmentManager().getFragment(savedInstanceState, "page1Fragment");
     }
 
-    public void setupBottomNavigation(View view) {
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bnv);
-        MenuItem item1 = findViewById(R.id.page1);
-        MenuItem item2 = findViewById(R.id.page2);
+    public BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull @org.jetbrains.annotations.NotNull MenuItem item) {
+            Fragment selectedFragment;
+            if (item.getItemId() == R.id.page1)
+                selectedFragment = fragment1;
+            else
+                selectedFragment = fragment2;
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull @org.jetbrains.annotations.NotNull MenuItem item) {
-                if (item.getItemId() == R.id.page1) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragmentContainerView3, selectedFragment)
+                    .commit();
+            return true;
+        }
+    };
 
-                } else {
-
-                }
-                return false;
-            }
-        });
-    }
-
-    public void runPlayer(View v) {
-        Intent intent = new Intent(this, MusicService.class);
-
-        Switch swtch = findViewById(R.id.switch1);
-        swtch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    startService(intent);
-                else
-                    stopService(intent);
-            }
-        });
+    @Override
+    protected void onSaveInstanceState(@NonNull @NotNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        getSupportFragmentManager().putFragment(outState, "page1Fragment", fragment1);
     }
 }
