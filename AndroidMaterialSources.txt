@@ -2,6 +2,7 @@ Bible: https://developer.android.com/docs
 Other off docs: https://github.com/Android (https://source.android.com/devices/tech/display)
 Aggregated yandex Mobile dev requirements: https://yandex.ru/jobs/ya-interview/#mldev	
 
+https://material.io/components/app-bars-bottom
 ============================================MATERIALS=====================================================
 1) JavaRush видео (Coursera translation):
 	- https://javarush.ru/quests/QUEST_GOOGLE_ANDROID
