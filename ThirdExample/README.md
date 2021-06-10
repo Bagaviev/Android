@@ -13,6 +13,17 @@
 4) Service - работает при сворачивании приложения, на примере музыки сделал
 
 5) AlarmManager - запуск в определенное время события
+	делается через PendingIntent и broadcastReceiver (explicit intent)
 
 6) Jobsheduler - более чистый способ планирования задач, отложенных так скажем
+
+7) Иконки можно через assets стоковые добавлять
+
+8) Fragments лучше создавать from scratch, чем через пункты IDE, тк тогда убогий FrameLayout применяется, а не прекрасный ConstraintLayout
+
+9) Анимации переходов между фрагментами можно сделать также через fragmentManager() и alpha.xml anim
+
+10) Notifications
+	делаеются через bilder, manager, channel и также pendingIntent
+
 	

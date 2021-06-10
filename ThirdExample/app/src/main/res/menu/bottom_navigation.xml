@@ -7,10 +7,16 @@
             android:icon="@drawable/ic_baseline_settings_24"
             android:checkable="true"
             android:checked="true"/>
-    <item android:title="Sheduling"
+    <item android:title="AlarmManager"
             android:id="@+id/page2"
             android:enabled="true"
             android:icon="@drawable/ic_baseline_query_builder_24"
+            android:checkable="true"
+            android:checked="true"/>
+    <item android:title="JobScheduler"
+            android:id="@+id/page3"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_rule_24"
             android:checkable="true"
             android:checked="true"/>
 </menu>

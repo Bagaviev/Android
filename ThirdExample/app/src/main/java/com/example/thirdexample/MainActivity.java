@@ -4,20 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Switch;
+import android.view.ViewGroup;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {       // делаем BottomNavigationMenu (отдельным .xml компоненты)
     private Fragment fragment1 = new page1Fragment();
     private Fragment fragment2 = new page2Fragment();
+    private Fragment fragment3 = new page3Fragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +28,24 @@ public class MainActivity extends AppCompatActivity {       // делаем Bott
 //            fragment1 = getSupportFragmentManager().getFragment(savedInstanceState, "page1Fragment");
     }
 
+
     public BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
-        public boolean onNavigationItemSelected(@NonNull @org.jetbrains.annotations.NotNull MenuItem item) {
+        public boolean onNavigationItemSelected(MenuItem item) {
             Fragment selectedFragment;
             if (item.getItemId() == R.id.page1)
                 selectedFragment = fragment1;
-            else
+            else if (item.getItemId() == R.id.page2)
                 selectedFragment = fragment2;
+            else
+                selectedFragment = fragment3;
 
             getSupportFragmentManager()
                     .beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.fade_in,
+                            R.anim.fade_out
+                    )
                     .replace(R.id.fragmentContainerView3, selectedFragment)
                     .commit();
             return true;
