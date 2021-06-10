@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {       // делаем Bott
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        if (savedInstanceState != null)
-            fragment1 = getSupportFragmentManager().getFragment(savedInstanceState, "page1Fragment");
+//        if (savedInstanceState != null)
+//            fragment1 = getSupportFragmentManager().getFragment(savedInstanceState, "page1Fragment");
     }
 
     public BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {       // делаем Bott
         }
     };
 
-    @Override
-    protected void onSaveInstanceState(@NonNull @NotNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        getSupportFragmentManager().putFragment(outState, "page1Fragment", fragment1);
-    }
+//    @Override
+//    protected void onSaveInstanceState(@NonNull @NotNull Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        getSupportFragmentManager().putFragment(outState, "page1Fragment", fragment1);
+//    }
 }

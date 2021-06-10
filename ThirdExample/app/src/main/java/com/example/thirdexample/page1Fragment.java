@@ -24,10 +24,10 @@ public class page1Fragment extends Fragment {
     @Override
     public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            state = savedInstanceState.getBoolean("switchState");
-            getActivity().findViewById(R.id.switch2).setSelected(state);
-        }
+//        if (savedInstanceState != null) {
+//            state = savedInstanceState.getBoolean("switchState");
+//            getActivity().findViewById(R.id.switch2).setSelected(state);
+//        }
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class page1Fragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Intent intent = new Intent(getContext(), MusicService.class);
-                state = isChecked;
+//                state = isChecked;
 
                 if (isChecked)
                     getActivity().startService(intent);
@@ -49,9 +49,9 @@ public class page1Fragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onSaveInstanceState(@NonNull @NotNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putBoolean("switchState", state);
-    }
+//    @Override
+//    public void onSaveInstanceState(@NonNull @NotNull Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putBoolean("switchState", state);
+//    }
 }
