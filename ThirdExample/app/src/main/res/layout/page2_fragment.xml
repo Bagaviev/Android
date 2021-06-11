@@ -6,30 +6,57 @@
         android:layout_height="match_parent">
 
     <TextView
-            android:text="Notification is alarmed and will appear after 3 sec!"
-            android:layout_width="196dp"
-            android:layout_height="66dp"
-            android:id="@+id/textView"
+            android:text="Time for notification not set!"
+            android:layout_width="268dp"
+            android:layout_height="51dp"
+            android:id="@+id/timepickerText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:textSize="16sp"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.499"
-            android:background="#DCEDC8" />
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.395"
+            android:background="#DCEDC8"
+            android:textAlignment="gravity"
+            android:layout_marginStart="50dp" />
 
     <Button
-            android:text="Notificate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_width="106dp"
+            android:layout_height="49dp"
+            android:id="@+id/cancel"
+            app:backgroundTint="#D84C4C"
+            app:layout_constraintTop_toBottomOf="@+id/timepickerText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.151"
+            app:layout_constraintStart_toEndOf="@+id/settime"
+            android:layout_marginStart="32dp" />
+
+    <Button
+            android:text="set time"
+            android:layout_width="111dp"
+            android:layout_height="49dp"
+            android:id="@+id/settime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timepickerText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.151"
+            android:layout_marginStart="50dp" />
+
+    <Button
+            android:text="Notificate now"
+            android:layout_width="107dp"
+            android:layout_height="41dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/notif"
-            app:backgroundTint="#459523"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:layout_marginTop="84dp"
-            app:layout_constraintHorizontal_bias="0.498"
+            android:id="@+id/now"
+            app:layout_constraintTop_toTopOf="parent"
+            app:backgroundTint="#FFB74D"
+            android:textSize="8sp"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.269"
+            android:layout_marginStart="50dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,6 +40,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         notificationManager.notify(1, notificationBuilder.build());
 
         Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(500);
+        v.vibrate(250);
     }
 }
