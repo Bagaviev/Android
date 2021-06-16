@@ -14,26 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../FirstExample/app/src/main/java/com/example/firstexample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstExample/app/src/main/java/com/example/firstexample/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/AsyncTaskFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/AsyncTaskFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/HandlerFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/HandlerFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/ImplicitIntentFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/ImplicitIntentFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/ThreadPoolFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/ThreadPoolFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/asynctask_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/asynctask_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/handler_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/handler_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/implicitintent_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/implicitintent_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/threadpool_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/threadpool_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Roadmap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Roadmap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@XPH5T19925003432]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -153,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623698995518</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add readme">
+      <created>1623868054154</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623868054154</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -170,10 +166,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="118" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1623695992128" />
-    <state x="239" y="0" key="CommitChangelistDialog2" timestamp="1623698994292">
+    <state x="239" y="0" key="CommitChangelistDialog2" timestamp="1623868052619">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="239" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1623698994292" />
+    <state x="239" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1623868052619" />
     <state width="1323" height="97" key="GridCell.Tab.0.bottom" timestamp="1623866767262">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -194,10 +190,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1623695078052" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1623699000213">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1623868058883">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1623699000213" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1623868058883" />
     <state x="280" y="148" width="1007" height="716" key="dock-window-1" timestamp="1623857832703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
