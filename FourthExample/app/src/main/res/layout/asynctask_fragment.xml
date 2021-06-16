@@ -6,13 +6,38 @@
         android:layout_height="match_parent">
 
     <TextView
-            android:text="Fragment 1"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:text="Calculate some task in background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/textView1"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            android:textSize="16sp"
+            android:layout_marginTop="200dp" />
+
+    <Button
+            android:text="Begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            android:layout_marginBottom="116dp" />
+
+    <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="146dp"
+            android:layout_height="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/progressBar1"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintTop_toBottomOf="@+id/textView1"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintVertical_bias="0.267" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,3 +4,8 @@ Now:
 	- https://github.com/ybereza/technotrack-resources
 
 2) guides from developer.android.com
+
+
+https://polis-mail-ru.github.io/2019-android/08_testing_CI/084_ci_cd/
+
+След прототип: БД, локальные файлы + dialog

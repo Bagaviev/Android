@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textView2);
         textView.setText("Main thread");
 
+        // getResources().getString(R.string.button_send) так юзать ресурсы
+
         final Button crashButton = findViewById(R.id.button1);  // вот это дорогостоящая операция кстати
         crashButton.setOnClickListener(v -> {   // button click function by code
             throw new RuntimeException("poof!"); // callback - функция, которая должна быть выполнена после какой то другой
