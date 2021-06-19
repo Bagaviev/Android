@@ -8,4 +8,11 @@ Now:
 
 https://polis-mail-ru.github.io/2019-android/08_testing_CI/084_ci_cd/
 
-След прототип: БД, локальные файлы + dialog
+След прототип: dialog + разрешения вызов + db sqlite
+
+
+
+
+сортировки роадмап:
+	пирамидальная (heap)
+	merge sort
