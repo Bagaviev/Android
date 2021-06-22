@@ -14,16 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../FifthExample/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FifthExample/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FifthExample/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FifthExample/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FifthExample/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FifthExample/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FifthExample/app/src/main/java/com/example/fifthexample/ViewPagerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FifthExample/app/src/main/java/com/example/fifthexample/fragments/FileFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FifthExample/app/src/main/res/layout/permission_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FifthExample/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FifthExample/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FifthExample/app/src/main/java/com/example/fifthexample/PermissionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FifthExample/app/src/main/java/com/example/fifthexample/PermissionFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Roadmap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Roadmap.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,9 +207,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="280" y="148" width="1007" height="716" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1623857832703" />
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1624366611776">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1624366611776" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1623858890238">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1623858890238" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1624366517049">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1624366517049" />
   </component>
 </project>
