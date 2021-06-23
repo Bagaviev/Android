@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="212dp"
+            android:layout_height="196dp"
+            android:id="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.151"
+            android:background="#EFEFEF" />
+
+    <Button
+            android:text="Create"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCreate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/buttonConnect"
+            app:layout_constraintStart_toEndOf="@+id/buttonConnect"
+            app:layout_constraintHorizontal_bias="0.242"
+            android:layout_marginStart="16dp" />
+
+    <Button
+            android:text="Insert"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonInsert"
+            app:layout_constraintEnd_toEndOf="@+id/buttonCreate"
+            android:layout_marginTop="17dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCreate" />
+
+    <ToggleButton
+            android:layout_width="72dp"
+            android:layout_height="39dp"
+            android:id="@+id/buttonConnect"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.278"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.309" />
+
+    <Button
+            android:text="Select"
+            android:layout_width="94dp"
+            android:layout_height="47dp"
+            android:id="@+id/buttonSelect"
+            app:layout_constraintEnd_toEndOf="@+id/buttonInsert"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonInsert" />
+
+    <Button
+            android:text="Delete"
+            android:layout_width="94dp"
+            android:layout_height="47dp"
+            android:id="@+id/buttonDelete"
+            app:layout_constraintEnd_toEndOf="@+id/buttonSelect"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSelect" />
+
+    <EditText
+            android:layout_width="107dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextFilter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSelect"
+            app:layout_constraintHorizontal_bias="0.739"
+            app:layout_constraintBaseline_toBaselineOf="@+id/buttonSelect"
+            android:hint="Older than:" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
