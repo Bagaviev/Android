@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/lruCache"
+                android:icon="@drawable/ic_baseline_cached_24"
+                android:title="LRU Cache" />
+        <item
+                android:id="@+id/contentProviderHelper"
+                android:icon="@drawable/ic_baseline_content_copy_24"
+                android:title="Content provider" />
+        <item
+                android:id="@+id/jsonManager"
+                android:icon="@drawable/ic_baseline_code_24"
+                android:title="JSON Manager" />
+    </group>
+</menu>

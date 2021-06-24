@@ -45,6 +45,7 @@ public class DBFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+//        textView.setText(String.valueOf((int) Runtime.getRuntime().maxMemory() / (1024 * 1024)));     размер JVM Heap
         buttonConnect.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) connect();
             else close();
