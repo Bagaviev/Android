@@ -1,0 +1,28 @@
+6 (app menu)
+	lru cache
+	content provider
+	json sent / receive
+
+7 (action bar menu)
+	styles etc
+	custom views
+	arhitecture
+
+8
+	animations
+	gestures
+	localisation
+
+9
+	sensors (bluetooth, camera)
+	widgets
+	google play publish moments
+
+10 - final (EMIAS Helper)
+	Authorisation
+	REST app
+	backend spring
+	Server DB
+	Tests (unit, integrity)
+	Ads
+	
