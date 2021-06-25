@@ -1,4 +1,4 @@
-package com.example.sixthexample.fragments;
+package com.example.sixthexample.fragments.Json;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

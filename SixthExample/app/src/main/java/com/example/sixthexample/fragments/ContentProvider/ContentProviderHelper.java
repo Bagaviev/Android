@@ -1,4 +1,4 @@
-package com.example.sixthexample.fragments;
+package com.example.sixthexample.fragments.ContentProvider;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.sixthexample.R;
 
-public class LruCache extends Fragment {
+public class ContentProviderHelper extends Fragment {
     TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.lru_cache_fragment, null);
-        textView = view.findViewById(R.id.tv_1_LRU);
+        View view = inflater.inflate(R.layout.content_provider_fragment, null);
+        textView = view.findViewById(R.id.tv_1_CP);
         return view;
     }
 

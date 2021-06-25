@@ -5,6 +5,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <ListView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_1_LRU"
+            android:id="@+id/listview"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.0" />
+
     <TextView
             android:text="LRU cache"
             android:layout_width="0dp"
@@ -15,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.285"
+            app:layout_constraintVertical_bias="0.044"
             android:textSize="20sp"
             android:textAlignment="center" />
 </androidx.constraintlayout.widget.ConstraintLayout>

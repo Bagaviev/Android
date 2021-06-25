@@ -7,20 +7,20 @@
 
     <fragment
             android:id="@+id/lruCache"
-            android:name="com.example.sixthexample.fragments.LruCache"
+            android:name="com.example.sixthexample.fragments.LruCache.LruCacheFragment"
             android:label="LruCache"
             tools:layout="@layout/lru_cache_fragment" />
     <!--    вручную тут дописывал эту строку с версткой-->
 
     <fragment
             android:id="@+id/contentProviderHelper"
-            android:name="com.example.sixthexample.fragments.ContentProviderHelper"
+            android:name="com.example.sixthexample.fragments.ContentProvider.ContentProviderHelper"
             android:label="ContentProviderHelper"
             tools:layout="@layout/content_provider_fragment" />
 
     <fragment
             android:id="@+id/jsonManager"
-            android:name="com.example.sixthexample.fragments.JsonManager"
+            android:name="com.example.sixthexample.fragments.Json.JsonManager"
             android:label="JsonManager"
             tools:layout="@layout/json_manager_fragment" />
 </navigation>
