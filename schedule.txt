@@ -1,5 +1,4 @@
 6 (app menu)
-	lru cache
 	content provider
 	json sent / receive
 
