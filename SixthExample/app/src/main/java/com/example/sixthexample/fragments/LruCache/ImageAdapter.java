@@ -14,7 +14,6 @@ import com.example.sixthexample.R;
 import java.io.File;
 
 public class ImageAdapter extends ArrayAdapter<File> {
-
     LayoutInflater mInflater;
     int mSize;
     LruCache memCache;

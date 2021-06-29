@@ -9,11 +9,13 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.health.PackageHealthStats;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -133,16 +135,19 @@ public class PermissionFragment extends Fragment {
                         textViewPermission.setText(e.getMessage());
                     }
                     showLocation(location);
-                } else
+                } else if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
+                    Toast.makeText(getContext(), "We need that permission, bitch", Toast.LENGTH_LONG).show();
+                } else {
                     textViewPermission.setText("Not working without permission");
+                }
             }
-                return;
+            return;
         }
     }
 
     public boolean checkPermission() {
         return ContextCompat.checkSelfPermission(getActivity(),
-        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
     }
 
     public void showLocation(Location location) {
