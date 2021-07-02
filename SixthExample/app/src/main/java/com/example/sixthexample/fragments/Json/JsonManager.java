@@ -107,7 +107,7 @@ public class JsonManager extends Fragment {     // в JavaRush мы сериал
     private JSONObject constructJson(int userId, int id, String title, boolean completed) {     // создали объект json руками
         JSONObject obj = null;
         try {
-            obj = new JSONObject();
+            obj = new JSONObject();     // как HashMap
             obj.put("userId", userId);
             obj.put("id", id);
             obj.put("title", title);

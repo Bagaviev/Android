@@ -1,0 +1,50 @@
+// сам тест был пиздатейшим - про жизнь(не то, что в яндексе). Проводился на Stepike
+и тут: https://app.codility.com/c/run/BYGQKN-5BX/
+6 страниц - 4 тест (java, android, c++, и еще что-то), 2 задачи
+
+https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation
+https://www.baeldung.com/cs/why-options-request-sent
+https://developer.android.com/training/app-links/deep-linking
+https://developer.apple.com/documentation/uikit/uistackview
+https://coderoad.ru/292357/%D0%92-%D1%87%D0%B5%D0%BC-%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-git-pull-%D0%B8-git-fetch
+https://www.sagitec.com/blog/the-5ws-of-mvvm#:~:text=MVVM%20cleanly%20separates%20the%20user,redesign%20%E2%80%93%20User%20interfaces%20become%20outdated.
+https://ru.stackoverflow.com/questions/536702/%D0%92-%D1%87%D0%B5%D0%BC-%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-px-dp-dip-%D0%B8-sp-%D0%BD%D0%B0-%D0%90%D0%BD%D0%B4%D1%80%D0%BE%D0%B8%D0%B4%D0%B5
+
+       String a = "g";
+        String b = new String("g");
+        String c = a;
+
+        System.out.println(a == b);
+        System.out.println(a == c);
+        System.out.println(b.equals(c));
+		
+C++ https://www.sololearn.com/Discuss/147409/prefix-postfix-in-a-for-loop-difference
+http://www.cplusplus.com/reference/vector/vector/push_back/
+
+изи задачка
+
+   String result = new String();
+
+        for (int i = 0; i < phone_numbers.length; i++) {
+            if (phone_numbers[i].equals(number)) {
+                result = phone_owners[i];
+                return result;
+            }
+            else
+                result = number;
+        }
+        return result;
+		
+еще словесная задачка на сущности приложения типа словарь
+
+лол опрос на тему нации, цвета кожи и гендера.
+result https://app.codility.com/c/feedback/BYGQKN-5BX/
+=============================================================
+статками поделились: 2к всего подали на стажировку, в частности на мой андроид 200 чел.
+Если им надо 20 чел (что дохуя) то надо сделать лучше 90% тест. Вероятность есть, но она средняя.
+Впечатления - самое адекватное тестирование в жизни (хотя мне когда то в мейл тест на java only показался тяжким, хех)
+
+
+=========================================================qa======================================================================
+https://testmatick.com/ru/top-10-negativnyh-test-kejsov-ispolzuemyh-vo-vremya-testirovaniya-po/
+https://www.software-testing.ru/library/testing/mobile-testing/3132-simbirsoft
