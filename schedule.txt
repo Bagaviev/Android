@@ -1,7 +1,3 @@
-6 (app menu)
-	content provider
-	json sent / receive
-
 7 (action bar menu)
 	styles etc
 	custom views

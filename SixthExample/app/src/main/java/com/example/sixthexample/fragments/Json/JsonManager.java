@@ -37,7 +37,7 @@ public class JsonManager extends Fragment {     // в JavaRush мы сериал
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {       // sustain activity on repo while doing kaspersky tests
         buttonGet.setOnClickListener((v) -> goGet());
         buttonPost.setOnClickListener((v) -> goPost());
     }
