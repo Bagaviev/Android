@@ -1,23 +1,59 @@
 7 (action bar menu)
 	styles etc
-	custom views
-	arhitecture
+	tests
+	localisation
 
 8
 	animations
 	gestures
-	localisation
+	arhitecture (JetPack binding, viewModel)
+
 
 9
+	custom views
 	sensors (bluetooth, camera)
 	widgets
+	
+10
 	google play publish moments
+	
 
-10 - final (EMIAS Helper)
+Final
 	Authorisation
-	REST app
+	REST api
 	backend spring
 	Server DB
-	Tests (unit, integrity)
+	Mock backend
+	AWS
+	Sessions / cookies
+	Crashlytics
 	Ads
+	Appmetrica (appsflyer, appodeal)
 	
+	
+================real work skills===============
+Kotlin
+Dagger
+RxJava
+Room
+Retrofit
+Espresso
+
+==============own app google play==============
+EMIAS Helper
+
+
+
+
+
+
+
+
+
+=============================================
+mvc
+mvp 
+	https://javarush.ru/groups/posts/505-mvp-v-android-dlja-samihkh-malenjhkikh?post=full#discussion
+	https://startandroid.ru/ru/blog/493-mvp-dlja-nachinajuschih-bez-bibliotek-i-interfejsov.html
+	https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42
+mvvm

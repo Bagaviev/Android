@@ -3,6 +3,8 @@ Other off docs: https://github.com/Android (https://source.android.com/devices/t
 Aggregated yandex Mobile dev requirements: https://yandex.ru/jobs/ya-interview/#mldev	
 
 https://material.io/components/app-bars-bottom
+
+ColorPicker: https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=EC407A
 ============================================MATERIALS=====================================================
 1) JavaRush видео (Coursera translation):
 	- https://javarush.ru/quests/QUEST_GOOGLE_ANDROID
