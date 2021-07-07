@@ -34,6 +34,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" />
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            android:name="com.example.rentateamtask.view.fragments.UserListFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
