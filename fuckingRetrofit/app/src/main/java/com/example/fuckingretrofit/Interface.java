@@ -1,13 +1,19 @@
 package com.example.fuckingretrofit;
 
-import java.util.List;
-import retrofit2.Call;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
+import com.example.fuckingretrofit.pojo.json.MainClass;
+
+import io.reactivex.Observable;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface Interface {
+/*
     @GET("/todos")
-    public Call<List<User>> getUsers(@Query("userId") int id);
+    Call<List<User>> getUsers();
+
+    @GET("users")
+    Call<MainClass> getUsers();
+*/
+
+    @GET("users")
+    Observable<MainClass> getUsers();
 }
