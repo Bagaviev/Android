@@ -66,4 +66,6 @@ public class ImageAdapter extends ArrayAdapter<File> {
     public Bitmap getBitmapFromMemCache(String key) {
         return (Bitmap) memCache.get(key);
     }
+
+
 }

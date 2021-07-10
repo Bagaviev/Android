@@ -1,23 +1,32 @@
 package com.example.fuckingretrofit;
 
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.fuckingretrofit.pojo.json.MainClass;
-import com.example.fuckingretrofit.pojo.json.UserData;
-
+import androidx.room.Room;
+import com.example.fuckingretrofit.pojo.MainClass;
+import com.example.fuckingretrofit.pojo.UserData;
+import com.example.fuckingretrofit.retrofit.NetworkService;
+import com.example.fuckingretrofit.room.AppDatabase;
+import com.example.fuckingretrofit.room.UserDao;
+import com.example.fuckingretrofit.utils.ListAdapter;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
-
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import retrofit2.Callback;
 
 /*
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {       // [Простой json]
     NetworkService networkService = NetworkService.getInstance();
     Button button;
     TextView textView;
@@ -58,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {       // [Сложный json]
     NetworkService networkService = NetworkService.getInstance();
     Button button;
     TextView textView;
@@ -111,12 +120,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
- */
 
-public class MainActivity extends AppCompatActivity {       // ok теперь с rxjava2
+public class MainActivity extends AppCompatActivity {       // [c RxJava]
     NetworkService networkService = NetworkService.getInstance();
     Button button;
-    TextView textView;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +134,7 @@ public class MainActivity extends AppCompatActivity {       // ok теперь �
 
     @Override
     protected void onStart() {
-        textView = findViewById(R.id.textView);
+        listView = findViewById(R.id.listview);
         button = findViewById(R.id.button);
         button.setOnClickListener(v -> {
             request();
@@ -134,7 +142,7 @@ public class MainActivity extends AppCompatActivity {       // ok теперь �
         super.onStart();
     }
 
-    private void request() {        // а это запрос по rxjava'овски
+    private void request() {
         networkService.getJSONApi().getUsers()          // мало понятно, но работает
         .subscribeOn(Schedulers.io())
         .subscribe(new Observer<MainClass>() {
@@ -143,9 +151,9 @@ public class MainActivity extends AppCompatActivity {       // ok теперь �
             }
 
             @Override
-            public void onNext(MainClass mainClass) {
-                String userContent = "";
-                List<UserData> list = mainClass.getData();
+            public void onNext(MainClass mainClass) {       // как и retrofit async request (и okhttp) сами все делают за нас в
+                String userContent = "";                    // бекграунд треде, при этом callback отрабатывает на UI треде.
+                List<UserData> list = mainClass.getData();  // те post и handler не нужны, все удобно
 
                 try {
                     Thread.sleep(2000);
@@ -172,5 +180,132 @@ public class MainActivity extends AppCompatActivity {       // ok теперь �
             public void onComplete() {
             }
         });
+    }
+}
+*/
+
+public class MainActivity extends AppCompatActivity {       // с listView
+    NetworkService netService = NetworkService.getInstance();
+//    AppDatabase dbService = DatabaseService.getInstance(this).getDb();
+    AppDatabase db;
+    UserDao userDao;
+    ListAdapter adapter;
+    ProgressBar progressBar;
+    Button button;
+    ListView listView;
+    TextView textViewMsg;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+         db = Room.databaseBuilder(this, AppDatabase.class, "app.db")   // ошибка SIGEGV была когда это di было
+                .allowMainThreadQueries()           // когда context передавал
+                .build();
+//        userDao = dbService.userDao();
+        userDao = db.userDao();
+//        dbService.connect();
+//        dbService.create();
+        setContentView(R.layout.activity_main);
+        listView = findViewById(R.id.listview);
+        button = findViewById(R.id.button);
+        progressBar = findViewById(R.id.progressBar);
+        textViewMsg = findViewById(R.id.textViewMsg);
+        textViewMsg.setMovementMethod(new ScrollingMovementMethod());
+        progressBar.setVisibility(View.INVISIBLE);
+        setupListView();
+        Log.e("LOGG", "активити стартовала");
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void onStart() {
+        button.setOnClickListener(v -> {
+            textViewMsg.setText("");
+            netRequest();
+        });
+        super.onStart();
+    }
+
+    private void netRequest() {
+        Log.e("LOGG", "запрос отправлен");
+        netService.getJSONApi().getUsers()
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<MainClass>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        progressBar.setVisibility(View.VISIBLE);
+                    }
+
+                    @Override
+                    public void onNext(MainClass mainClass) {
+                        Log.e("LOGG", "запрос получен");
+                        List<UserData> list = mainClass.getData();
+
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        for (int i = 0; i < list.size(); i++) {
+                            UserData tmp = list.get(i);
+                            UserData newUser = new UserData(tmp.getId(),
+                                    tmp.getEmail(),
+                                    tmp.getFirstName(),
+                                    tmp.getLastName(),
+                                    tmp.getAvatar());
+
+                            userDao.insert(newUser);
+                            Log.e("LOGG", newUser.toString());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (e instanceof SQLiteConstraintException)
+                            textViewMsg.setText("Данные обновлены");
+                        else if (e instanceof UnknownHostException)
+                            textViewMsg.setText("Нет интернета");
+                        else
+                            textViewMsg.setText(e.getMessage());
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        progressBar.setVisibility(View.INVISIBLE);
+                        listView.post(() -> adapter.notifyDataSetChanged());
+                        Log.e("LOGG", "запрос получен распарсен и вставлен");
+                    }
+                });
+    }
+
+    private void dbRequest() {
+        Log.e("LOGG", "запрос в бд");
+        userDao.getAll()
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<List<UserData>>() {
+                               @Override
+                               public void accept(List<UserData> userData) throws Exception {
+                                   adapter.addAll(userData);
+                                   listView.post(() -> adapter.notifyDataSetChanged());
+                               }
+                           }
+
+                );
+    }
+
+    private void setupListView() {
+        Log.e("LOGG", "адаптер начал работу");
+        adapter = new ListAdapter(this, new ArrayList<UserData>());
+        Log.e("LOGG", userDao.getAll().toString());
+        listView.setAdapter(adapter);
+        Log.e("LOGG", "адаптер закончил работу");
+    }
+
+    @Override
+    protected void onDestroy() {
+        netService.getJSONApi().getUsers().unsubscribeOn(Schedulers.io());
+        db.close();
+        super.onDestroy();
     }
 }

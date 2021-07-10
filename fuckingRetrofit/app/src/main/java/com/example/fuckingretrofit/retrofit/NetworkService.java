@@ -1,7 +1,4 @@
-package com.example.fuckingretrofit;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+package com.example.fuckingretrofit.retrofit;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -29,7 +26,7 @@ public class NetworkService {
         return mInstance;
     }
 
-    public Interface getJSONApi() {
-        return mRetrofit.create(Interface.class);
+    public OurAPI getJSONApi() {
+        return mRetrofit.create(OurAPI.class);
     }
 }

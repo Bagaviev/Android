@@ -1,4 +1,4 @@
-package com.example.fuckingretrofit.pojo.json;
+package com.example.fuckingretrofit.pojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

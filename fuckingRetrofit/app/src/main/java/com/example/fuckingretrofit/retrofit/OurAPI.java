@@ -1,11 +1,10 @@
-package com.example.fuckingretrofit;
+package com.example.fuckingretrofit.retrofit;
 
-import com.example.fuckingretrofit.pojo.json.MainClass;
-
+import com.example.fuckingretrofit.pojo.MainClass;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 
-public interface Interface {
+public interface OurAPI {
 /*
     @GET("/todos")
     Call<List<User>> getUsers();
