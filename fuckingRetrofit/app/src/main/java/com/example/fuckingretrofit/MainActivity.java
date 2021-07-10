@@ -1,10 +1,16 @@
 package com.example.fuckingretrofit;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteConstraintException;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -184,26 +190,26 @@ public class MainActivity extends AppCompatActivity {       // [c RxJava]
 }
 */
 
-public class MainActivity extends AppCompatActivity {       // с listView
+public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE = "com.example.fuckingretrofit.MESSAGE";
     NetworkService netService = NetworkService.getInstance();
-//    AppDatabase dbService = DatabaseService.getInstance(this).getDb();
+    //    AppDatabase dbService = DatabaseService.getInstance(this).getDb();
+    List<UserData> userListState = new ArrayList<>();
+    UserData selectedUser;
     AppDatabase db;
     UserDao userDao;
     ListAdapter adapter;
     ProgressBar progressBar;
     Button button;
-    ListView listView;
+    ListView listView;      // здесь бы мог быть recyclerview, но решил не усложнять
     TextView textViewMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-         db = Room.databaseBuilder(this, AppDatabase.class, "app.db")   // ошибка SIGEGV была когда это di было
-                .allowMainThreadQueries()           // когда context передавал
-                .build();
-//        userDao = dbService.userDao();
+        db = Room.databaseBuilder(this, AppDatabase.class, "app.db")   // ошибка SIGEGV была когда это di было
+                .build();   // когда context передавал
         userDao = db.userDao();
-//        dbService.connect();
-//        dbService.create();
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listview);
         button = findViewById(R.id.button);
@@ -211,16 +217,29 @@ public class MainActivity extends AppCompatActivity {       // с listView
         textViewMsg = findViewById(R.id.textViewMsg);
         textViewMsg.setMovementMethod(new ScrollingMovementMethod());
         progressBar.setVisibility(View.INVISIBLE);
-        setupListView();
         Log.e("LOGG", "активити стартовала");
         super.onCreate(savedInstanceState);
     }
 
     @Override
     protected void onStart() {
+        setupListView();
+
         button.setOnClickListener(v -> {
             textViewMsg.setText("");
-            netRequest();
+
+            if(isNetConnected()) {
+                netRequest();
+            } else {
+                textViewMsg.setText("Нет интернета");
+                dbRequest();
+            }
+        });
+
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            selectedUser = userListState.get(position);
+            openUserPage();
+            textViewMsg.setText("Выбран: " + selectedUser.getFirstName());
         });
         super.onStart();
     }
@@ -240,8 +259,8 @@ public class MainActivity extends AppCompatActivity {       // с listView
                         Log.e("LOGG", "запрос получен");
                         List<UserData> list = mainClass.getData();
 
-                        try {
-                            Thread.sleep(2000);
+                        try {                           // чтобы показать прогрессбар
+                            Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -254,7 +273,9 @@ public class MainActivity extends AppCompatActivity {       // с listView
                                     tmp.getLastName(),
                                     tmp.getAvatar());
 
-                            userDao.insert(newUser);
+                            userListState.add(newUser);     // in memory
+                            userDao.insert(newUser);        // persist
+
                             Log.e("LOGG", newUser.toString());
                         }
                     }
@@ -263,41 +284,45 @@ public class MainActivity extends AppCompatActivity {       // с listView
                     public void onError(Throwable e) {
                         if (e instanceof SQLiteConstraintException)
                             textViewMsg.setText("Данные обновлены");
-                        else if (e instanceof UnknownHostException)
-                            textViewMsg.setText("Нет интернета");
                         else
                             textViewMsg.setText(e.getMessage());
+
+                        dbRequest();
                         progressBar.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
                     public void onComplete() {
                         progressBar.setVisibility(View.INVISIBLE);
-                        listView.post(() -> adapter.notifyDataSetChanged());
+                        listView.post(() -> {
+                            dbRequest();
+                            adapter.notifyDataSetChanged();
+                        });
                         Log.e("LOGG", "запрос получен распарсен и вставлен");
                     }
                 });
     }
 
+    @SuppressLint("CheckResult")
     private void dbRequest() {
         Log.e("LOGG", "запрос в бд");
         userDao.getAll()
-                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())             // тут можно как то захэндлить исключение, если уметь
                 .subscribe(new Consumer<List<UserData>>() {
-                               @Override
-                               public void accept(List<UserData> userData) throws Exception {
-                                   adapter.addAll(userData);
-                                   listView.post(() -> adapter.notifyDataSetChanged());
-                               }
-                           }
-
-                );
+                    @Override
+                    public void accept(List<UserData> userData) throws Exception {      // framework moment...
+                        listView.post(() -> {
+                            userListState.clear();            // раньше тут писал сразу в адаптер, но пришлось в отдельный список
+                            userListState.addAll(userData);   // в памяти писать
+                            adapter.notifyDataSetChanged();
+                        });
+                    }
+                });
     }
 
     private void setupListView() {
         Log.e("LOGG", "адаптер начал работу");
-        adapter = new ListAdapter(this, new ArrayList<UserData>());
-        Log.e("LOGG", userDao.getAll().toString());
+        adapter = new ListAdapter(this, userListState);
         listView.setAdapter(adapter);
         Log.e("LOGG", "адаптер закончил работу");
     }
@@ -306,6 +331,22 @@ public class MainActivity extends AppCompatActivity {       // с listView
     protected void onDestroy() {
         netService.getJSONApi().getUsers().unsubscribeOn(Schedulers.io());
         db.close();
+        db = null;
+        userDao = null;
+        netService = null;
+        adapter = null;
         super.onDestroy();
+    }
+
+    public boolean isNetConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    public void openUserPage() {
+        Intent intent = new Intent(this, UserPage.class);
+        intent.putExtra(EXTRA_MESSAGE, selectedUser);
+        startActivity(intent);
     }
 }

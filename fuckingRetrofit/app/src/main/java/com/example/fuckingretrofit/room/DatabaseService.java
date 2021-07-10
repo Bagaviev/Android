@@ -104,7 +104,7 @@ public class DatabaseService {
         if (dInstance == null) {
             db = Room.databaseBuilder(context,
                     AppDatabase.class, "app.db")
-                    .allowMainThreadQueries()   // todo remove then
+                    .allowMainThreadQueries()   // remove then
                     .build();
             dInstance = new DatabaseService(context, db);
 
