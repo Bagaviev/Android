@@ -52,6 +52,7 @@ public class UserListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.userlist_fragment, null);
+        Log.e("LOGG", "фрагмент стартовал");
         db = Room.databaseBuilder(getActivity(), AppDatabase.class, "app.db").build();   // страшная ошибка SIGSEGV была
         userDao = db.userDao();                                                               // когда context передавал как di
         listView = view.findViewById(R.id.listview);
@@ -179,6 +180,7 @@ public class UserListFragment extends Fragment {
 
     @Override
     public void onDestroy() {
+        Log.e("LOGG", "фрагмент погиб");
 //        netService.getJSONApi().getUsers().unsubscribeOn(Schedulers.io());
 //        db.close();
 //        db = null;

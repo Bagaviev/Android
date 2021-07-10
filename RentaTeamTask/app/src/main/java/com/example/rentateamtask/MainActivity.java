@@ -1,39 +1,14 @@
 package com.example.rentateamtask;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.database.sqlite.SQLiteConstraintException;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.room.Room;
 
 import com.example.rentateamtask.fragments.AboutFragment;
 import com.example.rentateamtask.fragments.UserListFragment;
-import com.example.rentateamtask.pojo.MainClass;
-import com.example.rentateamtask.pojo.UserData;
-import com.example.rentateamtask.retrofit.NetworkService;
-import com.example.rentateamtask.room.AppDatabase;
-import com.example.rentateamtask.room.UserDao;
-import com.example.rentateamtask.utils.ListAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import java.util.ArrayList;
-import java.util.List;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
     Fragment userListFragment = new UserListFragment();
@@ -64,4 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
         return true;
     };
+
+    @Override
+    protected void onDestroy() {
+        Log.e("LOGG", "активити погибла");
+        super.onDestroy();
+    }
 }
