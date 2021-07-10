@@ -190,9 +190,6 @@ public class MainActivity extends AppCompatActivity {       // [c RxJava]
 }
 */
 
-// todo 3) вмерджить в проект с меню
-// todo 4) навести mvp
-
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.fuckingretrofit.MESSAGE";
