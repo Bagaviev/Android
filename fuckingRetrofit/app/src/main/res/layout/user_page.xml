@@ -42,10 +42,11 @@
                 android:id="@+id/textViewLN"
                 android:textSize="20sp"
                 android:textIsSelectable="true"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textViewFN"
                 app:layout_constraintStart_toEndOf="@+id/textViewFN"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.226" />
+                android:layout_marginStart="8dp"
+                app:layout_constraintHorizontal_bias="0.169" />
 
         <TextView
                 android:text="Firstname"
@@ -55,10 +56,10 @@
                 android:textSize="20sp"
                 android:textIsSelectable="true"
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.317" />
+                app:layout_constraintStart_toStartOf="@+id/cardView"
+                app:layout_constraintHorizontal_bias="0.0" />
 
         <TextView
                 android:text="email:"

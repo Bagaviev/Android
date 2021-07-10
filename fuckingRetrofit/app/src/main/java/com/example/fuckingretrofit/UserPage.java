@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fuckingretrofit.pojo.UserData;
+import com.squareup.picasso.Picasso;
 
 public class UserPage extends AppCompatActivity {
     UserData user;
@@ -35,6 +36,10 @@ public class UserPage extends AppCompatActivity {
         textViewLN.setText(user.getLastName());
         textViewEM.append(" " + user.getEmail());
         textViewID.append(" " + user.getId());
+        Picasso.with(this)                          // ez
+                .load(user.getAvatar())
+                .placeholder(R.drawable.default_user)
+                .into(avatar);
         super.onStart();
     }
 

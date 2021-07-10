@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
             android:largeHeap="true"
             android:allowBackup="true"
@@ -14,7 +13,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.FuckingRetrofit">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:launchMode="singleTop">
+<!--            Вот тут нюанс всплыл типа up кнопка != system back, это костыль, чтобы список не проебывался при возврате -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
