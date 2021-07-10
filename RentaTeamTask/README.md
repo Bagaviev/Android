@@ -1,6 +1,5 @@
 Тестовое задание в rentateam.ru
-
-Ну тут много нового было - prod решения, тайминг отчасти поэтому такой получился
+Тут много нового было - prod решения, тайминг отчасти поэтому такой получился
 
 1) Retrofit
 	вроде удобная альтернатива okhttp
@@ -16,12 +15,6 @@
 
 5) Архитектура MVP (in progress)
 
-<p align="center">
-<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/1.jpg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/2.jpg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/3.jpg" align="left" height="500" width="250" ></a>
-</p>
-
 Резюме: узнал много нового, реализовать смог все обязательные пункты.
 
 Оставил на изучение потом:
@@ -29,3 +22,7 @@
 	DI Dagger
 		
 P.S. Оставил пару пасхалок в приложении))
+
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/1.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/2.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/3.jpg" align="left" height="500" width="250" ></a>
