@@ -16,9 +16,9 @@
 
 5) Архитектура MVP (in progress)
 
-![Alt text](/1.jpg?raw=true "Экран список юзеров")
-![Alt text](/2.jpg?raw=true "Экран о приложении")
-![Alt text](/3.jpe?raw=true "Экран карточка юзера")
+![Alt text](1.jpg?raw=true "Экран список юзеров")
+![Alt text](2.jpg?raw=true "Экран о приложении")
+![Alt text](3.jpe?raw=true "Экран карточка юзера")
 
 Резюме: узнал много нового, реализовать смог все обязательные пункты.
 
