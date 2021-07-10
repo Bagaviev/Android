@@ -1,6 +1,5 @@
-package com.example.rentateamtask.view.fragments;
+package com.example.rentateamtask.fragments;
 
-import android.database.StaleDataException;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -14,9 +13,6 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import com.example.rentateamtask.R;
-
-import java.util.Objects;
-import java.util.Stack;
 
 public class AboutFragment extends Fragment {
     TextView textViewAF;

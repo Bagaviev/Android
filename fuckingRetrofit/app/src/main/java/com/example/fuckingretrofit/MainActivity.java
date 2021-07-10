@@ -190,7 +190,6 @@ public class MainActivity extends AppCompatActivity {       // [c RxJava]
 }
 */
 
-// todo 2) мб проработать потерю первой активити после вызова второй
 // todo 3) вмерджить в проект с меню
 // todo 4) навести mvp
 
@@ -211,9 +210,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        db = Room.databaseBuilder(this, AppDatabase.class, "app.db")   // ошибка SIGEGV была когда это di было
-                .build();   // когда context передавал
-        userDao = db.userDao();
+        db = Room.databaseBuilder(this, AppDatabase.class, "app.db").build();   // страшная ошибка SIGSEGV была
+        userDao = db.userDao();                                                               // когда context передавал как di
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listview);
         button = findViewById(R.id.button);

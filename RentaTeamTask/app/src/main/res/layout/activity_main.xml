@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.MainActivity"
+        tools:context=".MainActivity"
         android:id="@+id/clt"
         tools:actionBarNavMode="standard"
         android:layout_alignParentBottom="false"
@@ -35,6 +35,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-            android:name="com.example.rentateamtask.view.fragments.UserListFragment" />
+            android:name="com.example.rentateamtask.fragments.UserListFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
