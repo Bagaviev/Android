@@ -32,22 +32,19 @@ Final
 	
 	
 ================real work skills===============
-Kotlin
+✓ RxJava
+✓ Room
+✓ Retrofit
 Dagger
-RxJava
-Room
-Retrofit
+Architecture
+	MVC
+	MVP
+	MVVM
+Jetpack (AndroidX)
+Kotlin
 Espresso
-
 ==============own app google play==============
 EMIAS Helper
-
-
-
-
-
-
-
 
 
 =============================================
