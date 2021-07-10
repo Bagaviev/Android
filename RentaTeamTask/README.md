@@ -19,6 +19,7 @@
 <a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/1.jpg" align="left" height="500" width="250" ></a>
 <a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/2.jpg" align="left" height="500" width="250" ></a>
 <a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/RentaTeamTask/3.jpg" align="left" height="500" width="250" ></a>
+<br>
 
 Резюме: узнал много нового, реализовать смог все обязательные пункты.
 
