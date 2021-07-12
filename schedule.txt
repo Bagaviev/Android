@@ -40,7 +40,8 @@ Architecture
 	MVC
 	MVP
 	MVVM
-Jetpack (AndroidX)
+	Clean architecture
+Jetpack (AndroidX) - Binding etc
 Kotlin
 Espresso
 ==============own app google play==============

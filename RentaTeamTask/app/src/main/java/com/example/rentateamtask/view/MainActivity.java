@@ -1,4 +1,4 @@
-package com.example.rentateamtask;
+package com.example.rentateamtask.view;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,8 +6,9 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.rentateamtask.fragments.AboutFragment;
-import com.example.rentateamtask.fragments.UserListFragment;
+import com.example.rentateamtask.R;
+import com.example.rentateamtask.view.fragments.AboutFragment;
+import com.example.rentateamtask.view.fragments.UserListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.e("LOGG", "активити стартовала");
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
     }
@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        Log.e("LOGG", "активити погибла");
         super.onDestroy();
     }
 }

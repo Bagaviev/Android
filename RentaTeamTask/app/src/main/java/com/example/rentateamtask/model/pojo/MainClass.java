@@ -1,4 +1,4 @@
-package com.example.rentateamtask.pojo;
+package com.example.rentateamtask.model.pojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

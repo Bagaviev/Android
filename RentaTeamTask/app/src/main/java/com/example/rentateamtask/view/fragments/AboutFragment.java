@@ -1,4 +1,4 @@
-package com.example.rentateamtask.fragments;
+package com.example.rentateamtask.view.fragments;
 
 import android.graphics.Color;
 import android.media.MediaPlayer;

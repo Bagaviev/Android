@@ -1,4 +1,4 @@
-package com.example.rentateamtask.retrofit;
+package com.example.rentateamtask.model.service.network;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -25,7 +25,7 @@ public class NetworkService {
         return mInstance;
     }
 
-    public OurAPI getJSONApi() {
-        return mRetrofit.create(OurAPI.class);
+    public regresInApi getJSONApi() {
+        return mRetrofit.create(regresInApi.class);
     }
 }
