@@ -1,12 +1,13 @@
-package com.example.rentateamtask;
+package com.example.rentateamtask.view;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.rentateamtask.fragments.UserListFragment;
-import com.example.rentateamtask.pojo.UserData;
+import com.example.rentateamtask.R;
+import com.example.rentateamtask.model.pojo.UserData;
+import com.example.rentateamtask.view.fragments.UserListFragment;
 import com.squareup.picasso.Picasso;
 
 public class UserPage extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class UserPage extends AppCompatActivity {
         textViewEM = findViewById(R.id.textViewEM);
         textViewID = findViewById(R.id.textViewID);
         avatar = findViewById(R.id.avatar);
-        user = (UserData) getIntent().getSerializableExtra(UserListFragment.EXTRA_MESSAGE);  // а вот и сериализация пригодилась
+        user = (UserData) getIntent().getSerializableExtra(UserListFragment.EXTRA_MESSAGE);
     }
 
     @Override
@@ -35,7 +36,7 @@ public class UserPage extends AppCompatActivity {
         textViewLN.setText(user.getLastName());
         textViewEM.append(" " + user.getEmail());
         textViewID.append(" " + user.getId());
-        Picasso.with(this)                          // ez
+        Picasso.with(this)
                 .load(user.getAvatar())
                 .placeholder(R.drawable.default_user)
                 .into(avatar);
@@ -44,10 +45,6 @@ public class UserPage extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        textViewFN = null;
-        textViewLN = null;
-        textViewEM = null;
-        textViewID = null;
         avatar = null;
         user = null;
         super.onDestroy();

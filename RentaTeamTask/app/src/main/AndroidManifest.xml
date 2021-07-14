@@ -13,7 +13,7 @@
             android:roundIcon="@mipmap/rentateamlogo"
             android:supportsRtl="true"
             android:theme="@style/Theme.RentaTeamTask">
-        <activity android:name=".MainActivity"
+        <activity android:name=".view.MainActivity"
                   android:launchMode="singleTop"
                   android:screenOrientation="portrait">
             <intent-filter>
@@ -22,11 +22,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".UserPage">
+        <activity android:name=".view.UserPage">
             android:parentActivityName=".MainActivity"
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".MainActivity"/>
+                    android:value=".view.MainActivity"/>
         </activity>
     </application>
 

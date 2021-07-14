@@ -1,4 +1,4 @@
-package com.example.rentateamtask.pojo;
+package com.example.rentateamtask.model.pojo;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -9,8 +9,8 @@ import java.io.Serializable;
 @Entity(tableName = "users")
 public class UserData implements Serializable {
 
-    @PrimaryKey      // room
-    @SerializedName("id")   //retrofit
+    @PrimaryKey
+    @SerializedName("id")
     @Expose
     private int id;
 
