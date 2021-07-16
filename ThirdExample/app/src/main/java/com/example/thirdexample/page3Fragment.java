@@ -92,12 +92,14 @@ public class page3Fragment extends Fragment {
     }
 
     public void statusWorker() {
-        WorkManager.getInstance(getContext()).getWorkInfoByIdLiveData(myWorkRequest.getId()).observe(this, new Observer<WorkInfo>() {
-            @Override
-            public void onChanged(WorkInfo workInfo) {
-                textview.setText(workInfo.getState().toString());
-            }
-        });
+        if (myWorkRequest != null) {
+            WorkManager.getInstance(getContext()).getWorkInfoByIdLiveData(myWorkRequest.getId()).observe(this, new Observer<WorkInfo>() {
+                @Override
+                public void onChanged(WorkInfo workInfo) {
+                    textview.setText(workInfo.getState().toString());
+                }
+            });
+        }
     }
 
 
@@ -136,6 +138,6 @@ public class page3Fragment extends Fragment {
     };
 
     View.OnClickListener bListener = (v -> {
-       statusWorker();
+        statusWorker();
     });
 }
