@@ -1,6 +1,7 @@
 package com.example.reclinetask;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,19 +15,18 @@ import java.util.Random;
 // todo more beautiful win/lose msg
 // todo buttons and change color app
 // todo score
-
 // todo pack button style to theme
-// todo add sound
 
+// todo remove appbar
 // todo other tasks
 
 public class MainActivity extends AppCompatActivity {
     private final int[] buttonIds = new int[] { R.id.b0, R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8};
-    private int[][] winRow;
 
-    private static String LOSE_MESSAGE = "You lose, try again!";
-    private static String WIN_MESSAGE = "You win!";
-    private static String DRAW_MESSAGE = "It's a draw!";
+    private final static String LOSE_MESSAGE = "You lose, try again!";
+    private final static String WIN_MESSAGE = "You win!";
+    private final static String DRAW_MESSAGE = "It's a draw!";
+    private final static String CLICK = "Click";
     private static final int DOTS_TO_WIN = 3;
     private static final int MAX_MOVE_CNT = 9;
     private static String PLAYER_SYM = "X";
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private static int MOVE_CNT;
 
     private Button[][] buttons = new Button[3][3];
+    private MediaPlayer mediaPlayer;
     private TableLayout layout;
     private TextView textView;
     private Button startStop;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         layout = (TableLayout) findViewById(R.id.main_l);
         startStop = findViewById(R.id.buttonS);
-        textView =  findViewById(R.id.textViewInfo);
+        textView = findViewById(R.id.textViewInfo);
         initMap();
     }
 
@@ -101,16 +102,37 @@ public class MainActivity extends AppCompatActivity {
         Button b = (Button) v;
 
         if (b.getText().equals(EMPTY)) {
+            initAudio(CLICK);
+            mediaPlayer.start();
             b.setText(PLAYER_SYM);
             MOVE_CNT++;
 
             if (checkWin(PLAYER_SYM)) {
                 freezeMap();
+                initAudio(WIN_MESSAGE);
+                mediaPlayer.start();
                 printMessage(WIN_MESSAGE);
                 colorize(PLAYER_SYM);
                 return;
             }
             doAiMove();
+        }
+    }
+
+    private void initAudio(String type) {
+        switch (type) {
+            case DRAW_MESSAGE:
+                mediaPlayer = MediaPlayer.create(this, R.raw.draw);
+                break;
+            case WIN_MESSAGE:
+                mediaPlayer = MediaPlayer.create(this, R.raw.win);
+                break;
+            case LOSE_MESSAGE:
+                mediaPlayer = MediaPlayer.create(this, R.raw.lose);
+                break;
+            default:
+                mediaPlayer = MediaPlayer.create(this, R.raw.click);
+                break;
         }
     }
 
@@ -121,7 +143,10 @@ public class MainActivity extends AppCompatActivity {
         while (true) {
             if (MOVE_CNT >= MAX_MOVE_CNT) {
                 printMessage(DRAW_MESSAGE);
-                break;
+                initAudio(DRAW_MESSAGE);
+                mediaPlayer.start();
+                freezeMap();
+                return;
             }
 
             x = random.nextInt(buttons.length);
@@ -133,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (checkWin(AI_SYM)) {
                     freezeMap();
+                    initAudio(LOSE_MESSAGE);
+                    mediaPlayer.start();
                     printMessage(LOSE_MESSAGE);
                     colorize(AI_SYM);
                 }
@@ -143,8 +170,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkWin(String symb) {
-        int winToD1 = 0,  winToD2 = 0;
-        winRow = new int[DOTS_TO_WIN][DOTS_TO_WIN];
+        int winToD1 = 0, winToD2 = 0;
 
         for (int i = 0; i < buttons.length; i++) {
             int winToCol = 0, winToRow = 0;
@@ -171,27 +197,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String countWinStreak(String sym) {
-        String winStreak;
+        String winStreak = new String();
 
+        for (int i = 0, j = i; i < buttons.length; i++) {
+            boolean horizontalCondition = buttons[i][j].getText().equals(sym)
+                    & buttons[i][j + 1].getText().equals(sym)
+                    & buttons[i][j + 2].getText().equals(sym);
 
+            boolean verticalCondition  = buttons[j][i].getText().equals(sym)
+                    & buttons[j + 1][i].getText().equals(sym)
+                    & buttons[j + 2][i].getText().equals(sym);
 
-        if (buttons[0][0].getText().equals(sym) & buttons[0][1].getText().equals(sym) & buttons[0][2].getText().equals(sym))
-            winStreak = "h0";
-        else if (buttons[1][0].getText().equals(sym) & buttons[1][1].getText().equals(sym) & buttons[1][2].getText().equals(sym))
-            winStreak = "h1";
-        else if (buttons[2][0].getText().equals(sym) & buttons[2][1].getText().equals(sym) & buttons[2][2].getText().equals(sym))
-            winStreak = "h2";
-        else if (buttons[0][0].getText().equals(sym) & buttons[1][0].getText().equals(sym) & buttons[2][0].getText().equals(sym))
-            winStreak = "v0";
-        else if (buttons[0][1].getText().equals(sym) & buttons[1][1].getText().equals(sym) & buttons[2][1].getText().equals(sym))
-            winStreak = "v1";
-        else if (buttons[0][2].getText().equals(sym) & buttons[1][2].getText().equals(sym) & buttons[2][2].getText().equals(sym))
-            winStreak = "v2";
-        else if (buttons[0][0].getText().equals(sym) & buttons[1][1].getText().equals(sym) & buttons[2][2].getText().equals(sym))
-            winStreak = "d1";
-        else
-            winStreak = "d2";
+            boolean mainDiagCondition = buttons[j][j].getText().equals(sym)
+                                      & buttons[j + 1][j + 1].getText().equals(sym)
+                                      & buttons[j + 2][j + 2].getText().equals(sym);
 
+            boolean diagCondition = buttons[j][j + 2].getText().equals(sym)
+                                  & buttons[j + 1][j + 1].getText().equals(sym)
+                                  & buttons[j + 2][j].getText().equals(sym);
+
+            if (horizontalCondition & i == 0)
+                winStreak = "h0";
+            else if (horizontalCondition & i == 1)
+                winStreak = "h1";
+            else if (horizontalCondition & i == 2)
+                winStreak = "h2";
+
+            if (verticalCondition & i == 0)
+                winStreak = "v0";
+            else if (verticalCondition & i == 1)
+                winStreak = "v1";
+            else if (verticalCondition & i == 2)
+                winStreak = "v2";
+
+            if (mainDiagCondition)
+                winStreak = "d1";
+            else if (diagCondition)
+                winStreak = "d2";
+        }
         return winStreak;
     }
 
@@ -209,7 +252,6 @@ public class MainActivity extends AppCompatActivity {
             for (int k = 0, m = j; k <= j & m >= 0; k++, m--)
                 buttons[k][m].setBackgroundColor(Color.parseColor("#ffe08a"));
         }
-
     }
 
     private void colorize(String sym) {
