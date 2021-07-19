@@ -12,13 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-// todo more beautiful win/lose msg
-// todo buttons and change color app
-// todo score
-// todo pack button style to theme
-
 // todo remove appbar
 // todo other tasks
+
+// todo refactor somehow
+// todo more beautiful win/lose msg
+// todo more strong ai
 
 public class MainActivity extends AppCompatActivity {
     private final int[] buttonIds = new int[] { R.id.b0, R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8};
@@ -33,11 +32,17 @@ public class MainActivity extends AppCompatActivity {
     private static String AI_SYM = "O";
     private static String EMPTY = "";
     private static int MOVE_CNT;
+    private static int WIN_CNT;
+    private static int LOSE_CNT;
+    private static int DRAW_CNT;
 
     private Button[][] buttons = new Button[3][3];
     private MediaPlayer mediaPlayer;
     private TableLayout layout;
     private TextView textView;
+    private TextView tvWins;
+    private TextView tvLoses;
+    private TextView tvDraws;
     private Button startStop;
 
     @Override
@@ -47,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         layout = (TableLayout) findViewById(R.id.main_l);
         startStop = findViewById(R.id.buttonS);
         textView = findViewById(R.id.textViewInfo);
+        tvWins = findViewById(R.id.textViewWin);
+        tvLoses = findViewById(R.id.textViewLos);
+        tvDraws = findViewById(R.id.textViewDraw);
         initMap();
     }
 
@@ -78,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons[i].length; j++) {
                 buttons[i][j].setText(EMPTY);
-                buttons[i][j].setBackgroundColor(Color.parseColor("#FF6200EE"));
+                buttons[i][j].setBackgroundColor(Color.parseColor("#bd9bd1"));    // тут если ресурсы юзать почему то углы херятся у кнопок
                 textView.setText(EMPTY);
-                textView.setBackgroundColor(Color.parseColor("#EAEAEA"));
+                textView.setBackgroundResource(R.color.main_background);
                 MOVE_CNT = 0;
                 initMap();
             }
@@ -109,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (checkWin(PLAYER_SYM)) {
                 freezeMap();
+                WIN_CNT++;
+                updateScore(WIN_MESSAGE);
                 initAudio(WIN_MESSAGE);
                 mediaPlayer.start();
                 printMessage(WIN_MESSAGE);
@@ -122,9 +132,9 @@ public class MainActivity extends AppCompatActivity {
     private void initAudio(String type) {
         switch (type) {
             case DRAW_MESSAGE:
-                mediaPlayer = MediaPlayer.create(this, R.raw.draw);
-                break;
-            case WIN_MESSAGE:
+                mediaPlayer = MediaPlayer.create(this, R.raw.draw); // кароче тут была страшная ебка - оказывается есть
+                break;                                                      // какие то аудио файлы, которые не может переварить
+            case WIN_MESSAGE:                                               // mediaPlayer, и он кидает NPE, хотя формат файлов один и тот же
                 mediaPlayer = MediaPlayer.create(this, R.raw.win);
                 break;
             case LOSE_MESSAGE:
@@ -143,7 +153,9 @@ public class MainActivity extends AppCompatActivity {
         while (true) {
             if (MOVE_CNT >= MAX_MOVE_CNT) {
                 printMessage(DRAW_MESSAGE);
-                initAudio(DRAW_MESSAGE);
+                DRAW_CNT++;
+                updateScore(DRAW_MESSAGE);      // миленько получилось. Наверно тут какойто паттерн применить нужно, чтобы
+                initAudio(DRAW_MESSAGE);        // сгруппировать эти однотипные параметры
                 mediaPlayer.start();
                 freezeMap();
                 return;
@@ -160,6 +172,8 @@ public class MainActivity extends AppCompatActivity {
                     freezeMap();
                     initAudio(LOSE_MESSAGE);
                     mediaPlayer.start();
+                    LOSE_CNT++;
+                    updateScore(LOSE_MESSAGE);
                     printMessage(LOSE_MESSAGE);
                     colorize(AI_SYM);
                 }
@@ -279,6 +293,20 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "d2":
                 iterator(0, 2);
+                break;
+        }
+    }
+
+    private void updateScore(String type) {
+        switch (type) {
+            case WIN_MESSAGE:
+                tvWins.setText(String.valueOf(WIN_CNT));    // тут то мы уже на опыте, надо кастить в стринг, прежде чем толкать в сеттер
+                break;
+            case LOSE_MESSAGE:
+                tvLoses.setText(String.valueOf(LOSE_CNT));
+                break;
+            default:
+                tvDraws.setText(String.valueOf(DRAW_CNT));
                 break;
         }
     }
