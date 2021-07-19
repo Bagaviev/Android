@@ -31,6 +31,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         WebView webview = findViewById(R.id.webView);
         webview.setWebViewClient(new WebViewClient());
+
         webview.loadUrl("https://yandex.ru");
     }
 }

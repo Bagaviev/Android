@@ -1,9 +1,11 @@
 package com.example.reclinetask;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -22,8 +24,8 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private final int[] buttonIds = new int[] { R.id.b0, R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8};
 
-    private final static String LOSE_MESSAGE = "You lose, try again!";
     private final static String WIN_MESSAGE = "You win!";
+    private final static String LOSE_MESSAGE = "You lose, try again!";
     private final static String DRAW_MESSAGE = "It's a draw!";
     private final static String CLICK = "Click";
     private static final int DOTS_TO_WIN = 3;
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvLoses;
     private TextView tvDraws;
     private Button startStop;
+    private Button webView;         // remove
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,13 +58,20 @@ public class MainActivity extends AppCompatActivity {
         tvWins = findViewById(R.id.textViewWin);
         tvLoses = findViewById(R.id.textViewLos);
         tvDraws = findViewById(R.id.textViewDraw);
+        webView = findViewById(R.id.buttonWebView);
         initMap();
     }
 
     @Override
     protected void onStart() {
         startStop.setOnClickListener(v -> restartGame());
+        webView.setOnClickListener(v -> loadPage());;
         super.onStart();
+    }
+
+    private void loadPage() {       // remove
+        Intent intent = new Intent(this, WebViewActivity.class);
+        startActivity(intent);
     }
 
     private void initMap() {
@@ -255,16 +265,16 @@ public class MainActivity extends AppCompatActivity {
     private void iterator(int i, int j) {
         if (j == 3) {
             for (int k = 0; k < j; k++)
-                buttons[i][k].setBackgroundColor(Color.parseColor("#ffe08a"));
+                buttons[i][k].setBackgroundColor(Color.parseColor("#f5e3b0"));
         } else if (i == 3) {
             for (int k = 0; k < i; k++)
-                buttons[k][j].setBackgroundColor(Color.parseColor("#ffe08a"));
+                buttons[k][j].setBackgroundColor(Color.parseColor("#f5e3b0"));
         } else if (i == j) {
             for (int k = 0; k <= i; k++)
-                buttons[k][k].setBackgroundColor(Color.parseColor("#ffe08a"));
+                buttons[k][k].setBackgroundColor(Color.parseColor("#f5e3b0"));
         } else {
             for (int k = 0, m = j; k <= j & m >= 0; k++, m--)
-                buttons[k][m].setBackgroundColor(Color.parseColor("#ffe08a"));
+                buttons[k][m].setBackgroundColor(Color.parseColor("#f5e3b0"));
         }
     }
 

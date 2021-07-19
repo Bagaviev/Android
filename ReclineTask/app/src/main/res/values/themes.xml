@@ -22,4 +22,9 @@
         <item name="android:layout_margin">10dp</item>
         <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="Theme.ReclineTask.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
