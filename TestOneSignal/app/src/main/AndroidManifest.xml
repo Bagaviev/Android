@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.example.testonesignal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/reklain"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/reklain"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.TestOneSignal">
+
+        <activity
+                android:name=".LoadActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.TestOneSignal.NoActionBar"
+                android:noHistory="true">
+            <!--костылечичек, чтобы backstack был без первого экрана. По другому не работал интент на третий экран-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".GameActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.TestOneSignal.NoActionBar"
+                android:noHistory="true">
+        </activity>
+
+        <activity
+                android:name=".WebViewActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.TestOneSignal.NoActionBar"
+                android:noHistory="true">
+        </activity>
+    </application>
+
+</manifest>
