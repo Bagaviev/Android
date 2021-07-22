@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.onesignal.OSNotificationOpenedResult;
 import com.onesignal.OneSignal;
 
+// https://app.onesignal.com/apps/a5ee2618-e10e-4da3-aa1e-9a2b2a746855#outcomes=os__click__count
+// https://documentation.onesignal.com/docs/android-sdk-setup
+
 public class LoadActivity extends AppCompatActivity {
     private static final String ONESIGNAL_APP_ID = "a5ee2618-e10e-4da3-aa1e-9a2b2a746855";
     ProgressBar bar;
