@@ -1,14 +1,60 @@
-Now:
+7 (action bar menu)
+	styles etc
+	tests
+	localisation
 
-1) Курс от mail.ru Юрий Береза, Технотрек
-	- https://github.com/ybereza/technotrack-resources
+8
+	animations
+	gestures
+	arhitecture (JetPack binding, viewModel)
 
-2) guides from developer.android.com
+
+9
+	custom views
+	sensors (bluetooth, camera)
+	widgets
+	
+10
+	google play publish moments
+	
+
+Final
+	Authorisation
+	REST api
+	backend spring
+	Server DB
+	Mock backend
+	AWS
+	Sessions / cookies
+	Crashlytics
+	Ads
+	Appmetrica (appsflyer, appodeal)
+	
+	
+================real work skills===============
+✓ RxJava
+✓ Room
+✓ Retrofit
+Dagger
+Architecture
+	MVC
+	MVP
+	MVVM
+	Clean architecture
+Jetpack (AndroidX) - Binding etc
+Kotlin
+Espresso
+==============own app google play==============
+EMIAS Helper
 
 
-https://polis-mail-ru.github.io/2019-android/08_testing_CI/084_ci_cd/
-
-След прототип: dialog + разрешения вызов + db sqlite
+=============================================
+mvc
+mvp 
+	https://javarush.ru/groups/posts/505-mvp-v-android-dlja-samihkh-malenjhkikh?post=full#discussion
+	https://startandroid.ru/ru/blog/493-mvp-dlja-nachinajuschih-bez-bibliotek-i-interfejsov.html
+	https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42
+mvvm
 
 
 
