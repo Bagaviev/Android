@@ -1,7 +1,7 @@
-7 (action bar menu)
-	styles etc
-	tests
+7 
+	action bar menu
 	localisation
+	tests
 
 8
 	animations
