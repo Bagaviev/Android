@@ -1,9 +1,6 @@
 package com.example.rentateamtask.view.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
@@ -14,23 +11,13 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.room.Room;
 
 import com.example.rentateamtask.Contract;
 import com.example.rentateamtask.R;
 import com.example.rentateamtask.model.Model;
-import com.example.rentateamtask.model.pojo.UserData;
-import com.example.rentateamtask.model.service.network.NetworkService;
-import com.example.rentateamtask.model.service.db.AppDatabase;
-import com.example.rentateamtask.model.service.db.UserDao;
 import com.example.rentateamtask.presenter.Presenter;
 import com.example.rentateamtask.view.UserPage;
-import com.example.rentateamtask.presenter.utils.ListAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserListFragment extends Fragment implements Contract.View {
     public static final String EXTRA_MESSAGE = "com.example.rentateamtask.MESSAGE";
