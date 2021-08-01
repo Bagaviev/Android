@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SeventhExample</string>
+
+    <!-- Options menu items. This text is on a item that can fit 30 chars -->
+    <string name="menu1">Меню опций</string>
+    <string name="menu2">Локализация</string>
+    <string name="menu3">Тесты IDE</string>
+
+    <!-- Textview for fragment. This text is on a view that can fit 150 chars -->
+    <string name="fragmentTv1">Простой фрагмент открывается при выборе первого пункта меню</string>
+    <string name="fragmentTv2">Фрагмент перенаправляет на настройки локали, когда выбран второй пункт меню</string>
+    <string name="fragmentTv3">Фрагмент показывает методы тестирования при выборе третьего пункта меню</string>
+    <string name="button">Открыть</string>
+</resources>

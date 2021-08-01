@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">SeventhExample</string>
+    <string name="app_name" translatable="false">SeventhExample</string>
+
+    <!-- Options menu items. This text is on a item that can fit 30 chars -->
+    <string name="menu1">Options menu</string>
+    <string name="menu2">Localisation</string>
+    <string name="menu3">IDE Tests</string>
+
+    <!-- Textview for fragment. This text is on a view that can fit 150 chars -->
+    <string name="fragmentTv1">Simple fragment opens when first menu item selected</string>
+    <string name="fragmentTv2">Fragment redirects to locale settings when second menu item selected</string>
+    <string name="fragmentTv3">Fragment shows testing techniques when third menu item selected</string>
+    <string name="button">Open</string>
 </resources>

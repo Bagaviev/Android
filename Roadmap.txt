@@ -6,8 +6,8 @@
 8
 	animations
 	gestures
-	arhitecture (JetPack binding, viewModel)
-
+	arhitecture (JetPack binding, viewModel) 
+		clean architecture
 
 9
 	custom views
@@ -29,6 +29,7 @@ Final
 	Crashlytics
 	Ads
 	Appmetrica (appsflyer, appodeal)
+	Firebase
 	
 	
 ================real work skills===============
@@ -44,6 +45,7 @@ Architecture
 Jetpack (AndroidX) - Binding etc
 Kotlin
 Espresso
+
 ==============own app google play==============
 EMIAS Helper
 
@@ -55,8 +57,6 @@ mvp
 	https://startandroid.ru/ru/blog/493-mvp-dlja-nachinajuschih-bez-bibliotek-i-interfejsov.html
 	https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42
 mvvm
-
-
 
 
 сортировки роадмап:
