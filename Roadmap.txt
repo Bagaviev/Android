@@ -1,8 +1,3 @@
-7 
-	action bar menu
-	localisation
-	tests
-
 8
 	animations
 	gestures
@@ -18,7 +13,6 @@
 	build types
 	google play publish moments
 	
-
 Final
 	Authorisation
 	REST api
@@ -30,36 +24,21 @@ Final
 	Crashlytics
 	Ads
 	Appmetrica (appsflyer, appodeal)
-	Firebase
-	
+✓ 	Firebase
 	
 ================real work skills===============
 ✓ RxJava
 ✓ Room
 ✓ Retrofit
-Dagger
+✓ Espresso
 Architecture
-	MVC
-	MVP
+✓ 	MVC
+✓ 	MVP
 	MVVM
 	Clean architecture
+Dagger
 Jetpack (AndroidX) - Binding etc
 Kotlin
-Espresso
 
 ==============own app google play==============
 EMIAS Helper
-
-
-=============================================
-mvc
-mvp 
-	https://javarush.ru/groups/posts/505-mvp-v-android-dlja-samihkh-malenjhkikh?post=full#discussion
-	https://startandroid.ru/ru/blog/493-mvp-dlja-nachinajuschih-bez-bibliotek-i-interfejsov.html
-	https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42
-mvvm
-
-
-сортировки роадмап:
-	пирамидальная (heap)
-	merge sort
