@@ -8,7 +8,7 @@
     <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textVie3"
+            android:id="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -16,5 +16,33 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintVertical_bias="0.195"
             android:text="@string/fragmentTv3"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textAlignment="center" />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/editTextText1"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.308"
+            android:hint="@string/inputValue" />
+
+    <Button
+            android:text="@string/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.349" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

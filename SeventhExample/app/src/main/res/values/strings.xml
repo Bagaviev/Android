@@ -11,4 +11,6 @@
     <string name="fragmentTv2">Fragment redirects to locale settings when second menu item selected</string>
     <string name="fragmentTv3">Fragment shows testing techniques when third menu item selected</string>
     <string name="button">Open</string>
+    <string name="inputValue">Input number</string>
+    <string name="submit">Enter</string>
 </resources>

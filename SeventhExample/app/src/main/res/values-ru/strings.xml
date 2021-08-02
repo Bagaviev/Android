@@ -11,4 +11,6 @@
     <string name="fragmentTv2">Фрагмент перенаправляет на настройки локали, когда выбран второй пункт меню</string>
     <string name="fragmentTv3">Фрагмент показывает методы тестирования при выборе третьего пункта меню</string>
     <string name="button">Открыть</string>
+    <string name="inputValue">Введите число</string>
+    <string name="submit">Ввод</string>
 </resources>

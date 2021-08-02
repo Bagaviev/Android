@@ -14,29 +14,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/presenter/Presenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SeventhExample/app/src/androidTest/java/com/example/seventhexample/InputUiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/java/com/example/seventhexample/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/view/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/UserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/view/UserPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/fragments/AboutFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/view/fragments/AboutFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/fragments/UserListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/view/fragments/UserListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/pojo/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/pojo/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/pojo/Support.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/pojo/Support.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/pojo/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/pojo/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/retrofit/NetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/service/network/NetworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/retrofit/OurAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/service/network/regresInApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/room/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/service/db/AppDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/room/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/model/service/db/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/utils/ListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/java/com/example/rentateamtask/presenter/utils/ListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/res/layout/userlist_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RentaTeamTask/app/src/main/res/layout/userlist_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../schedule.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../schedule.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/androidTest/java/com/example/seventhexample/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/androidTest/java/com/example/seventhexample/PrefsInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/java/com/example/seventhexample/fragments/IdeTestFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/java/com/example/seventhexample/fragments/IdeTestFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/layout/fragment_ide_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/layout/fragment_ide_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values-ru/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values-ru/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/test/java/com/example/seventhexample/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/test/java/com/example/seventhexample/CalculatorUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

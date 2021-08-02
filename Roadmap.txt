@@ -15,6 +15,7 @@
 	widgets
 	
 10
+	build types
 	google play publish moments
 	
 
