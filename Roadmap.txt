@@ -1,3 +1,6 @@
+7 
+	Kotlin
+
 8
 	animations
 	gestures
@@ -38,7 +41,6 @@ Architecture
 	Clean architecture
 Dagger
 Jetpack (AndroidX) - Binding etc
-Kotlin
 
 ==============own app google play==============
 EMIAS Helper
