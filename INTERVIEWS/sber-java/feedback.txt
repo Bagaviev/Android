@@ -1,0 +1,73 @@
+Вакансия Java девелопер в Safety чето там. Анонимизация данных.
+
+Чтото плохо пошло с самого начала (опозд.)
+
+1) Вопрос про SQL Having и Group By. Для фильтрации группового выражения. Можно заменить не Where, а подзапросом в итоге, подзабыл этот момент.
+Не совсем синтаксический сахар получается. (group by + внешний запрос с where, вот это эквивалент having) +-
+
+2) Поменять две переменные значениями безз третьей. В итоге с подсказками смог прийти к этому + (с подсказкой)
+
+	int a = Integer.MAX_VALUE;
+        int b = 59;
+
+        a = b + a;
+        b = a - b;
+        a = a - b;
+
+        System.out.println(a);
+        System.out.println(b);
+
+Можно еще через искл ИЛИ:
+
+	a = a ^ b;
+	b = b ^ a;
+        a = a ^ b;
+
+3) Вопрос про уровни изоляции (ACID) -
+
+https://ru.wikipedia.org/wiki/ACID
+https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%B8%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B9
+
+4) Вопрос про volatile +
+
+5) Задачка про Ping Pong последовательно из двух потоков. Тут тупо конечно сам виноват, не вспомнил, как делал когда-то. -
+	
+   5.1 Кароче нужно в каждый поток передавать один объект для синхронизации, и мониторы занимать в run уже его
+   5.2 По дефолту notify(), wait() вызывается не объекте this текущего класса, поэтому был exception. Надо вызывать lockObj.notify() etc.
+
+    static class Task implements Runnable {
+        Object obj;
+        String name;
+
+        public Task(Object obj, String name) {
+            this.obj = obj;
+            this.name = name;
+        }
+
+        @Override
+        public void run() {
+            synchronized (obj) {
+                while (true) {
+                    try {
+                        System.out.println(name + "!");
+                        Thread.sleep(500);
+
+                        obj.notify();
+                        obj.wait(500);
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
+    public static void main (String[]args){
+        Object syncObj = new Object();
+        new Thread(new Task(syncObj, "Ping")).start();
+        new Thread(new Task(syncObj, "Pong")).start();
+    }
+}
+
+6) Вопрос для след встречи мог бы быть про паттерны...
