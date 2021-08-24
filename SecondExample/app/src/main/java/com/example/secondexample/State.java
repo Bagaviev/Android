@@ -1,7 +1,5 @@
 package com.example.secondexample;
 
-import android.widget.ImageView;
-
 public class State {
     private String model;
     private int flagResourse;

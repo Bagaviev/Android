@@ -22,6 +22,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder> 
     public StateAdapter(OnItemClickListener onItemClickListener, List<State> states) {
         this.onItemClickListener = onItemClickListener;
         this.states = states;
+        // t
     }
 
     @Override
