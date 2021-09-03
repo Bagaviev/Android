@@ -41,9 +41,9 @@ Figma: https://clck.ru/X4P9A<br/>
 	
 ### Примеры скриншотов:
 
-<a href="url"><img src="https://github.com/Bagaviev/YandexMediaservicesHackathon/blob/twitch_streaming/pic1.jpg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/YandexMediaservicesHackathon/blob/twitch_streaming/pic2.jpg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/YandexMediaservicesHackathon/blob/twitch_streaming/pic3.jpg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/YandexMediaservicesHackathon/blob/twitch_streaming/pic4.jpg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/YandexMediaservicesHackathon/blob/twitch_streaming/pic5.jpg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/YandexMediaservicesHackathon/blob/twitch_streaming/pic6.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/YandexMediaservicesHackathon/pic1.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/YandexMediaservicesHackathon/pic2.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/YandexMediaservicesHackathon/pic3.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/YandexMediaservicesHackathon/pic4.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/YandexMediaservicesHackathon/pic5.jpg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/YandexMediaservicesHackathon/pic6.jpg" align="left" height="500" width="250" ></a>
