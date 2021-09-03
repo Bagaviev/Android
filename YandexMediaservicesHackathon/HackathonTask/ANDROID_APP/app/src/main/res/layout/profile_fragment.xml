@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DFEAEAEA">
+
+    <TextView
+            android:text="Юзернейм Ластнейм"
+            android:layout_width="221dp"
+            android:layout_height="31dp"
+            android:id="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.037"
+            android:textAlignment="center" />
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="115dp"
+            android:layout_height="108dp"
+            app:cardCornerRadius="250dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.13999999"
+            android:id="@+id/cardView">
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="250dp"
+                android:layout_gravity="center">
+
+            <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/smal"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/avatar" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_baseline_camera_24"
+            android:id="@+id/floatingActionButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintVertical_bias="0.96" />
+
+    <TextView
+            android:text="Почта: email@yandex-team.ru"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:id="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="80dp"
+            android:background="#FFFFFF" />
+
+    <TextView
+            android:text="Поддержка"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:id="@+id/textView9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF" />
+
+    <TextView
+            android:text="О приложении"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:id="@+id/textView11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF" />
+
+    <TextView
+            android:text="Уведомления"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:id="@+id/textView10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

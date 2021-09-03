@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.example.afishaandroidapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/ic_yandex_logologo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/ic_yandex_logologo"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.AfishaAndroidApp"
+            android:screenOrientation="portrait">
+
+        <activity android:name=".eventActivity"
+                  android:parentActivityName=".MainActivity"
+                  android:screenOrientation="portrait">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".streamActivity"
+                  android:screenOrientation="portrait">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity" />
+        </activity>
+
+        <activity
+                android:name=".MainActivity"
+                android:theme="@style/Theme.AfishaAndroidApp.NoActionBar"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

@@ -1,0 +1,2 @@
+rootProject.name = "AfishaAndroidApp"
+include ':app'
