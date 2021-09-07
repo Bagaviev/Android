@@ -12,11 +12,12 @@
             android:text="Distance"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="600dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/textViewDist" />
+            android:id="@+id/textViewDist"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCity"
+            android:layout_marginTop="32dp"
+            app:layout_constraintHorizontal_bias="0.498" />
 
     <Button
             android:text="Calculate"
@@ -32,14 +33,25 @@
 
     <TextView
             android:text="Weather data"
-            android:layout_width="318dp"
-            android:layout_height="320dp"
+            android:layout_width="332dp"
+            android:layout_height="155dp"
             android:id="@+id/textViewWeather"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="52dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.494" />
+
+    <TextView
+            android:text="City data"
+            android:layout_width="332dp"
+            android:layout_height="155dp"
+            android:id="@+id/textViewCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintTop_toBottomOf="@+id/buttonWeather"
+            android:layout_marginTop="36dp" />
 
     <Button
             android:text="Get"
@@ -49,8 +61,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/buttonWeather"
             app:layout_constraintTop_toBottomOf="@+id/textViewWeather"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.17" />
+            android:layout_marginTop="32dp" />
+
+    <Button
+            android:text="Get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/buttonCity"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCity"
+            android:layout_marginTop="44dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

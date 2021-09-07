@@ -2,6 +2,7 @@ package com.example.weatherapp;
 
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,6 +13,14 @@ import com.example.weatherapp.pojo.api_entities.Daily;
 import com.example.weatherapp.pojo.api_entities.Request;
 import com.example.weatherapp.pojo.our_entity.OurWeather;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
     List<OurWeather> weatherList = new ArrayList<>();
     NetworkService networkService = NetworkService.getInstance();
     Button buttonDist;
-    TextView textViewDist;
     Button buttonWeather;
+    Button buttonCity;
+    TextView textViewDist;
     TextView textViewWeather;
+    TextView textViewCity;
 
     double lat1 = 55.693702;
     double lon1 = 37.658820;
@@ -39,9 +50,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonDist = findViewById(R.id.buttonDist);
-        textViewDist = findViewById(R.id.textViewDist);
         buttonWeather = findViewById(R.id.buttonWeather);
+        buttonCity = findViewById(R.id.buttonCity);
+        textViewDist = findViewById(R.id.textViewDist);
         textViewWeather = findViewById(R.id.textViewWeather);
+        textViewCity = findViewById(R.id.textViewCity);
 
         buttonDist.setOnClickListener(v -> {
             result = calcDistance(lat1, lon1, lat2, lon2);
@@ -49,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonWeather.setOnClickListener(v -> request(25.964051, 18.322344));
+
+        buttonCity.setOnClickListener(v -> {
+            try {
+                String result = readJsonFromRaw();
+                textViewCity.setText(result.substring(0, 100));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void request(double lat, double lon) {
@@ -89,6 +111,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeCity() {
 
+    }
+
+    public String readJsonFromRaw() throws IOException {
+        InputStream is = getResources().openRawResource(R.raw.city_list);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } finally {
+            is.close();
+        }
+
+        String jsonString = writer.toString();
+        return jsonString;
     }
 
     public float calcDistance(double lat1, double lon1, double lat2, double lon2) {
