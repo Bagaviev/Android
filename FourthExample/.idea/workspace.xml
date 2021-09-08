@@ -14,16 +14,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../SeventhExample/app/src/androidTest/java/com/example/seventhexample/InputUiTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/java/com/example/seventhexample/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/pojo/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/res/raw/worldcities_clear.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/pojo/api_entities/Daily.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/pojo/api_entities/Daily.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/pojo/cities_entity/City.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/pojo/our_entity/OurWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/pojo/OurWeather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/res/raw/city_list.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/androidTest/java/com/example/seventhexample/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/androidTest/java/com/example/seventhexample/PrefsInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/java/com/example/seventhexample/fragments/IdeTestFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/java/com/example/seventhexample/fragments/IdeTestFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/layout/fragment_ide_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/layout/fragment_ide_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values-ru/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values-ru/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeventhExample/app/src/test/java/com/example/seventhexample/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeventhExample/app/src/test/java/com/example/seventhexample/CalculatorUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../YandexMediaservicesHackathon/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../YandexMediaservicesHackathon/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

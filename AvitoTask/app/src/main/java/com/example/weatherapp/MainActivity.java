@@ -2,35 +2,37 @@ package com.example.weatherapp;
 
 import android.location.Location;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weatherapp.network.NetworkService;
+import com.example.weatherapp.pojo.City;
+import com.example.weatherapp.pojo.OurWeather;
 import com.example.weatherapp.pojo.api_entities.Daily;
 import com.example.weatherapp.pojo.api_entities.Request;
-import com.example.weatherapp.pojo.our_entity.OurWeather;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    NetworkService networkService;
+
     List<OurWeather> weatherList = new ArrayList<>();
-    NetworkService networkService = NetworkService.getInstance();
+    List<City> cityList = new ArrayList<>();
+
     Button buttonDist;
     Button buttonWeather;
     Button buttonCity;
@@ -49,12 +51,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        networkService = NetworkService.getInstance();
+
         buttonDist = findViewById(R.id.buttonDist);
         buttonWeather = findViewById(R.id.buttonWeather);
         buttonCity = findViewById(R.id.buttonCity);
         textViewDist = findViewById(R.id.textViewDist);
         textViewWeather = findViewById(R.id.textViewWeather);
         textViewCity = findViewById(R.id.textViewCity);
+
+        readCsvFromRaw();
 
         buttonDist.setOnClickListener(v -> {
             result = calcDistance(lat1, lon1, lat2, lon2);
@@ -64,12 +71,8 @@ public class MainActivity extends AppCompatActivity {
         buttonWeather.setOnClickListener(v -> request(25.964051, 18.322344));
 
         buttonCity.setOnClickListener(v -> {
-            try {
-                String result = readJsonFromRaw();
-                textViewCity.setText(result.substring(0, 100));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            List<City> list = findCity("kazan");
+            textViewCity.setText(list.toString());
         });
     }
 
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         callList.enqueue(new Callback<Request>() {
             @Override
             public void onResponse(Call<Request> call, Response<Request> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     textViewWeather.setText("Code: " + response.code());
                     return;
                 }
@@ -89,13 +92,18 @@ public class MainActivity extends AppCompatActivity {
 
                     for (int i = 0; i < list.size(); i++) {
                         Daily item = list.get(i);
+
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, d MMMM", new Locale("ru"));
+                        String date = dateFormat.format( new Date(item.getDt() * 1000));
+                        String descr = item.getWeather().get(0).getDescription().toLowerCase();
+
                         OurWeather day = new OurWeather(
-                            item.getDt(),
-                            item.getTemp().getDay(),
-                            item.getPressure(),
+                       date.substring(0, 1).toUpperCase() + date.substring(1),
+                            String.format("%.0f", item.getTemp().getDay()),
+                            String.format("%.0f", item.getPressure() / 1.333),
                             item.getHumidity(),
-                            item.getWindSpeed(),
-                            item.getWeather().get(0).getDescription());
+                            String.format("%.0f", item.getWindSpeed()),
+                 descr.substring(0, 1).toUpperCase() + descr.substring(1));
                         weatherList.add(day);
                     }
                     textViewWeather.setText(weatherList.toString());
@@ -109,26 +117,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void changeCity() {
-
+    public List<City> findCity(String cityName) {       // sqlite чето работал херово, обходились как могли
+        List<City> founded = new ArrayList<>();
+        for (int i = 0; i < cityList.size(); i++) {
+            if (cityList.get(i).getName().toLowerCase().contains(cityName.toLowerCase())) {
+                founded.add(cityList.get(i));
+            }
+        }
+        return founded;
     }
 
-    public String readJsonFromRaw() throws IOException {
-        InputStream is = getResources().openRawResource(R.raw.city_list);
-        Writer writer = new StringWriter();
-        char[] buffer = new char[1024];
-        try {
-            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            int n;
-            while ((n = reader.read(buffer)) != -1) {
-                writer.write(buffer, 0, n);
-            }
-        } finally {
-            is.close();
-        }
+    public void readCsvFromRaw() {
+        new Thread(() -> {
+            InputStream is = getResources().openRawResource(R.raw.worldcities_clear);
 
-        String jsonString = writer.toString();
-        return jsonString;
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
+                while (reader.ready()) {
+                    String[] data = reader.readLine().split(";");
+                    cityList.add(new City(
+                            Double.valueOf(data[0]),
+                            data[1],
+                            data[2],
+                            Double.valueOf(data[3]),
+                            Double.valueOf(data[4])));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
     public float calcDistance(double lat1, double lon1, double lat2, double lon2) {

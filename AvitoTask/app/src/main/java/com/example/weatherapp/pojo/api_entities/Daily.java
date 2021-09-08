@@ -10,7 +10,7 @@ import java.util.Map;
 public class Daily {
     @SerializedName("dt")
     @Expose
-    private int dt;
+    private long dt;
 
     @SerializedName("sunrise")
     @Expose
@@ -89,7 +89,7 @@ public class Daily {
     public Daily() {
     }
 
-    public Daily(int dt, int sunrise, int sunset, int moonrise, int moonset, double moonPhase, Temp temp, FeelsLike feelsLike, int pressure, int humidity, double dewPoint, double windSpeed, int windDeg, double windGust, List<Weather__1> weather, int clouds, double pop, double rain, double uvi) {
+    public Daily(long dt, int sunrise, int sunset, int moonrise, int moonset, double moonPhase, Temp temp, FeelsLike feelsLike, int pressure, int humidity, double dewPoint, double windSpeed, int windDeg, double windGust, List<Weather__1> weather, int clouds, double pop, double rain, double uvi) {
         super();
         this.dt = dt;
         this.sunrise = sunrise;
@@ -112,11 +112,11 @@ public class Daily {
         this.uvi = uvi;
     }
 
-    public int getDt() {
+    public long getDt() {
         return dt;
     }
 
-    public void setDt(int dt) {
+    public void setDt(long dt) {
         this.dt = dt;
     }
 
