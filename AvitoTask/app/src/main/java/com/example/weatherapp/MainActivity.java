@@ -1,10 +1,14 @@
 package com.example.weatherapp;
 
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weatherapp.network.NetworkService;
@@ -18,10 +22,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
     Button buttonDist;
     Button buttonWeather;
     Button buttonCity;
+    Button buttonMatch;
     TextView textViewDist;
     TextView textViewWeather;
     TextView textViewCity;
+    TextView textViewMatch;
 
     double lat1 = 55.693702;
     double lon1 = 37.658820;
@@ -47,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     float result;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +71,11 @@ public class MainActivity extends AppCompatActivity {
         buttonDist = findViewById(R.id.buttonDist);
         buttonWeather = findViewById(R.id.buttonWeather);
         buttonCity = findViewById(R.id.buttonCity);
+        buttonMatch = findViewById(R.id.buttonMatch);
         textViewDist = findViewById(R.id.textViewDist);
         textViewWeather = findViewById(R.id.textViewWeather);
         textViewCity = findViewById(R.id.textViewCity);
+        textViewMatch = findViewById(R.id.textViewMatch);
 
         readCsvFromRaw();
 
@@ -73,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
         buttonCity.setOnClickListener(v -> {
             List<City> list = findCity("kazan");
             textViewCity.setText(list.toString());
+        });
+
+        buttonMatch.setOnClickListener(v -> {
+            String match = getClosestCity(65.998563, 57.635634);
+            textViewMatch.setText(match.toString());
         });
     }
 
@@ -115,6 +136,35 @@ public class MainActivity extends AppCompatActivity {
                 textViewWeather.setText("Failure: " + t);
             }
         });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public String getClosestCity(double lat, double lon) {
+        Map<Float, City> map = new TreeMap<>();
+
+        for (int i = 0; i < cityList.size(); i++) {
+            float distance = calcDistance(lat, lon, cityList.get(i).getLat(), cityList.get(i).getLon());
+            map.put(distance, cityList.get(i));
+        }
+
+        Map.Entry<Float, City> actualValue = map.entrySet()
+                .stream()
+                .findFirst()
+                .get();
+
+        return actualValue.getKey().toString() + " " + actualValue.getValue().toString();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+        List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
+        list.sort(Map.Entry.comparingByValue());
+
+        Map<K, V> result = new LinkedHashMap<>();
+        for (Map.Entry<K, V> entry : list) {
+            result.put(entry.getKey(), entry.getValue());
+        }
+        return result;
     }
 
     public List<City> findCity(String cityName) {       // sqlite чето работал херово, обходились как могли

@@ -16,7 +16,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/textViewDist"
             app:layout_constraintTop_toBottomOf="@+id/buttonCity"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintHorizontal_bias="0.498" />
 
     <Button
@@ -29,29 +29,28 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewDist"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.453" />
+            app:layout_constraintVertical_bias="0.11" />
 
     <TextView
             android:text="Weather data"
-            android:layout_width="332dp"
-            android:layout_height="155dp"
+            android:layout_width="339dp"
+            android:layout_height="96dp"
             android:id="@+id/textViewWeather"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.494" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
             android:text="City data"
-            android:layout_width="332dp"
-            android:layout_height="155dp"
+            android:layout_width="330dp"
+            android:layout_height="112dp"
             android:id="@+id/textViewCity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintTop_toBottomOf="@+id/buttonWeather"
-            android:layout_marginTop="36dp" />
+            android:layout_marginTop="24dp" />
 
     <Button
             android:text="Get"
@@ -62,7 +61,7 @@
             android:id="@+id/buttonWeather"
             app:layout_constraintTop_toBottomOf="@+id/textViewWeather"
             app:layout_constraintHorizontal_bias="0.498"
-            android:layout_marginTop="32dp" />
+            android:layout_marginTop="16dp" />
 
     <Button
             android:text="Get"
@@ -73,6 +72,27 @@
             android:id="@+id/buttonCity"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintTop_toBottomOf="@+id/textViewCity"
-            android:layout_marginTop="44dp" />
+            android:layout_marginTop="20dp" />
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="342dp"
+            android:layout_height="82dp"
+            android:id="@+id/textViewMatch"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492" />
+
+    <Button
+            android:text="Find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonMatch"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMatch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
