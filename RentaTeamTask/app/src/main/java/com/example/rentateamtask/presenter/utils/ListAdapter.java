@@ -23,7 +23,7 @@ public class ListAdapter extends ArrayAdapter<UserData> {
         View view = convertView;
         if (view == null)
             view = mInflater.inflate(R.layout.list_item, parent, false);
-        TextView textViewFn = view.findViewById(R.id.textViewFisrtname);
+        TextView textViewFn = view.findViewById(R.id.textViewDay);
         TextView textViewLn = view.findViewById(R.id.textViewLastname);
 
         UserData user = getItem(position);

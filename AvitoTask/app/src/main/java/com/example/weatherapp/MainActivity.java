@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import com.example.weatherapp.pojo.City;
 import com.example.weatherapp.pojo.OurWeather;
 import com.example.weatherapp.pojo.api_entities.Daily;
 import com.example.weatherapp.pojo.api_entities.Request;
+import com.example.weatherapp.utils.ListAdapter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,30 +44,32 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    private final int GPS_PERMISSION_CODE = 1;
+    private LocationManager locationManager;
+    private LocationListener locationListener;
+    private Location locationObj;
+
     NetworkService networkService;
 
     List<OurWeather> weatherList = new ArrayList<>();
     List<City> cityList = new ArrayList<>();
 
-    Button buttonWeather;
     Button buttonCity;
     Button buttonLocate;
-    TextView textViewWeather;
     TextView textViewCity;
     TextView textViewLocate;
+    ListView listView;
+    TextView textViewMcity;     // log textView, all errors will be there
+    TextView textViewMhum;
+    TextView textViewMtemp;
+    TextView textViewMpres;
+    TextView textViewMdesc;
+    TextView textViewMwind;
+    TextView textViewMdt;
 
-    static Double curLat;       // most logic holder variable
-    static Double curLon;       // most logic holder variable
-
-    double lat1 = 55.693702;
-    double lon1 = 37.658820;
-    double lat2 = 56.102816;
-    double lon2 = 40.379595;
-
-    private final int GPS_PERMISSION_CODE = 1;
-    private LocationManager locationManager;
-    private LocationListener locationListener;
-    private Location locationObj;
+    static Double curLat;       // most logic holder variables
+    static Double curLon;
+    static String curCityName;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -76,22 +80,26 @@ public class MainActivity extends AppCompatActivity {
         networkService = NetworkService.getInstance();
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-        buttonWeather = findViewById(R.id.buttonWeather);
         buttonCity = findViewById(R.id.buttonCity);
         buttonLocate = findViewById(R.id.buttonLocate);
-        textViewWeather = findViewById(R.id.textViewWeather);
         textViewCity = findViewById(R.id.textViewCity);
         textViewLocate = findViewById(R.id.textViewLocate);
+        listView = findViewById(R.id.listView);
+        textViewMcity = findViewById(R.id.textViewMcity);
+        textViewMhum = findViewById(R.id.textViewMhum);
+        textViewMtemp = findViewById(R.id.textViewMtemp);
+        textViewMpres = findViewById(R.id.textViewMpress);
+        textViewMdesc = findViewById(R.id.textViewMdesc);
+        textViewMwind = findViewById(R.id.textViewMwind);
+        textViewMdt = findViewById(R.id.textViewMdt);
 
         readCsvFromRaw();
+        readFromPrefs();
 
-        buttonWeather.setOnClickListener(v -> {
-                if (curLat != null & curLon != null)
-                    request(curLat, curLon);
-                else
-                    textViewWeather.setText("Locations not set!");
-            }
-        );
+        if (curLat != null & curLon != null & curCityName != null)
+            request(curLat, curLon);
+        else
+            textViewMcity.setText("Не указан город!");
 
         buttonCity.setOnClickListener(v -> {
             List<City> list = findCity("kazan");
@@ -111,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Request> call, Response<Request> response) {
                 if (!response.isSuccessful()) {
-                    textViewWeather.setText("Code: " + response.code());
+                    textViewMcity.setText("Code: " + response.code());
                     return;
                 }
                 if (response.body().getDaily() != null){
@@ -133,13 +141,14 @@ public class MainActivity extends AppCompatActivity {
                                 descr.substring(0, 1).toUpperCase() + descr.substring(1));
                         weatherList.add(day);
                     }
-                    textViewWeather.setText(weatherList.toString());
+
+                    initData();
                 }
             }
 
             @Override
             public void onFailure(Call<Request> call, Throwable t) {
-                textViewWeather.setText("Failure: " + t);
+                textViewMcity.setText("Failure: " + t);
             }
         });
     }
@@ -171,6 +180,22 @@ public class MainActivity extends AppCompatActivity {
         return founded;
     }
 
+    public void initData() {
+        OurWeather today = weatherList.get(0);
+        textViewMhum.setText(String.valueOf(today.getHumidity()) + "%");
+        textViewMtemp.setText(String.valueOf(today.getTemperature()) + "°C");
+        textViewMpres.setText(String.valueOf(today.getPressure()) + "мм.рт");
+        textViewMdesc.setText(String.valueOf(today.getDescription()));
+        textViewMwind.setText(String.valueOf(today.getWindSpeed()) + "м/с");
+        textViewMdt.setText(String.valueOf(today.getDay()));
+        textViewMcity.setText(curCityName);
+
+        listView.setAdapter(new ListAdapter(getApplicationContext(), weatherList.subList(1, weatherList.size() - 1)));
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Toast.makeText(getApplicationContext(), "Это будет хороший день!", Toast.LENGTH_SHORT).show();
+        });
+    }
+
     public void readCsvFromRaw() {
         new Thread(() -> {
             InputStream is = getResources().openRawResource(R.raw.worldcities_clear);
@@ -186,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                             Double.valueOf(data[4])));
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                textViewMcity.setText(e.getMessage());
             }
         }).start();
     }
@@ -212,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onProviderDisabled(@NonNull String provider) {
-                textViewLocate.setText("GPS not enabled");
+                textViewMcity.setText("GPS not enabled");
             }
         };
 
@@ -244,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                         locationObj = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
 
                     } catch (SecurityException e) {
-                        textViewLocate.setText(e.getMessage());
+                        textViewMcity.setText(e.getMessage());
                     }
 
                     updLocation(locationObj);
@@ -252,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
                     Toast.makeText(this, "We need that permission", Toast.LENGTH_LONG).show();
                 } else {
-                    textViewLocate.setText("Not working without permission");
+                    textViewMcity.setText("Not working without permission");
                 }
             }
             return;
@@ -264,6 +289,8 @@ public class MainActivity extends AppCompatActivity {
         City match = getClosestCity(location.getLatitude(), location.getLongitude());
         curLat = match.getLat();
         curLon = match.getLon();
+        curCityName = match.getName();
+        saveToPrefs();
         textViewLocate.setText(match.getName() + ", " + match.getCountry());
     }
 
@@ -274,5 +301,17 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean gpsStatusCheck() {
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
+    public void saveToPrefs() {
+        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("lat", String.valueOf(curLat)).apply();
+        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("lon", String.valueOf(curLon)).apply();
+        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("cityname", String.valueOf(curCityName)).apply();
+    }
+
+    public void readFromPrefs() {
+        curLat = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("lat", "0"));
+        curLon = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("lon", "0"));
+        curCityName = getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("cityname", "0");
     }
 }

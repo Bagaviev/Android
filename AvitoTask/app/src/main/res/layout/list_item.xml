@@ -8,20 +8,21 @@
 
 
     <TextView
-            android:layout_width="118dp"
-            android:layout_height="28dp"
+            android:layout_width="208dp"
+            android:layout_height="29dp"
             android:id="@+id/textViewDay"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="24dp"
-            android:textSize="20sp"
-            android:layout_marginStart="24dp"
-            android:background="#E8E8E8" />
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:background="#E8E8E8"
+            android:gravity="center" />
 
     <TextView
             android:layout_width="80dp"
             android:layout_height="20dp"
-            android:id="@+id/textView"
+            android:id="@+id/textViewTemp"
             app:layout_constraintTop_toBottomOf="@+id/textViewDay"
             android:layout_marginTop="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,17 +30,21 @@
             app:layout_constraintVertical_bias="0.029"
             android:layout_marginBottom="24dp"
             android:textSize="14sp"
-            android:background="#E8E8E8" />
+            android:background="#E8E8E8"
+            android:gravity="center"/>
 
     <TextView
-            android:layout_width="120dp"
-            android:layout_height="28dp"
-            android:id="@+id/textView2"
+            android:layout_width="116dp"
+            android:layout_height="66dp"
+            android:id="@+id/textViewDescr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewDay"
             app:layout_constraintHorizontal_bias="0.474"
             app:layout_constraintTop_toTopOf="@+id/textViewDay"
-            android:textSize="20sp"
-            android:background="#E8E8E8" />
+            android:textSize="16sp"
+            android:background="#E8E8E8"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
