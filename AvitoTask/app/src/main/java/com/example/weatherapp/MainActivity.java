@@ -1,24 +1,17 @@
 package com.example.weatherapp;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.example.weatherapp.network.NetworkService;
 import com.example.weatherapp.pojo.City;
@@ -36,29 +29,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.TreeMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    private final int GPS_PERMISSION_CODE = 1;
-    private LocationManager locationManager;
-    private LocationListener locationListener;
-    private Location locationObj;
-
     NetworkService networkService;
 
-    List<OurWeather> weatherList = new ArrayList<>();
-    List<City> cityList = new ArrayList<>();
+    static List<OurWeather> weatherList = new ArrayList<>();
+    static List<City> cityList = new ArrayList<>();
 
-    Button buttonCity;
-    Button buttonLocate;
-    TextView textViewCity;
-    TextView textViewLocate;
-    ListView listView;
+    ListView listViewMain;
     TextView textViewMcity;     // log textView, all errors will be there
     TextView textViewMhum;
     TextView textViewMtemp;
@@ -66,10 +48,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewMdesc;
     TextView textViewMwind;
     TextView textViewMdt;
-
-    static Double curLat;       // most logic holder variables
-    static Double curLon;
-    static String curCityName;
+    Button buttonIntent;
+    ProgressBar progressBar1;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -78,37 +58,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         networkService = NetworkService.getInstance();
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-        buttonCity = findViewById(R.id.buttonCity);
-        buttonLocate = findViewById(R.id.buttonLocate);
-        textViewCity = findViewById(R.id.textViewCity);
-        textViewLocate = findViewById(R.id.textViewLocate);
-        listView = findViewById(R.id.listView);
-        textViewMcity = findViewById(R.id.textViewMcity);
+        listViewMain = findViewById(R.id.listView);
+        textViewMcity = findViewById(R.id.textViewMcityLog1);
         textViewMhum = findViewById(R.id.textViewMhum);
         textViewMtemp = findViewById(R.id.textViewMtemp);
         textViewMpres = findViewById(R.id.textViewMpress);
         textViewMdesc = findViewById(R.id.textViewMdesc);
         textViewMwind = findViewById(R.id.textViewMwind);
         textViewMdt = findViewById(R.id.textViewMdt);
+        buttonIntent = findViewById(R.id.buttonIntent);
+        progressBar1 = findViewById(R.id.progressBar1);
 
-        readCsvFromRaw();
+        hideElements(progressBar1, true);
+        hideElements(listViewMain, false);
+
+        if (cityList.size() == 0)       // спасло от SIGSEGV. Видимо памяти не хватало. Это второй кейс когда встречается эта ебала. Первый был когда много данных грузил в sqlite (или корявые данные были)
+            readCsvFromRaw();
+
         readFromPrefs();
 
-        if (curLat != null & curLon != null & curCityName != null)
-            request(curLat, curLon);
+        if (LocationActivity.curLat != 0 & LocationActivity.curLon != 0 & LocationActivity.curCityName != "0")
+            request(LocationActivity.curLat, LocationActivity.curLon);      // state по гео хранится во втором классе
         else
-            textViewMcity.setText("Не указан город!");
+            openCitySelectorActivity();
 
-        buttonCity.setOnClickListener(v -> {
-            List<City> list = findCity("kazan");
-            textViewCity.setText(list.toString());
-        });
-
-        buttonLocate.setOnClickListener(v -> {
-            handleGPS();
-        });
+        buttonIntent.setOnClickListener(v -> openCitySelectorActivity());
     }
 
     private void request(double lat, double lon) {
@@ -143,55 +118,31 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     initData();
+                    hideElements(progressBar1, false);
+                    hideElements(listViewMain, true);
                 }
             }
 
             @Override
             public void onFailure(Call<Request> call, Throwable t) {
-                textViewMcity.setText("Failure: " + t);
+                textViewMcity.setText("Нет интернета");
+                hideElements(progressBar1, false);
             }
         });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public City getClosestCity(double lat, double lon) {
-        Map<Float, City> map = new TreeMap<>();
-
-        for (int i = 0; i < cityList.size(); i++) {
-            float distance = calcDistance(lat, lon, cityList.get(i).getLat(), cityList.get(i).getLon());
-            map.put(distance, cityList.get(i));
-        }
-
-        Map.Entry<Float, City> actualValue = map.entrySet()
-                .stream()
-                .findFirst()
-                .get();
-
-        return actualValue.getValue();
-    }
-
-    public List<City> findCity(String cityName) {       // sqlite чето работал херово, обходились как могли
-        List<City> founded = new ArrayList<>();
-        for (int i = 0; i < cityList.size(); i++) {
-            if (cityList.get(i).getName().toLowerCase().contains(cityName.toLowerCase())) {
-                founded.add(cityList.get(i));
-            }
-        }
-        return founded;
-    }
-
     public void initData() {
         OurWeather today = weatherList.get(0);
-        textViewMhum.setText(String.valueOf(today.getHumidity()) + "%");
-        textViewMtemp.setText(String.valueOf(today.getTemperature()) + "°C");
-        textViewMpres.setText(String.valueOf(today.getPressure()) + "мм.рт");
+        textViewMhum.setText(today.getHumidity() + "%");
+        textViewMtemp.setText(today.getTemperature() + "°C");
+        textViewMpres.setText(today.getPressure() + "мм.рт");
         textViewMdesc.setText(String.valueOf(today.getDescription()));
-        textViewMwind.setText(String.valueOf(today.getWindSpeed()) + "м/с");
+        textViewMwind.setText(today.getWindSpeed() + "м/с");
         textViewMdt.setText(String.valueOf(today.getDay()));
-        textViewMcity.setText(curCityName);
+        textViewMcity.setText(LocationActivity.curCityName);
 
-        listView.setAdapter(new ListAdapter(getApplicationContext(), weatherList.subList(1, weatherList.size() - 1)));
-        listView.setOnItemClickListener((parent, view, position, id) -> {
+        listViewMain.setAdapter(new ListAdapter(getApplicationContext(), weatherList.subList(1, weatherList.size() - 1)));
+        listViewMain.setOnItemClickListener((parent, view, position, id) -> {
             Toast.makeText(getApplicationContext(), "Это будет хороший день!", Toast.LENGTH_SHORT).show();
         });
     }
@@ -216,102 +167,28 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
-    public float calcDistance(double lat1, double lon1, double lat2, double lon2) {
-        Location locA = new Location("point A");
-        Location locB = new Location("point B");
-        locA.setLatitude(lat1);
-        locA.setLongitude(lon1);
-        locB.setLatitude(lat2);
-        locB.setLongitude(lon2);
-        return locA.distanceTo(locB);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    public void handleGPS() {
-        locationListener = new LocationListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onLocationChanged(@NonNull Location location) {
-                updLocation(location);
-            }
-
-            @Override
-            public void onProviderDisabled(@NonNull String provider) {
-                textViewMcity.setText("GPS not enabled");
-            }
-        };
-
-        if (checkPermission()) {
-            if (!gpsStatusCheck())
-                startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-
-            locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
-            locationObj = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        } else {
-            requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, GPS_PERMISSION_CODE);
-        }
-    }
-
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case GPS_PERMISSION_CODE: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    try {
-                        if (!gpsStatusCheck())
-                            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-
-                        locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
-                        locationObj = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
-
-                    } catch (SecurityException e) {
-                        textViewMcity.setText(e.getMessage());
-                    }
-
-                    updLocation(locationObj);
-
-                } else if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
-                    Toast.makeText(this, "We need that permission", Toast.LENGTH_LONG).show();
-                } else {
-                    textViewMcity.setText("Not working without permission");
-                }
-            }
-            return;
-        }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void updLocation(Location location) {    // core method
-        City match = getClosestCity(location.getLatitude(), location.getLongitude());
-        curLat = match.getLat();
-        curLon = match.getLon();
-        curCityName = match.getName();
-        saveToPrefs();
-        textViewLocate.setText(match.getName() + ", " + match.getCountry());
-    }
-
-    public boolean checkPermission() {
-        return ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
-    }
-
-    public boolean gpsStatusCheck() {
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-    }
-
-    public void saveToPrefs() {
-        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("lat", String.valueOf(curLat)).apply();
-        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("lon", String.valueOf(curLon)).apply();
-        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("cityname", String.valueOf(curCityName)).apply();
+    public void openCitySelectorActivity() {
+        Intent intent = new Intent(this, LocationActivity.class);
+        startActivity(intent);
     }
 
     public void readFromPrefs() {
-        curLat = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("lat", "0"));
-        curLon = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("lon", "0"));
-        curCityName = getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("cityname", "0");
+        LocationActivity.curLat = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("lat", "0"));
+        LocationActivity.curLon = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("lon", "0"));
+        LocationActivity.curCityName = getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("cityname", "0");
+    }
+
+    public static void hideElements(View view, Boolean marker) {
+        if (marker) {
+            view.setVisibility(View.VISIBLE);
+        } else {
+            view.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        networkService = null;
     }
 }

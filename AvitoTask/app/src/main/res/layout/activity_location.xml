@@ -4,6 +4,86 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".LocationActivity">
+        tools:context=".LocationActivity"
+        android:background="#D6EEFD">
+
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listView2"
+            android:layout_marginTop="44dp" />
+
+    <TextView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:id="@+id/textViewGpsStatus"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonGps"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButtonGps"
+            android:text="Текущее местоположение"
+            app:layout_constraintTop_toTopOf="@+id/imageButtonGps" />
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_mylocation"
+            android:id="@+id/imageButtonGps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar2"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.198"
+            app:layout_constraintHorizontal_bias="0.328" />
+
+    <TextView
+            android:layout_width="105dp"
+            android:layout_height="43dp"
+            android:id="@+id/textViewLog2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp" />
+
+    <EditText
+            android:layout_width="183dp"
+            android:layout_height="42dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextCity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Город"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLog2"
+            android:layout_marginTop="40dp"
+            app:layout_constraintHorizontal_bias="0.114"
+            android:layout_marginStart="16dp" />
+
+    <ListView
+            android:layout_width="209dp"
+            android:layout_height="162dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCity"
+            android:layout_marginTop="40dp"
+            android:id="@+id/listView2" />
+
+    <Button
+            android:text="Искать"
+            android:layout_width="95dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/buttonSearch"
+            app:layout_constraintTop_toTopOf="@+id/editTextCity"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextCity"
+            app:layout_constraintStart_toEndOf="@+id/editTextCity"
+            app:layout_constraintHorizontal_bias="0.656"
+            app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

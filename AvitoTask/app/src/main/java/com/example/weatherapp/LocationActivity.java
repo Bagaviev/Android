@@ -1,10 +1,4 @@
-/*
 package com.example.weatherapp;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Context;
@@ -16,13 +10,21 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.weatherapp.network.NetworkService;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.example.weatherapp.pojo.City;
-import com.example.weatherapp.pojo.OurWeather;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,14 +37,19 @@ public class LocationActivity extends AppCompatActivity {
     private LocationListener locationListener;
     private Location locationObj;
 
-    Button buttonCity;
-    Button buttonLocate;
-    TextView textViewCity;
-    TextView textViewLocate;
+    ImageButton buttonGps;
+    Button buttonSearch;
+    EditText editTextCity;
+    ListView listViewCity;
+    ProgressBar progressBar2;
+    TextView textViewLog2;
+    TextView textViewGpsInfo;
 
-    List<OurWeather> weatherList = new ArrayList<>();
-    List<City> cityList = new ArrayList<>();
+    static Double curLat;       // most logic holder variables
+    static Double curLon;
+    static String curCityName;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,18 +57,49 @@ public class LocationActivity extends AppCompatActivity {
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-        buttonCity = findViewById(R.id.buttonCity);
-        buttonLocate = findViewById(R.id.buttonLocate);
-        textViewCity = findViewById(R.id.textViewCity);
-        textViewLocate = findViewById(R.id.textViewLocate);
+        textViewLog2 = findViewById(R.id.textViewLog2);
+        textViewGpsInfo = findViewById(R.id.textViewGpsStatus);
+        progressBar2 = findViewById(R.id.progressBar2);
+        editTextCity = findViewById(R.id.editTextCity);
+        buttonGps = findViewById(R.id.imageButtonGps);
+        buttonSearch = findViewById(R.id.buttonSearch);
+        listViewCity = findViewById(R.id.listView2);
+        MainActivity.hideElements(progressBar2, false);
 
-        buttonCity.setOnClickListener(v -> {
-            List<City> list = findCity("kazan");
-            textViewCity.setText(list.toString());
+        buttonSearch.setOnClickListener(v -> {
+            textViewLog2.setText("");
+            String input = editTextCity.getText().toString();
+
+            if (input.length() > 0) {
+                MainActivity.hideElements(progressBar2, true);
+                List<City> list = findCity(editTextCity.getText().toString());
+                if (list.size() == 0) {
+                    textViewLog2.setText("Ничего не нашлось");
+                    MainActivity.hideElements(progressBar2, false);
+                } else
+                    configureListView(list);
+            } else {
+                textViewLog2.setText("Название пустое");
+                MainActivity.hideElements(progressBar2, false);
+            }
         });
 
-        buttonLocate.setOnClickListener(v -> {
+        buttonGps.setOnClickListener(v -> {
+            MainActivity.weatherList.clear();
+            MainActivity.hideElements(progressBar2, true);
             handleGPS();
+        });
+    }
+
+    public void configureListView(List<City> searchCityList) {
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, searchCityList);
+        listViewCity.setAdapter(adapter);
+        MainActivity.hideElements(progressBar2, false);
+
+        listViewCity.setOnItemClickListener((parent, view, position, id) -> {
+            MainActivity.weatherList.clear();
+            City selectedItem = searchCityList.get(position);
+            updLocation(selectedItem);
         });
     }
 
@@ -69,9 +107,9 @@ public class LocationActivity extends AppCompatActivity {
     public City getClosestCity(double lat, double lon) {
         Map<Float, City> map = new TreeMap<>();
 
-        for (int i = 0; i < cityList.size(); i++) {
-            float distance = calcDistance(lat, lon, cityList.get(i).getLat(), cityList.get(i).getLon());
-            map.put(distance, cityList.get(i));
+        for (int i = 0; i < MainActivity.cityList.size(); i++) {     // state по погоде хранится в первом классе
+            float distance = calcDistance(lat, lon, MainActivity.cityList.get(i).getLat(), MainActivity.cityList.get(i).getLon());
+            map.put(distance, MainActivity.cityList.get(i));
         }
 
         Map.Entry<Float, City> actualValue = map.entrySet()
@@ -84,9 +122,9 @@ public class LocationActivity extends AppCompatActivity {
 
     public List<City> findCity(String cityName) {       // sqlite чето работал херово, обходились как могли
         List<City> founded = new ArrayList<>();
-        for (int i = 0; i < cityList.size(); i++) {
-            if (cityList.get(i).getName().toLowerCase().contains(cityName.toLowerCase())) {
-                founded.add(cityList.get(i));
+        for (int i = 0; i < MainActivity.cityList.size(); i++) {
+            if (MainActivity.cityList.get(i).getName().toLowerCase().contains(cityName.toLowerCase())) {
+                founded.add(MainActivity.cityList.get(i));
             }
         }
         return founded;
@@ -113,7 +151,7 @@ public class LocationActivity extends AppCompatActivity {
 
             @Override
             public void onProviderDisabled(@NonNull String provider) {
-                textViewLocate.setText("GPS not enabled");
+                textViewLog2.setText("GPS not enabled");
             }
         };
 
@@ -145,7 +183,7 @@ public class LocationActivity extends AppCompatActivity {
                         locationObj = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
 
                     } catch (SecurityException e) {
-                        textViewLocate.setText(e.getMessage());
+                        textViewLog2.setText(e.getMessage());
                     }
 
                     updLocation(locationObj);
@@ -153,7 +191,7 @@ public class LocationActivity extends AppCompatActivity {
                 } else if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
                     Toast.makeText(this, "We need that permission", Toast.LENGTH_LONG).show();
                 } else {
-                    textViewLocate.setText("Not working without permission");
+                    textViewLog2.setText("Not working without permission");
                 }
             }
             return;
@@ -165,8 +203,18 @@ public class LocationActivity extends AppCompatActivity {
         City match = getClosestCity(location.getLatitude(), location.getLongitude());
         curLat = match.getLat();
         curLon = match.getLon();
+        curCityName = match.getName();
         saveToPrefs();
-        textViewLocate.setText(match.getName() + ", " + match.getCountry());
+        MainActivity.hideElements(progressBar2, false);
+        textViewGpsInfo.setText("Ок");
+    }
+
+    public void updLocation(City city) {    // core method
+        curLat = city.getLat();
+        curLon = city.getLon();
+        curCityName = city.getName();
+        saveToPrefs();
+        textViewGpsInfo.setText("Ок");
     }
 
     public boolean checkPermission() {
@@ -179,12 +227,8 @@ public class LocationActivity extends AppCompatActivity {
     }
 
     public void saveToPrefs() {
-        getSharedPreferences("lat", MODE_PRIVATE).edit().putString("double", String.valueOf(curLat)).apply();
-        getSharedPreferences("lon", MODE_PRIVATE).edit().putString("double", String.valueOf(curLon)).apply();
+        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("lat", String.valueOf(curLat)).commit();
+        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("lon", String.valueOf(curLon)).commit();
+        getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).edit().putString("cityname", String.valueOf(curCityName)).apply();
     }
-
-    public void readFromPrefs() {
-        curLat = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("double", "0"));
-        curLon = Double.parseDouble(getSharedPreferences("MY_PREFERENCE", MODE_PRIVATE).getString("double", "0"));
-    }
-}*/
+}
