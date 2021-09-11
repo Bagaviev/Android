@@ -14,10 +14,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/java/com/example/weatherapp/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AvitoTask/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AvitoTask/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/java/com/example/lesson3/DeeplinkActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/java/com/example/lesson3/UrlActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/java/com/example/lesson3/start.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/res/layout/activity_deeplink.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/res/layout/activity_url.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
