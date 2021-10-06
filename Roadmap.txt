@@ -10,7 +10,8 @@ https://hyperskill.org/study-plan
 https://kotlinlang.org/docs/learning-materials-overview.html
 
 7   
-	Kotlin частично вводная лекция в Сбере и Koans, остались coroutines и можно еще изучать бесконечно
+	Kotlin (✓ koans + some daily app practise) ~50%
+		koroutines
 
 8
 	animations
@@ -19,7 +20,9 @@ https://kotlinlang.org/docs/learning-materials-overview.html
 	clean architecture
 
 9
-	custom views
+	custom views (✓ onDraw) ~33%
+		oMeasure
+		onLayout
 	sensors (bluetooth, camera)
 	widgets
 	
