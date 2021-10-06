@@ -1,11 +1,22 @@
-7 
-	Kotlin
+Остановились на этом, частично прошли.
+
+https://www.youtube.com/watch?v=auKGWue4cMo&list=PLrCZzMib1e9ptI7bPXFG8X5xEiCBt5qYE&ab_channel=%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D1%81%D1%82%D1%80%D0%B8%D0%BCMail.RuGroup
+https://developer.android.com/guide/topics/resources/localization
+https://www.coursera.org/learn/kotlin-for-java-developers
+https://metanit.com/kotlin/tutorial/2.2.php
+https://developer.android.com/kotlin/learn
+https://developer.android.com/codelabs/java-to-kotlin?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fkotlin-for-java%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjava-to-kotlin#0
+https://hyperskill.org/study-plan
+https://kotlinlang.org/docs/learning-materials-overview.html
+
+7   
+	Kotlin частично вводная лекция в Сбере и Koans, остались coroutines и можно еще изучать бесконечно
 
 8
 	animations
 	gestures
 	arhitecture (JetPack binding, viewModel) 
-		clean architecture
+	clean architecture
 
 9
 	custom views

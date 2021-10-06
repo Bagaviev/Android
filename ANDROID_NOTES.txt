@@ -1,3 +1,125 @@
+Custom views 1
+
+Надо наследоваться от view
+Создавать styleable.xml с атрибутами для xml
+Далее из темы иниц эту тему и деф значения
+Можно прикрутить в тему/стиль
+Осн метод override fun onDraw(canvas: Canvas): тут рисуем методами
+drowLine(), drawCircle() drawText() etc
+Так же есть onMeasure() тут надо настраивать, чтобы атрибуты match_parent, wrap_content работали и resizeить вьюху
+invalidate() requestLayout() для перерисовки
+Speedometer sample
+
+
+Передать данные в recycler dynamically
+
+Можно сделать одну верстку для разных адаптеров в recycler. Сложно но работает. По клику на итем recycler будет открываться новый recycler с теми данными которые передадим через ссылки и обработку в новой активити
+
+
+Анимация смены позиции recycler
+
+notifyItemMoved(oldIndex, newIndex)
+
+
+Activity lifecycle
+
+1. Сначала create(), start(), resume()
+Запускаем вторую
+1. OnPause()
+2. Те же три метода
+1. Stop(), destroy()
+Назад
+2. Pause
+1. Create start resume
+2. Stop, destroy
+
+
+OnFocusChanged()
+
+Передача id view при получении фокуса элемента - focusChangeListener().
+Связать id элемента списка при нажатии - в холдер переместили focus listener, получаем id itemа через holder.adapterPosition().
+Не смогли сделать onTextChangeListener() вызов метода. Получался focus loop
+Передать флаг при нажатии на разнотипном списке можно в разных viewholder'aх. Передавать параметр в интерфейс листенера, потом снаружи его юзать в активити
+
+
+Нюанс с focusChangeListener
+
+Может почему-то возвращать -1 adapter.Position.
+
+
+Get view id on touch inside recycler
+
+Сделал чудом через holder.adapterPosition
+В адаптере в onBindViewHolder() сделал focus listener на editText. Далее при нажатии выводил id
+
+
+AStudio file header
+
+Author + date
+Делается через settings > editor > file and code templates > file header
+
+
+RecyclerView not clickable
+
+Если нет click listeners на элементы списка, то чтобы при задании itemBackground была анимация нажатия надо ещё clickable focusable true делать!
+
+
+Adb file transfer moments:
+
+adb devices
+adb shell стартует
+adb push pathPc pathDevice
+adb pull pathDevice pathPc
+Только не работает с опр директорией: /storage/sdcard0. Складывает файлы в меню emulated в проводнике (корень)
+
+
+Intent launch mode
+
+Есть разные режимы, чтобы открывалась одна активити один раз по нажатию, а не n раз
+Всего 4. Адекватные первые 2
+
+
+Deeplinks
+
+Открывал чужие, методы см в yandex hackaton task
+Создавал свои в сбере: intent filters задаются на хост/путь, далее можно через интент параметры из строки вытащить
+
+
+Парсинг сложного JSON:
+
+Retrofit и pojo class автоматом
+Или вручную через JsonObject. Тут аккуратно, если нужны данные из вложенной структуры, надо несколько раз вызывать методы друг на друге: jsonArray.getJsonObject() для массива json или getJsonObject()
+
+
+Image crop
+
+Чтобы картинка сасно вставилась надо ей атрибут scaleType "centerCrop" делать
+
+
+Sqlite
+
+Даже чистые данные вставлялись не полностью, хз почему
+
+
+Sigsegv ебучий
+
+Или segmentation fault
+Возникал при использовании room / sqlite. На больших (50к строк) данных, или корявых данных.
+А также при использовании многа памяти. Помогло не дублировать загрузку каждый раз.
+
+
+Splash screen
+
+Так делается экран старта приложения, при загрузке контента
+Делается темой или новой фичей
+
+
+Image formats
+
+Png без фона (без потерь качества), jpg с (шакалистый)
+Webp оптимизированный, юзаем его. В 20 раз меньше места занимает, чем пнг
+
+
 UI тесты
 
 Можно повторять действия тестера

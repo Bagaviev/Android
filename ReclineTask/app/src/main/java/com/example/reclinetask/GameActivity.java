@@ -46,7 +46,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        layout = (TableLayout) findViewById(R.id.main_l);
+        layout = findViewById(R.id.main_l);
         startStop = findViewById(R.id.buttonS);
         textView = findViewById(R.id.textViewInfo);
         tvWins = findViewById(R.id.textViewWin);

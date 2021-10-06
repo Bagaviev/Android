@@ -14,27 +14,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/java/com/example/lesson3/DeeplinkActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/java/com/example/lesson3/UrlActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/java/com/example/lesson3/start.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/res/layout/activity_deeplink.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson3/app/src/main/res/layout/activity_url.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstExample/app/src/main/java/com/example/firstexample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstExample/app/src/main/java/com/example/firstexample/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ReclineTask/app/src/main/java/com/example/reclinetask/GameActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ReclineTask/app/src/main/java/com/example/reclinetask/GameActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Roadmap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Roadmap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecondExample/app/src/main/java/com/example/secondexample/StateAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SecondExample/app/src/main/java/com/example/secondexample/StateAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@XPH5T19925003432]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
