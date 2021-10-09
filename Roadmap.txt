@@ -25,7 +25,8 @@ https://kotlinlang.org/docs/learning-materials-overview.html
 	clean architecture
 
 9
-	custom views (✓ onDraw) ~33%
+	custom views 
+		✓ onDraw (+ resize)
 		oMeasure
 		onLayout
 	sensors (bluetooth, camera)
