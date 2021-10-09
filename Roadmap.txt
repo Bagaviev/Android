@@ -10,8 +10,13 @@ https://hyperskill.org/study-plan
 https://kotlinlang.org/docs/learning-materials-overview.html
 
 7   
-	Kotlin (✓ koans + some daily app practise) ~50%
-		koroutines
+	Kotlin 
+		✓ data classes
+		✓ extensions + scope functions
+		✓ koans + some daily app practise
+		✓ any/nothing/unit base class hierarchy
+		✓ collections overview (function labda API)
+	koroutines
 
 8
 	animations
