@@ -20,20 +20,37 @@ https://kotlinlang.org/docs/learning-materials-overview.html
 
 8
 	animations
+		✓ Fragment change default transitions
+		✓ Frame by frame
+		✓ ValueAnimator (Code + xml)
+		✓ ObjectAnimator
+		✓ ViewPropertyAnimator
+		  Transitions Framework
+	
 	gestures
-	arhitecture (JetPack binding, viewModel) 
+		✓ TouchEvents (single touch onTouchEvent)
+		complex Gestures (pinch, etc)
+		
+	arhitecture (JetPack, Architecture components)
+		view binding
+		mvp
+		mvvm
+		
 	clean architecture
 
 9
 	custom views 
-		✓ onDraw (+ resize)
+		✓ onDraw 
+		onResize
 		oMeasure
 		onLayout
+		
 	sensors (bluetooth, camera)
 	widgets
 	
 10
 	build types
+	modules
 	google play publish moments
 	
 Final
