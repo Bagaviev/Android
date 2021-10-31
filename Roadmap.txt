@@ -25,14 +25,15 @@ https://kotlinlang.org/docs/learning-materials-overview.html
 		✓ ValueAnimator (Code + xml)
 		✓ ObjectAnimator
 		✓ ViewPropertyAnimator
-		  Transitions Framework
+		✓ Drag & Swipe itemTouchHelper for RecyclerView
 	
 	gestures
 		✓ TouchEvents (single touch onTouchEvent)
 		complex Gestures (pinch, etc)
 		
 	arhitecture (JetPack, Architecture components)
-		view binding
+		✓ view binding
+		data binding
 		mvp
 		mvvm
 		
@@ -52,6 +53,17 @@ https://kotlinlang.org/docs/learning-materials-overview.html
 	build types
 	modules
 	google play publish moments
+		Полезные сссылки, которые пришли из Янга:
+		- https://play.google.com/console/signup
+		- https://habr.com/ru/company/livetyping/blog/326874/
+		- https://accounts.google.com/ServiceLogin/webreauth?service=androiddeveloper&flowName=GlifWebSignIn&flowEntry=ServiceLogin
+		- https://play.google.com/console/about/
+		- https://developer.android.com/distribute/console
+		- https://support.google.com/googleplay/android-developer/answer/6112435?hl=ru
+		
+		- https://netpeak.net/ru/blog/kak-rabotat-s-prilozheniyami-v-google-play-developers-console/
+		- https://android-developers.googleblog.com/2021/10/launching-data-safety-in-play-console.html
+		- https://medium.com/googleplaydev/a-guide-to-the-google-play-console-1bdc79ca956f
 	
 Final
 	Authorisation

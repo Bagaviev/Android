@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class page2Fragment extends Fragment {
+public class    page2Fragment extends Fragment {
     Calendar calendar = Calendar.getInstance();
     Button setTime;
     Button cancel;

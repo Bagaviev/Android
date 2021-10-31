@@ -4,6 +4,7 @@ import android.net.IpSecManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,7 +87,7 @@ public class HandlerFragment extends Fragment {
 
         }
 
-        public final Handler handler = new Handler(new Handler.Callback() {
+        public final Handler handler = new Handler(Looper.myLooper(), new Handler.Callback() {
             @Override
             public boolean handleMessage(@NonNull Message msg) {
                 switch (msg.what) {

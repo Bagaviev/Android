@@ -1,6 +1,7 @@
 package com.example.sixthexample.fragments.Json;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,10 +92,10 @@ public class JsonManager extends Fragment {     // в JavaRush мы сериал
     }
 
     private String parseJson(String jsonString) {       // расчленяет json до атрибутов (хардкодная версия, может быть
-        StringBuilder sb = new StringBuilder();;        // сделана лучше через Jackson)
+        StringBuilder sb = new StringBuilder();        // сделана лучше через Jackson) (Moshi)
         try {
             JSONObject obj = new JSONObject(jsonString);    // native Android, not lib
-            sb.append("userId = " + obj.getInt("userId") + "\n");
+            sb.append("userId = S" + obj.getInt("userId") + "\n");
             sb.append("id = " + obj.getInt("id") + "\n");
             sb.append("title = " + obj.getString("title") + "\n");
             sb.append("completed = " + obj.getBoolean("completed") + "\n");
@@ -112,6 +113,7 @@ public class JsonManager extends Fragment {     // в JavaRush мы сериал
             obj.put("id", id);
             obj.put("title", title);
             obj.put("completed", completed);
+            Log.e("TAG", "parseJson: " + obj.toString());
         } catch (JSONException e) {
             textView.setText(e.toString());
         }
