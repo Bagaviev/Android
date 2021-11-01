@@ -13,15 +13,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../kotlin-profile/2021-10-30-13-04-39-654.profile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/HandlerFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fourthexample/fragments/HandlerFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Roadmap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Roadmap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SixthExample/app/src/main/java/com/example/sixthexample/fragments/Json/JsonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SixthExample/app/src/main/java/com/example/sixthexample/fragments/Json/JsonManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThirdExample/app/src/main/java/com/example/thirdexample/page2Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThirdExample/app/src/main/java/com/example/thirdexample/page2Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kotlin-profile/2021-10-14-21-50-32-891.profile" beforeDir="false" />
-    </list>
+    <list default="true" id="afbfed82-0682-4489-812c-ff6792c06111" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

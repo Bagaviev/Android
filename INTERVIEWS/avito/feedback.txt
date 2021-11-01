@@ -1,0 +1,188 @@
+Сентябрь - тестовое приложение погоды (полностью сделанное по ТЗ) для стажировки - отказ без причины
+
+Ноябрь - опять тоже задание, повтор отправки.
+       - тестовое для junior (middle) позиции
+
+======================================================================================
+
+1) Тест
+
+startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.avito.ru")))
+Impilict intent запускает диалог выбора, чем обработать deeplink.
+
+Вот тут сложно было
+мой Если a.equals(b) == true, то a.hashCode() = b.hashCode() == true
+альт Если a.equals(b) == false, то a.hashCode() = b.hashCode() == false
+
+GC периодически останавливает выполнение программы и анализирует граф ссылок на связность, удаляя несвязные с root элементы
+
+А еще - интересно никогда не задавался вопросом, сколько времени занимаем отрисовка textview
+
+Log.d("logTag", LocalDateTime.now().toString());
+        textViewType.text = "hello";
+        Log.d("logTag", LocalDateTime.now().toString());
+
+Ответ - 1 милисекунда
+
+2) Задача как Leetcode - For this challenge you will be converting a string of Roman numerals. [roman to int]
+	
+Принцип римских реально таков (концепция с i < 1 или i > 3 - брехня, индусы подкинули проще способ)
+Идея такая - бежим по символам, если i+1-ый больше i-го, то отнимаем от общей суммы i-ый, иначе добавляем.
+Пример: -> XIV, XV
+
+/*
+public int romanToInt(String s) {
+    HashMap<Character, Integer> map = new HashMap<>();
+    map.put('I', 1);
+    map.put('V', 5);
+    map.put('X', 10);
+    map.put('L', 50);
+    map.put('C', 100);
+    map.put('D', 500);
+    map.put('M', 1000);
+    int len = s.length();
+    int index = 0, result = 0;
+    while (index < len) {
+        Character chCur = s.charAt(index);
+        Character chNext = null;
+        if (index + 1 < len)
+            chNext = s.charAt(index + 1);
+        if(chNext != null && map.get(chCur) < map.get(chNext))
+            result -= map.get(chCur);
+        else
+            result += map.get(chCur);
+        index++;
+    }
+    return result;
+}
+
+Только валидатор выдавал ничего не говорящую ошибку про типы без номера строки - вылечил так: 
+HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+*/
+
+3) Проблемы в коде (кастомная вьюха)
+
+private val KEY_DATA = "data"
+private val PREF_KEY_CLICKED = "counter"
+
+class TestView @JvmOverloads constructor(   context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
+
+    private val backgroundRectSize = 120f
+	private val preferences = context.getSharedPreferences("features", Context.MODE_PRIVATE)
+	private val presenter = TestPresenter.getInstance()
+
+   init {
+		presenter.setView(this) //1
+		
+       setOnClickListener {
+           incClickedCounter()
+           presenter.calculateDebt() // 3
+       }
+
+   }
+
+   override fun onSaveInstanceState(): Parcelable = Bundle().apply {
+
+       putParcelable("superState", super.onSaveInstanceState())
+       // We will use it later
+       putParcelable(KEY_DATA, getBitmapFromView(this@TestView)) //4
+
+   }
+
+   override fun onDraw(canvas: Canvas) {
+       super.onDraw(canvas)
+       drawBackground(canvas) //5
+
+   }
+
+   private fun incClickedCounter() {
+       val counter = preferences.getInt(PREF_KEY_CLICKED, 0)
+       preferences.edit().putInt(PREF_KEY_CLICKED, counter + 1).commit() //2
+
+   }
+
+   private fun drawBackground(canvas: Canvas) = with(canvas) {
+       val backgroundRect = RectF(0f, 0f, backgroundRectSize, backgroundRectSize)
+       val backgroundPaint = Paint().apply {
+           style = Paint.Style.FILL
+           isAntiAlias = true
+       }
+       drawRect(backgroundRect, backgroundPaint)
+
+   }
+
+   private fun getBitmapFromView(view: View): Bitmap {
+       val result: Bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+       val canvas = Canvas(result)
+       val bgDrawable: Drawable = view.background
+       bgDrawable.draw(canvas)
+       view.draw(canvas)
+       return result
+   }
+}
+
+@Singleton
+class TestPresenter private constructor() {
+   
+   private lateinit var view: TestView
+   
+   @Volatile
+   private var debt: Int = 0
+
+   private val lock: Any = Any()
+
+   fun setView(testView: TestView) {
+       view = testView
+   }
+
+   fun calculateDebt() {
+       for (i in 1..1000) { //6
+           Thread { getDebt(amount = i) }.start()
+       }
+
+       lock.wait()//к 3 - тут лок раньше, чем поход в сеть, заблочит ,mainthread
+
+       try {
+           sendDebtRequest()
+       } catch (e: Exception) { // 7
+           handleError(e)
+       } catch (e: IOException) {
+           handleIOError(e)
+
+       }
+
+   }
+
+   private fun handleIOError(e: IOException) {
+       // do some handle
+   }
+
+   private fun handleError(e: Exception) {
+       // do some handle
+   }
+
+   @Throws(IOException::class)
+   @WorkerThread
+   private fun sendDebtRequest() {
+       // send api stuff
+   }
+
+   private fun getDebt(amount: Int) {
+       if (debt == 0) {
+           debt += amount //8
+           view.invalidate() //11
+           lock.notify() //9
+       }
+   }
+
+   companion object {
+
+       private var instance: TestPresenter? = null
+       fun getInstance(): TestPresenter { //10
+           if (instance == null) {
+               instance = TestPresenter()
+           }
+           return instance as TestPresenter
+       }
+   }
+}
