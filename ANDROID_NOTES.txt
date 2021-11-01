@@ -1,3 +1,62 @@
+Implicit intent
+
+На старт deeplinka - обработает dialog chooser
+
+
+TextView render time
+
+setText() - 1 msec
+
+
+JSON serializations
+
+Есть java Jackson
+Есть Moshi для android
+Есть java / kotlin jsonObject (native)
+Есть kotlinx serialisation (native) // todo: попробовать потом
+
+
+Fragment displacement
+
+Кароче если разметка фрагмента больше исходного поля fragmentContainer, то оно просто обрежется нахер. Надо делать фрагмент с учётом родителя
+
+
+ViewBinding
+
+Удобный механизм, чтобы не клепать findViewById()
+Для активити:
+сначала xml делаем, потом поле класса типа xmlNameBinding, немного меняем inflating, и все поля хмл доступны из переменной
+Для фрагментов:
+На пару строк больше, чем в активити
+Build gradle module: "viewBinding true"
+
+
+Fragments
+
+Можно создать viewContainer - fragmentContainerView из кода и добавить к текущей разметке LinearLayot снизу
+rootView.addView(container)
+Также инстанс фрагмента создаётся через newInstance в самом фрагменте
+Данные передать внутрь можно через bundle - setArguments
+Взаимодействие между фрагментами делать через acitivy implements interfaceApi
+
+
+Animations
+
+Тупой frame by frame
+Есть valueAnimator, анимировали спидометр
+Можно как из кода, так и из xml задавать
+Есть способ для swipe&drap recycler framework: simpleItemTouchCallback
+Там можно в getMovementFlag настроить что и как будет двигаться, а также onSwipe и onMove делать, то, что нужно
+
+
+targetSDK, compileSDK, minSDK
+
+Первый это для догоняния Latest Android version (типа он указывает фичи которые будут включены, permissions пример буду норм работать на версии до той, где появились). Runtime
+Compile это версия api которая будет доступна при сборке
+min это просто
+Min < target < compile
+
+
 Custom views 1
 
 Надо наследоваться от view
