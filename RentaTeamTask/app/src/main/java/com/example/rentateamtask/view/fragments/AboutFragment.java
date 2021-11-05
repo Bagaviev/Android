@@ -29,7 +29,7 @@ public class AboutFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        buttonAF.setOnClickListener((v) -> bomb());
+        buttonAF.setOnClickListener(v -> bomb());
         super.onViewCreated(view, savedInstanceState);
     }
 
