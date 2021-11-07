@@ -15,6 +15,23 @@ Coroutines:
 	https://metanit.com/kotlin/tutorial/8.7.php
 	https://medium.com/nuances-of-programming/%D0%BA%D0%BE%D1%80%D1%83%D1%82%D0%B8%D0%BD%D1%8B-%D1%81%D0%B0%D0%BC%D0%BE%D0%B5-%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5-d421bb4523d9
 =================================================================================================================
+Material - CardView, Animations, Drawables и прочие (https://fonts.google.com/icons?selected=Material+Icons). Сюда же иконки из студии
+Jetpack - AppCompat, Databinding, Navigation, Material, Room, WorkManager, Lifecycle components
+Architecture components - ViewModel (Lifecycle components), LiveData(Lifecycle components), Room, Retrofit, DI, Paging (Сложные обработки списков)
+Androidx - backward compatibility + Architecture components + Jetpack
+=================================================================================================================
+interactor (так нам пока это не надо, middleware между repository/viewModel)
+repository (тут логика запроса к сети/БД/кешу)
+domain (data/business logic)
+presentation layer (viewModel/presenter)
+view layer
+
+https://stackoverflow.com/questions/35746546/android-mvp-what-is-an-interactor/37898721
+https://dev.to/rodrassilva/android-repository-pattern-using-room-retrofit-and-coroutines-58kb
+
+Опорник по архитектуре: https://github.com/vln90/AndroidSchool-Lesson17/tree/feature/mvvm/app/src/main/java/com/vleonidov/lesson_17
+Clean:
+=================================================================================================================
 
 7   
 	Kotlin 
@@ -40,8 +57,8 @@ Coroutines:
 		complex Gestures (pinch, etc)
 		
 	arhitecture (JetPack, Architecture components)
-		✓ view binding
-		data binding
+		✓ view binding (достаем xml views удобно в коде, без findViewByid)
+		data binding (переменные сразу сеттим в xml)
 		mvp
 		mvvm
 		
@@ -91,7 +108,7 @@ Final
 ✓ Room
 ✓ Retrofit
 ✓ Espresso
-✓ Jetpack (AndroidX) - Binding etc
+✓ Jetpack (AndroidX) - Data binding etc
 ✓ Moshi
 ✓ OkHttp
 ✓ HttpURLConnection
