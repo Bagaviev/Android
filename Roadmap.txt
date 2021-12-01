@@ -36,6 +36,16 @@ mvvm: https://startandroid.ru/ru/courses/architecture-components/27-course/archi
 Clean:  https://proandroiddev.com/clean-architecture-data-flow-dependency-rule-615ffdd79e29
 		https://medium.com/nuances-of-programming/clean-architecture-%D1%81-kotlin-5228794b71db
 		https://www.fandroid.info/lektsiya-4-po-arhitekture-android-prilozheniya-clean-arcitecture/
+		
+=================================================================================================================
+Dagger
+	https://developer.android.com/training/dependency-injection/dagger-basics
+	https://developer.android.com/training/dependency-injection/dagger-android#kotlin
+	https://developer.android.com/codelabs/android-dagger#4
+	https://medium.com/mobile-app-development-publication/dagger-2-for-dummies-in-kotlin-with-one-page-simple-code-project-618a5f9f2fe8
+=================================================================================================================
+Static variable lifecycle in Android
+	https://stackoverflow.com/questions/1944369/android-static-object-lifecycle
 =================================================================================================================
 
 7   
@@ -113,11 +123,17 @@ Final
 ✓ Room
 ✓ Retrofit
 ✓ Espresso
-✓ Jetpack (AndroidX) - Data binding etc
+✓ Jetpack (AndroidX)
 ✓ Moshi
 ✓ OkHttp
 ✓ HttpURLConnection
-Dagger
+✓ Dagger
+	Provided dependencies, wout factory
+	ApplicationComponent
 
+✓ SwipeRefreshLayout
+✓ SplashScreen
+✓ SearchView
+✓ Shimmers (Facebook)
 ==============own app google play==============
 EMIAS Helper / New Tinder
