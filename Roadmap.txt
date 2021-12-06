@@ -43,9 +43,14 @@ Dagger
 	https://developer.android.com/training/dependency-injection/dagger-android#kotlin
 	https://developer.android.com/codelabs/android-dagger#4
 	https://medium.com/mobile-app-development-publication/dagger-2-for-dummies-in-kotlin-with-one-page-simple-code-project-618a5f9f2fe8
+
 =================================================================================================================
 Static variable lifecycle in Android
 	https://stackoverflow.com/questions/1944369/android-static-object-lifecycle
+
+=================================================================================================================
+Solid best
+	https://medium.com/webbdev/solid-4ffc018077da
 =================================================================================================================
 
 7   
@@ -90,6 +95,7 @@ Static variable lifecycle in Android
 	widgets
 	
 10
+	Jetpack Compose (типа как Flutter)
 	build types
 	modules
 	google play publish moments
