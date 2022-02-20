@@ -1,3 +1,103 @@
+Gradle modules
+
+Есть 3 типа: android, library, java/kotlin
+Первый создаёт отдельную версию приложения в проекте, которое запускается и билдится самостоятельно: юзкейс - типа про версия и фри версии
+Library это будет подмодуль для основного приложения, его надо будет доподключать в build.gradle app уровня, юзкейс - impl фичи
+Java/kotlin это api фичи, без андроид кода
+
+
+Google drive пригар
+
+Сука не даёт пошарить мою apk другим юзерам, пишет мол нужно провести проверку. Яндекс Диск for life.
+
+
+TextView
+
+Перенос текста тупо в строке "blabla\n bla bla"
+
+
+Документация Android Studio
+
+Надо в SDK manager ставить галку sources, скачивать
+
+
+Foreground service
+
+Android manifest не забываем добавлять пермишн
+ Стартуем startForegorundService(intent), а не обычный
+В самом сервисе в onStartCommand() вызываем метод включения foreground вариации startForeground()
+Ещё может потребоваться ебочка в манифесте с exported=true для активити, у которой есть intent filter с категорией лаунчера
+
+
+R strings Studio
+
+Если не видит строки, надо проверить импорт, чтобы было не import android.R, а com.example.lesson26.R
+
+
+App flavors
+
+Это как build variants сущность, позволяет несколько типов приложений выпускать, типа free/pro/debug/release etc
+У нас в проекте неск вариантов типа aloha beta base kav unsecure server mock
+Bv задаются в build.gradle на уровне модуля
+Pf на уровне всего app
+
+
+Service start types
+
+START_STICKY когда система прибъет сервис изза нехватки памяти, она же сама потом запустил его, когда она появится
+START_NOT_STICKY нет
+
+
+Remove modules AS
+
+Делается через меню project structure
+
+
+ApplicationId
+
+В gradle задается. Уник ключ проекта в google play. Схож с структурой директорий проекта
+
+
+Push / notification
+
+Первый это remote communication
+Второе это интернал из приложения
+
+
+Модули
+
+Есть gradle (они же студиевские). Нужны для удобства, и ускорения времени сборки. Каждый модуль отдельная приложуха обобщенная проектом
+Есть dagger
+
+
+Instrumentation test
+
+Тест на андроиде
+Pure jvm - локальный
+
+
+Project build alias
+
+gradlew sberb && ad install build_output && adv shell start splash
+
+
+Jvm options
+
+Задать размер heap initial -Xms
+Максимальный -Хmх
+Но по факту будет использоваться больше, там ещё плюс стек и ещё вспомогательная память
+Также это для jvm самой которая запускается. Также для студии своя jvm, чтобы она сама работала
+
+
+Настройка производительности студии
+
+Выделить память для студии. Тут в help меню ставить значения, откроется файл vmoptions, и там будет значение как в префах. Но в последних почему то больше 4гб нельзя задать. А если руками найти файл, то там не такое значение
+Удалить папку .idea
+Работать через vpn - remote cache
+Spotlight Exclude директорию проекта. Дир студии не удалось
+Билд с команды
+
+
 SwipeRefreshLayout
 
 Работает чётко
