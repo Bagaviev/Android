@@ -1,3 +1,62 @@
+Mvi
+
+По сути тот же mvvm, но с добавлением состояний в модель. Это из js пришло.
+Кароче идея, чтобы модельки не данные отображали, а состояние. Типа для лучше консистентности
+Sealed классы и вот это вот все. Классы которые имеют заранее известных потомков в компайл тайме.
+
+
+Mvvm
+
+Model это data + domain слои
+
+
+Coordinator
+
+Кароче сам по туториалам почти сделал до конца, оставалось только докрутить
+contentScrim - color для abbparlayout
+И флагами scrollflags поиграться scroll|exituntilcollapsed|snap
+
+
+Верстка момент
+
+Надо всегда делать не кастом, а сложную готовую верстку, как в других модулях, но выключать соотв флагом лишнюю функциональность, чем самому пытаться её повторить простым layout'ом
+
+
+Idea/studio moments
+
+Есть оказывается max tab cnt дефолтный, бля
+Cmd и наведение стрелки на метод даст сигнатуру без доки
+
+
+MaterialDesign Heights
+
+Statusbar 24dp
+AppBar 56dp
+
+
+Transparent appBar
+
+Вместе с statusBar
+Можно сделать только с coordinatorLayout и collapsingToolbarLayout, на простом не удалось
+Все делала тема, кроме цвета шрифта статусбара, он задавался через тему: windowLightStatusBar
+Тема transparent sbol - toolbarTextColor, actionBarTheme (transparent), statusBarColor, oppositeTheme
+
+
+CoordinatorLayout
+
+Disable animation flag (collapsingLayout):
+layout_scrollFlags: noScroll
+Diasable shadow after disabling animation (appBarLayout):
+stateListAnimator: @null
+
+
+Эмулятор moments
+
+Умеет лагнуть, там сверху полоса чёрная. Помогает удалить эмулятор и заново создать.
+При дублировании номер эму сохраняется, что хорошо, алиасы целы
+Надо чекбокс ставить, no frame при создании, типа менее красиво, но более надежно
+
+
 Поиск по проекту
 
 Double shift ищем следы использования кода
