@@ -2,7 +2,7 @@ package com.example.currencyexchanger.data.network
 
 import com.example.currencyexchanger.config.Constants.Companion.API_KEY
 import com.example.currencyexchanger.config.Constants.Companion.BASE_URL
-import com.example.currencyexchanger.domain.RequestEntity
+import com.example.currencyexchanger.domain.ResponseEntity
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -20,7 +20,7 @@ class NetworkModule: ExchangeRatesApi {
             .create(ExchangeRatesApi::class.java)
     }
 
-    override suspend fun getRates(base: String?, apikey: String): Response<RequestEntity?> {
+    override suspend fun getRates(base: String?, apikey: String): Response<ResponseEntity?> {
         return provideRetrofitService().getRates(base, API_KEY)
     }
 }
