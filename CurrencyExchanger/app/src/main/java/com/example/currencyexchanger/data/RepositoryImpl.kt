@@ -3,13 +3,13 @@ package com.example.currencyexchanger.data
 import com.example.currencyexchanger.config.Constants.Companion.EMPTY_STRING
 import com.example.currencyexchanger.data.converter.EntityConverter
 import com.example.currencyexchanger.data.network.NetworkModule
-import com.example.currencyexchanger.domain.ExchangeModel
+import com.example.currencyexchanger.models.presentation.ExchangeModel
 
 /**
  * @author Bulat Bagaviev
  * @created 09.10.2022
  */
-class Repository(
+class RepositoryImpl(
     private val apiMapper: NetworkModule,
     private val converter: EntityConverter
 ) {

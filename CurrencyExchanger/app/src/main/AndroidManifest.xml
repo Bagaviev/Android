@@ -13,8 +13,8 @@
             android:theme="@style/Theme.CurrencyExchanger">
 
         <activity
-                android:name=".MainActivity"
-                android:exported="false">
+                android:name="com.example.currencyexchanger.presentation.views.MainActivity"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

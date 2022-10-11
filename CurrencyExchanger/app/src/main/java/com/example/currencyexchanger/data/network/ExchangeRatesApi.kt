@@ -1,6 +1,6 @@
 package com.example.currencyexchanger.data.network
 
-import com.example.currencyexchanger.domain.ResponseEntity
+import com.example.currencyexchanger.models.data.ResponseEntity
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header

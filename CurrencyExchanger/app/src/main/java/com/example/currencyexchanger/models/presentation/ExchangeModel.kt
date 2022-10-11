@@ -1,4 +1,4 @@
-package com.example.currencyexchanger.domain
+package com.example.currencyexchanger.models.presentation
 
 /**
  * @author Bulat Bagaviev
