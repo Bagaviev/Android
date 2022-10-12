@@ -3,13 +3,17 @@ package com.example.currencyexchanger.presentation.views
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.currencyexchanger.R
 import com.example.currencyexchanger.data.RepositoryImpl
 import com.example.currencyexchanger.data.converter.EntityConverter
 import com.example.currencyexchanger.data.network.NetworkModule
 import com.example.currencyexchanger.databinding.ActivityMainBinding
+import com.example.currencyexchanger.domain.interactor.InteractorImpl
 import com.example.currencyexchanger.presentation.fragments.FavouritesFragment
 import com.example.currencyexchanger.presentation.fragments.PopularFragment
+import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
@@ -18,8 +22,8 @@ import com.google.android.material.navigation.NavigationBarView
  * @created 12.10.2022
  */
 class MainActivity : AppCompatActivity() {
-    private val repo = RepositoryImpl(NetworkModule(), EntityConverter())
     private lateinit var binding: ActivityMainBinding
+    private lateinit var mainViewModel: CurrencyViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
+        createViewModel()
         super.onStart()
     }
 
@@ -55,4 +60,14 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+    private fun createViewModel() {
+        val interactor = InteractorImpl(RepositoryImpl(NetworkModule(), EntityConverter()))
+
+        mainViewModel = ViewModelProvider(this, object: ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return CurrencyViewModel(interactor) as T
+            }
+        }).get(CurrencyViewModel::class.java)
+    }
 }
