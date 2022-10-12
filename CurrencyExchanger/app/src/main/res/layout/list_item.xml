@@ -10,7 +10,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:elevation="2dp">
+        android:elevation="1dp">
 
     <TextView
             android:id="@+id/textName"
@@ -40,7 +40,7 @@
     <ImageButton
             android:id="@+id/buttonSave"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
