@@ -15,7 +15,6 @@ import com.example.currencyexchanger.presentation.fragments.FavouritesFragment
 import com.example.currencyexchanger.presentation.fragments.PopularFragment
 import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 
 /**
  * @author Bulat Bagaviev

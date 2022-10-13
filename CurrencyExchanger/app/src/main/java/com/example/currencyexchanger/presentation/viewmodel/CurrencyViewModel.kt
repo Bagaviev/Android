@@ -4,12 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-import com.example.currencyexchanger.config.Constants
-import com.example.currencyexchanger.config.Constants.Companion.EMPTY_STRING
 import com.example.currencyexchanger.domain.interactor.Interactor
 import com.example.currencyexchanger.models.presentation.ExchangeModel
 import com.example.currencyexchanger.models.presentation.NormalRate
+import com.example.currencyexchanger.utils.Constants.Companion.EMPTY_STRING
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

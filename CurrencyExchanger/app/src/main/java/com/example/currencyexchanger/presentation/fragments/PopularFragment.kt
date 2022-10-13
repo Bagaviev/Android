@@ -1,9 +1,11 @@
 package com.example.currencyexchanger.presentation.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
@@ -11,14 +13,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.currencyexchanger.R
-import com.example.currencyexchanger.config.Constants.Companion.EMPTY_STRING
-import com.example.currencyexchanger.data.RepositoryImpl
-import com.example.currencyexchanger.data.converter.EntityConverter
-import com.example.currencyexchanger.data.network.NetworkModule
 import com.example.currencyexchanger.databinding.FragmentPopularBinding
 import com.example.currencyexchanger.models.presentation.ExchangeModel
 import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
 import com.example.currencyexchanger.presentation.views.adapter.CurrencyAdapter
+import com.example.currencyexchanger.utils.Constants.Companion.EMPTY_STRING
+import com.example.currencyexchanger.utils.Utility
+import kotlin.system.exitProcess
 
 /**
  * @author Bulat Bagaviev
@@ -26,10 +27,16 @@ import com.example.currencyexchanger.presentation.views.adapter.CurrencyAdapter
  */
 class PopularFragment: Fragment() {
 
-    // todo обработка диалога об ошибке
-    // todo обработка прогресс бара
     // todo добавляем выпадающий список для каждого фрагмента
+    // todo сохранение в бд списка валют и адаптация запроса (в префы выбранную валюту)
+
     // todo добавляем imageButton для сортировки
+    // todo сортировки (на уровне списка)
+
+    // todo сохранение в бд элемента списка (кароче тут будет сохранен лист выбранных валют, только тип, без данных и по нему фильтроваться getAll с бека буцет)
+    // todo экран с сохрами
+
+    // текстовка с date time последних значений (до минуты)
 
     private var _binding: FragmentPopularBinding? = null
     private val binding get() = _binding!!
@@ -37,13 +44,11 @@ class PopularFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
-        Log.e("PopularFragment: ", "created")
         initViews()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.e("PopularFragment: ", "started")
         subscribeForLiveData()
         super.onViewCreated(view, savedInstanceState)
     }
@@ -81,24 +86,38 @@ class PopularFragment: Fragment() {
 
     private fun showProgress(isVisible: Boolean) {
         with(binding) {
-
+            if (isVisible) {
+                progressBarPopular.visibility = VISIBLE
+            } else {
+                progressBarPopular.visibility = GONE
+            }
         }
     }
 
     private fun showError(error: Throwable) {
-        with(binding) {
-
-        }
+        val dialog = Utility.provideAlertDialog(requireContext(), error.message.toString())
+        setupDialog(dialog)
     }
 
-//    private fun doCall() {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val result = repo.loadModelFromNet()
-//            Log.e("PopularFragment: ", result.rates.first().toString())
-//            binding.recView.post { handleResult(result.rates) }
-//            binding.swipeRefresh.isRefreshing = false
-//        }
-//    }
+    private fun setupDialog(dialog: AlertDialog) {
+        dialog.setOnShowListener {
+            var positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+            var negative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+            dialog.setCanceledOnTouchOutside(false)
+
+            positive.setOnClickListener {
+                onRefresh()
+                dialog.dismiss()
+            }
+
+            negative.setOnClickListener {
+                dialog.dismiss()
+                activity?.finish()
+                exitProcess(0)
+            }
+        }
+        dialog.show()
+    }
 
     private fun onRefresh() {
         sharedViewModel.getLatestData(EMPTY_STRING)

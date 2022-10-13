@@ -1,4 +1,4 @@
-package com.example.currencyexchanger.config
+package com.example.currencyexchanger.utils
 
 /**
  * @author Bulat Bagaviev

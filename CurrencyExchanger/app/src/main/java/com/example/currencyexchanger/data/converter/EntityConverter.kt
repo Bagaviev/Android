@@ -1,10 +1,8 @@
 package com.example.currencyexchanger.data.converter
 
+import com.example.currencyexchanger.models.data.ResponseEntity
 import com.example.currencyexchanger.models.presentation.ExchangeModel
 import com.example.currencyexchanger.models.presentation.NormalRate
-import com.example.currencyexchanger.models.data.ResponseEntity
-import java.lang.IllegalStateException
-import kotlin.math.roundToLong
 
 /**
  * @author Bulat Bagaviev
