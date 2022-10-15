@@ -7,7 +7,7 @@ package com.example.currencyexchanger.models.presentation
 
 data class ExchangeModel(
     val base: String,
-    val date: String,
+    val timeLoaded: String,
     val success: Boolean,
     val rates: List<NormalRate>
 )

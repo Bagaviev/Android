@@ -10,6 +10,17 @@
         android:layout_alignParentTop="false"
         tools:context=".presentation.views.MainActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:name="com.example.currencyexchanger.presentation.fragments.PopularFragment"
+            android:id="@+id/fragmentContainerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,16 +35,5 @@
             app:layout_constraintVertical_bias="1.0"
             android:id="@+id/bottomNavigationView"
             app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.fragment.app.FragmentContainerView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:name="com.example.currencyexchanger.presentation.fragments.PopularFragment"
-            android:id="@+id/fragmentContainerView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

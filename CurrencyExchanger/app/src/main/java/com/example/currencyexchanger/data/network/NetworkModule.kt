@@ -3,6 +3,7 @@ package com.example.currencyexchanger.data.network
 import com.example.currencyexchanger.models.data.ResponseEntity
 import com.example.currencyexchanger.utils.Constants.Companion.API_KEY
 import com.example.currencyexchanger.utils.Constants.Companion.BASE_URL
+import com.google.gson.GsonBuilder
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

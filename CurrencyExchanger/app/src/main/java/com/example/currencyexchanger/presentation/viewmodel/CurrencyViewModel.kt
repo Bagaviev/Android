@@ -20,13 +20,13 @@ class CurrencyViewModel(
     private val interactor: Interactor
 ): ViewModel() {
 
-    private val _errorLiveData = MutableLiveData<Throwable>()
-    private val _progressLiveData = MutableLiveData<Boolean>()
     private val _currencyLatestLiveData = MutableLiveData<ExchangeModel>()
+    private val _progressLiveData = MutableLiveData<Boolean>()
+    private val _errorLiveData = MutableLiveData<Throwable>()
 
-    val errorLiveData: LiveData<Throwable> = _errorLiveData
-    val progressLiveData: LiveData<Boolean> = _progressLiveData
     val currencyLatestLiveData: LiveData<ExchangeModel> = _currencyLatestLiveData
+    val progressLiveData: LiveData<Boolean> = _progressLiveData
+    val errorLiveData = _errorLiveData
 
     init { getLatestData(EMPTY_STRING) }
 

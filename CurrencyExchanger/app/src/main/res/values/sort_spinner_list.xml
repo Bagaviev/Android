@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_spinner_list">
+        <item>Название A-Z</item>
+        <item>Название Z-A</item>
+        <item>Значение возрастание</item>
+        <item>Значение убывание</item>
+    </string-array>
+</resources>

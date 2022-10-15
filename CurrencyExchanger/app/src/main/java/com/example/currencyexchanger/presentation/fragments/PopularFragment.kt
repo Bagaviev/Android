@@ -2,11 +2,13 @@ package com.example.currencyexchanger.presentation.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
@@ -15,10 +17,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.currencyexchanger.R
 import com.example.currencyexchanger.databinding.FragmentPopularBinding
 import com.example.currencyexchanger.models.presentation.ExchangeModel
+import com.example.currencyexchanger.models.presentation.NormalRate
 import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
 import com.example.currencyexchanger.presentation.views.adapter.CurrencyAdapter
 import com.example.currencyexchanger.utils.Constants.Companion.EMPTY_STRING
 import com.example.currencyexchanger.utils.Utility
+import java.util.*
 import kotlin.system.exitProcess
 
 /**
@@ -27,16 +31,11 @@ import kotlin.system.exitProcess
  */
 class PopularFragment: Fragment() {
 
-    // todo добавляем выпадающий список для каждого фрагмента
-    // todo сохранение в бд списка валют и адаптация запроса (в префы выбранную валюту)
-
-    // todo добавляем imageButton для сортировки
-    // todo сортировки (на уровне списка)
-
     // todo сохранение в бд элемента списка (кароче тут будет сохранен лист выбранных валют, только тип, без данных и по нему фильтроваться getAll с бека буцет)
-    // todo экран с сохрами
+    // todo добавляем выпадающий список для каждого фрагмента (все надстройки над списком можно вынести в корневую активити на саомм деле)
 
-    // текстовка с date time последних значений (до минуты)
+    // todo сохранение в бд списка валют и адаптация запроса (в префы выбранную валюту)
+    // todo экран с сохрами
 
     private var _binding: FragmentPopularBinding? = null
     private val binding get() = _binding!!
@@ -44,13 +43,9 @@ class PopularFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
+        subscribeForLiveData()
         initViews()
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        subscribeForLiveData()
-        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun subscribeForLiveData() {
@@ -65,6 +60,34 @@ class PopularFragment: Fragment() {
         with(binding) {
             initRecycler()
             swipeRefresh.setOnRefreshListener { onRefresh() }
+            sortingSpinner.onItemSelectedListener = setupSortingListener()
+        }
+    }
+
+    private fun setupSortingListener() = object : AdapterView.OnItemSelectedListener {
+        override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) { sortList(position) }
+        override fun onNothingSelected(parent: AdapterView<*>?) {}
+    }
+
+    private fun sortList(sortingFlag: Int) {
+        with (binding) {
+            val list = sharedViewModel.currencyLatestLiveData.value?.rates
+            if (list.isNullOrEmpty()) { return }
+
+            Log.e("PopularFragment", list.size.toString())
+
+            val sortedList = when (sortingFlag) {
+                0 -> list.sortedBy { it.name }
+                1 -> list.sortedByDescending { it.name }
+                2 -> list.sortedBy { it.value }
+                3 -> list.sortedByDescending { it.value }
+                else -> emptyList()
+            }
+
+            recView.apply {
+                adapter = CurrencyAdapter(sortedList)
+                adapter?.notifyDataSetChanged()
+            }
         }
     }
 
@@ -81,6 +104,9 @@ class PopularFragment: Fragment() {
             recView.adapter = CurrencyAdapter(data.rates)
             recView.adapter?.notifyDataSetChanged()
             swipeRefresh.isRefreshing = false
+            timeLoadedTv.text = data.timeLoaded
+            currencySpinner.setSelection(data.rates.indexOf(data.rates.first { it.name == "EUR" }))
+            counterTv.text = data.rates.size.toString()
         }
     }
 

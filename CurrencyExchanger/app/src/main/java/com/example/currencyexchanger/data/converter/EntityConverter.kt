@@ -3,6 +3,8 @@ package com.example.currencyexchanger.data.converter
 import com.example.currencyexchanger.models.data.ResponseEntity
 import com.example.currencyexchanger.models.presentation.ExchangeModel
 import com.example.currencyexchanger.models.presentation.NormalRate
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * @author Bulat Bagaviev
@@ -12,13 +14,14 @@ import com.example.currencyexchanger.models.presentation.NormalRate
 class EntityConverter {
 
     fun convert(input: ResponseEntity?): ExchangeModel {
+        val mainDateFormat = SimpleDateFormat("d MMMM, HH:mm", Locale("ru"))
 
         if (input == null)
             throw IllegalStateException("Empty response!")
 
         val rates = arrayListOf<NormalRate>()
         val base = input.base
-        val date = input.date
+        val timeLoaded = mainDateFormat.format(Date(input.timestamp.toLong() * 1000))
         val success = input.success
 
         rates.add(NormalRate("AED", input.rates.aED))
@@ -189,6 +192,6 @@ class EntityConverter {
         rates.add(NormalRate("ZMW", input.rates.zMW))
         rates.add(NormalRate("ZWL", input.rates.zWL))
 
-        return ExchangeModel(base, date, success, rates)
+        return ExchangeModel(base, timeLoaded, success, rates)
     }
 }
