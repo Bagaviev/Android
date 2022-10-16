@@ -3,4 +3,5 @@
     <string name="timing_message">Загружено</string>
     <string name="sort_message">Сортировка:</string>
     <string name="currency_message">Валюта:</string>
+    <string name="default_currency">EUR</string>
 </resources>

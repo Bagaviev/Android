@@ -28,13 +28,25 @@ class CurrencyViewModel(
     val progressLiveData: LiveData<Boolean> = _progressLiveData
     val errorLiveData = _errorLiveData
 
-    init { getLatestData(EMPTY_STRING) }
+    init { getLatestData() }
+
+    fun getLatestData() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                _progressLiveData.postValue(true)
+                _currencyLatestLiveData.postValue(interactor.getRatesDefault())
+                _progressLiveData.postValue(false)
+            } catch (e: Exception) {
+                handleErrors(e)
+            }
+        }
+    }
 
     fun getLatestData(base: String) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 _progressLiveData.postValue(true)
-                _currencyLatestLiveData.postValue(interactor.loadCurrency(base))
+                _currencyLatestLiveData.postValue(interactor.getRatesSpecific(base))
                 _progressLiveData.postValue(false)
             } catch (e: Exception) {
                 handleErrors(e)

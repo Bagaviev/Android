@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface ExchangeRatesApi {
 
     @GET("latest?")
-    suspend fun getRates(
+    suspend fun apiCallLatest(
         @Query("base") base: String?,
         @Header("apikey") key: String
     ): Response<ResponseEntity?>

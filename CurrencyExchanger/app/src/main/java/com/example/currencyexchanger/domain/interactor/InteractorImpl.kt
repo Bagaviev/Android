@@ -12,7 +12,7 @@ class InteractorImpl(
     private val repository: Repository
 ): Interactor {
 
-    override suspend fun loadCurrency(base: String?): ExchangeModel? {
-        return repository.loadModelFromNet(base)
-    }
+    override suspend fun getRatesDefault(): ExchangeModel = repository.loadRatesDefaultCurrency()
+
+    override suspend fun getRatesSpecific(base: String): ExchangeModel = repository.loadRatesSpecificCurrency(base)
 }

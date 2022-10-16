@@ -15,8 +15,13 @@ class RepositoryImpl(
     private val converter: EntityConverter
 ): Repository {
 
-    override suspend fun loadModelFromNet(base: String?): ExchangeModel {
-        val result = apiMapper.getRates(base, EMPTY_STRING)
+    override suspend fun loadRatesDefaultCurrency(): ExchangeModel {
+        val result = apiMapper.apiCallLatest(null, EMPTY_STRING)
+        return converter.convert(result.body())
+    }
+
+    override suspend fun loadRatesSpecificCurrency(base: String): ExchangeModel {
+        val result = apiMapper.apiCallLatest(base, EMPTY_STRING)
         return converter.convert(result.body())
     }
 }

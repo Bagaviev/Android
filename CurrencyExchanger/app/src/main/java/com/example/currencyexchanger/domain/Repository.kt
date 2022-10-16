@@ -9,5 +9,7 @@ import com.example.currencyexchanger.models.presentation.ExchangeModel
 
 interface Repository {
 
-    suspend fun loadModelFromNet(base: String? = null): ExchangeModel
+    suspend fun loadRatesDefaultCurrency(): ExchangeModel
+
+    suspend fun loadRatesSpecificCurrency(base: String): ExchangeModel
 }
