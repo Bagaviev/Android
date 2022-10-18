@@ -37,14 +37,16 @@ class PopularFragment: Fragment() {
     private var _binding: FragmentPopularBinding? = null
     private val binding get() = _binding!!
     private val sharedViewModel: CurrencyViewModel by activityViewModels()
-
-    private lateinit var selectedCurrency: String
+    private var selectedCurrency: String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
         initViews()
         subscribeForLiveData()
-        Log.e("onCreateView", "called")
+
+        if (savedInstanceState == null) {
+            sharedViewModel.getAllSaved(selectedCurrency)
+        }
         return binding.root
     }
 
@@ -83,7 +85,6 @@ class PopularFragment: Fragment() {
     private fun setupCurrencyListener() = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
             selectedCurrency = binding.currencySpinner.selectedItem as String
-            Log.e("popularfragment", selectedCurrency)
             onRefresh(selectedCurrency)
         }
 
@@ -104,7 +105,7 @@ class PopularFragment: Fragment() {
             }
 
             recView.apply {
-                adapter = CurrencyAdapter(sortedList)
+                adapter = CurrencyAdapter(sortedList, sharedViewModel)
                 adapter?.notifyDataSetChanged()
             }
         }
@@ -120,7 +121,7 @@ class PopularFragment: Fragment() {
 
     private fun showData(data: ExchangeModel) {
         with(binding) {
-            recView.adapter = CurrencyAdapter(data.rates)
+            recView.adapter = CurrencyAdapter(data.rates, sharedViewModel)
             recView.adapter?.notifyDataSetChanged()
             swipeRefresh.isRefreshing = false
             timeLoadedTv.text = data.timeLoaded
@@ -163,7 +164,7 @@ class PopularFragment: Fragment() {
         dialog.show()
     }
 
-    private fun onRefresh(base: String) {
+    private fun onRefresh(base: String?) {
         sharedViewModel.getLatestData(base)
         Toast.makeText(activity, "Данные обновлены", Toast.LENGTH_LONG).show()
     }

@@ -9,7 +9,5 @@ import com.example.currencyexchanger.models.presentation.ExchangeModel
 
 interface Interactor {
 
-    suspend fun getRatesDefault(): ExchangeModel
-
-    suspend fun getRatesSpecific(base: String): ExchangeModel
+    suspend fun getRatesSpecific(base: String?): ExchangeModel
 }

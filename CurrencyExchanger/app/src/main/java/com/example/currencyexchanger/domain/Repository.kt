@@ -9,7 +9,5 @@ import com.example.currencyexchanger.models.presentation.ExchangeModel
 
 interface Repository {
 
-    suspend fun loadRatesDefaultCurrency(): ExchangeModel
-
-    suspend fun loadRatesSpecificCurrency(base: String): ExchangeModel
+    suspend fun loadRates(base: String?): ExchangeModel
 }

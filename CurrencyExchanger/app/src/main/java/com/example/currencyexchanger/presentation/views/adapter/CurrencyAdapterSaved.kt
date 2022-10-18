@@ -11,8 +11,8 @@ import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
  * @author Bulat Bagaviev
  * @created 11.10.2022
  */
-class CurrencyAdapter(
-    private val currencyList: List<NormalRate>,
+class CurrencyAdapterSaved(
+    private val currencyList: ArrayList<NormalRate>,
     private val mainViewModel: CurrencyViewModel
 ) : RecyclerView.Adapter<CurrencyViewHolder>() {
 
@@ -27,7 +27,7 @@ class CurrencyAdapter(
             textValue.text = item.value.toString()
         }
 
-        holder.buttonSave.setOnClickListener { mainViewModel.saveItem(item) }
+//        holder.buttonSave.setOnClickListener { mainViewModel.deleteItem(item) }
     }
 
     override fun getItemCount() = currencyList.size

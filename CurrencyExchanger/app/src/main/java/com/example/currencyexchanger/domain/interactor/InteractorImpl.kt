@@ -12,7 +12,5 @@ class InteractorImpl(
     private val repository: Repository
 ): Interactor {
 
-    override suspend fun getRatesDefault(): ExchangeModel = repository.loadRatesDefaultCurrency()
-
-    override suspend fun getRatesSpecific(base: String): ExchangeModel = repository.loadRatesSpecificCurrency(base)
+    override suspend fun getRatesSpecific(base: String?): ExchangeModel = repository.loadRates(base)
 }
