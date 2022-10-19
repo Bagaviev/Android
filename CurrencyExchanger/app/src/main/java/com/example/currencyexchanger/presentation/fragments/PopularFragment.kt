@@ -2,12 +2,12 @@ package com.example.currencyexchanger.presentation.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -21,7 +21,6 @@ import com.example.currencyexchanger.models.presentation.ExchangeModel
 import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
 import com.example.currencyexchanger.presentation.views.adapter.CurrencyAdapter
 import com.example.currencyexchanger.utils.Utility
-import java.util.*
 import kotlin.system.exitProcess
 
 /**
@@ -43,10 +42,6 @@ class PopularFragment: Fragment() {
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
         initViews()
         subscribeForLiveData()
-
-        if (savedInstanceState == null) {
-            sharedViewModel.getAllSaved(selectedCurrency)
-        }
         return binding.root
     }
 
@@ -62,15 +57,15 @@ class PopularFragment: Fragment() {
         with(binding) {
             initRecycler()
             swipeRefresh.setOnRefreshListener { onRefresh(selectedCurrency) }
+            initCurrencySpinner()
             sortingSpinner.onItemSelectedListener = setupSortingListener()
             currencySpinner.onItemSelectedListener = setupCurrencyListener()
-            selectedCurrency = resources.getString(R.string.default_currency)
-            initCurrencySpinner()
         }
     }
 
     private fun initCurrencySpinner() {
         with(binding) {
+            selectedCurrency = resources.getString(R.string.default_currency)
             val adapter = currencySpinner.adapter as ArrayAdapter<String>
             val position = adapter.getPosition(resources.getString(R.string.default_currency))
             currencySpinner.setSelection(position)
@@ -166,7 +161,7 @@ class PopularFragment: Fragment() {
 
     private fun onRefresh(base: String?) {
         sharedViewModel.getLatestData(base)
-        Toast.makeText(activity, "Данные обновлены", Toast.LENGTH_LONG).show()
+        Toast.makeText(activity, "Данные обновлены", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {

@@ -27,7 +27,7 @@ class CurrencyAdapterSaved(
             textValue.text = item.value.toString()
         }
 
-//        holder.buttonSave.setOnClickListener { mainViewModel.deleteItem(item) }
+        holder.buttonSave.setOnClickListener { mainViewModel.deleteItem(item) }
     }
 
     override fun getItemCount() = currencyList.size

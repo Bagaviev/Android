@@ -10,7 +10,6 @@ import com.example.currencyexchanger.data.RepositoryImpl
 import com.example.currencyexchanger.data.converter.EntityConverter
 import com.example.currencyexchanger.data.network.NetworkModule
 import com.example.currencyexchanger.databinding.ActivityMainBinding
-import com.example.currencyexchanger.di.AppResLocator
 import com.example.currencyexchanger.domain.interactor.InteractorImpl
 import com.example.currencyexchanger.presentation.fragments.FavouritesFragment
 import com.example.currencyexchanger.presentation.fragments.PopularFragment
@@ -62,12 +61,12 @@ class MainActivity : AppCompatActivity() {
         }
 
     private fun createViewModel() {
-        val interactor = InteractorImpl(RepositoryImpl(NetworkModule(), EntityConverter()))
+        val interactor = InteractorImpl(RepositoryImpl(NetworkModule(), EntityConverter(), application))
 
         mainViewModel = ViewModelProvider(this, object: ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return CurrencyViewModel(interactor, (applicationContext as AppResLocator)) as T
+                return CurrencyViewModel(interactor) as T
             }
-        }).get(CurrencyViewModel::class.java)
+        })[CurrencyViewModel::class.java]
     }
 }

@@ -18,6 +18,7 @@ import com.example.currencyexchanger.databinding.FragmentFavouritesBinding
 import com.example.currencyexchanger.models.presentation.NormalRate
 import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
 import com.example.currencyexchanger.presentation.views.adapter.CurrencyAdapter
+import com.example.currencyexchanger.presentation.views.adapter.CurrencyAdapterSaved
 import com.example.currencyexchanger.utils.Utility
 import kotlin.system.exitProcess
 
@@ -29,16 +30,12 @@ class FavouritesFragment: Fragment() {
     private var _binding: FragmentFavouritesBinding? = null
     private val binding get() = _binding!!
     private val sharedViewModel: CurrencyViewModel by activityViewModels()
-    private var selectedCurrencyFav: String? = null
+    private var selectedCurrency: String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentFavouritesBinding.inflate(inflater, container, false)
         initViews()
         subscribeForLiveData()
-
-        if (savedInstanceState == null) {
-            sharedViewModel.getAllSaved(selectedCurrencyFav)
-        }
         return binding.root
     }
 
@@ -54,10 +51,19 @@ class FavouritesFragment: Fragment() {
     private fun initViews() {
         with(binding) {
             initRecycler()
-            swipeRefreshFav.setOnRefreshListener { onRefresh(selectedCurrencyFav) }
+            swipeRefreshFav.setOnRefreshListener { onRefresh(selectedCurrency) }
             sortingSpinnerFav.onItemSelectedListener = setupSortingListener()
             currencySpinnerFav.onItemSelectedListener = setupCurrencyListener()
-            selectedCurrencyFav = resources.getString(R.string.default_currency)
+            initCurrencySpinner()
+        }
+    }
+
+    private fun initCurrencySpinner() {
+        with(binding) {
+            selectedCurrency = resources.getString(R.string.default_currency)
+            val adapter = currencySpinnerFav.adapter as ArrayAdapter<String>
+            val position = adapter.getPosition(resources.getString(R.string.default_currency))
+            currencySpinnerFav.setSelection(position)
         }
     }
 
@@ -68,8 +74,8 @@ class FavouritesFragment: Fragment() {
 
     private fun setupCurrencyListener() = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-            selectedCurrencyFav = (binding.currencySpinnerFav.selectedItem as NormalRate).name
-            onRefresh(selectedCurrencyFav)
+            selectedCurrency = binding.currencySpinnerFav.selectedItem as String
+            onRefresh(selectedCurrency)
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -106,9 +112,8 @@ class FavouritesFragment: Fragment() {
     private fun showData(data: List<NormalRate>) {
         with(binding) {
             Log.e("fragment", data.toString())
-            recViewFav.adapter = CurrencyAdapter(data, sharedViewModel)
+            recViewFav.adapter = CurrencyAdapterSaved(data as ArrayList<NormalRate>, sharedViewModel)
             recViewFav.adapter?.notifyDataSetChanged()
-            currencySpinnerFav.adapter = ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, data)
             swipeRefreshFav.isRefreshing = false
         }
     }
@@ -135,7 +140,7 @@ class FavouritesFragment: Fragment() {
             dialog.setCanceledOnTouchOutside(false)
 
             positive.setOnClickListener {
-                onRefresh(selectedCurrencyFav)
+                onRefresh(selectedCurrency)
                 dialog.dismiss()
             }
 
@@ -150,7 +155,7 @@ class FavouritesFragment: Fragment() {
 
     private fun onRefresh(base: String?) {
         sharedViewModel.getAllSaved(base)
-        Toast.makeText(activity, "Данные обновлены", Toast.LENGTH_LONG).show()
+        Toast.makeText(activity, "Данные обновлены", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {

@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="42dp"
             android:id="@+id/currencySpinnerFav"
+            android:entries="@array/currencies_spinner_list"
             app:layout_constraintTop_toBottomOf="@+id/textView2Fav"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="@+id/textView2Fav" />

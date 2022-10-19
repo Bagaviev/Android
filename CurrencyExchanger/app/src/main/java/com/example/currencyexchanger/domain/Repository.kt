@@ -1,6 +1,7 @@
 package com.example.currencyexchanger.domain
 
 import com.example.currencyexchanger.models.presentation.ExchangeModel
+import com.example.currencyexchanger.models.presentation.NormalRate
 
 /**
  * @author Bulat Bagaviev
@@ -9,5 +10,11 @@ import com.example.currencyexchanger.models.presentation.ExchangeModel
 
 interface Repository {
 
-    suspend fun loadRates(base: String?): ExchangeModel
+    suspend fun loadRatesFromNet(base: String?): ExchangeModel
+
+    suspend fun loadRatesFromDb(): List<NormalRate>
+
+    suspend fun saveRateToDb(item: NormalRate)
+
+    suspend fun deleteRateFromDb(item: NormalRate)
 }
