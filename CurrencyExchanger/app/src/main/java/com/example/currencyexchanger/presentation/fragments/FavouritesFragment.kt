@@ -41,7 +41,7 @@ class FavouritesFragment: Fragment() {
 
     private fun subscribeForLiveData() {
         sharedViewModel.apply {
-            savingLiveData.observe(viewLifecycleOwner) { data -> showData(data) }
+            currencySavedLiveData.observe(viewLifecycleOwner) { data -> showData(data) }
             progressLiveData.observe(viewLifecycleOwner) { progress -> showProgress(progress) }
             errorLiveData.observe(viewLifecycleOwner) { error -> showError(error) }
             itemDeletedEventLiveData.observe(viewLifecycleOwner) { item -> showToastAndUpdateList(item) }
@@ -83,7 +83,7 @@ class FavouritesFragment: Fragment() {
 
     private fun sortList(sortingFlag: Int) {
         with (binding) {
-            val list = sharedViewModel.savingLiveData.value
+            val list = sharedViewModel.currencySavedLiveData.value
             if (list.isNullOrEmpty()) { return }
 
             val sortedList = when (sortingFlag) {

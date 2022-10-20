@@ -29,7 +29,6 @@ import kotlin.system.exitProcess
  */
 class PopularFragment: Fragment() {
 
-    // todo singleliveevent
     // todo di moment
 
     private var _binding: FragmentPopularBinding? = null

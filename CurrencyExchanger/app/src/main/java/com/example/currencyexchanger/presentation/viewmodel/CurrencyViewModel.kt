@@ -24,14 +24,14 @@ class CurrencyViewModel(
     private val _currencySavedLiveData = MutableLiveData<List<NormalRate>>()
     private val _itemSaveEventLiveData = MutableLiveData<NormalRate>()
     private val _itemDeletedEventLiveData = MutableLiveData<NormalRate>()
-    private val _errorLiveData = MutableLiveData<Throwable>()
 
     val currencyLatestLiveData: LiveData<ExchangeModel> = _currencyLatestLiveData
     val progressLiveData: LiveData<Boolean> = _progressLiveData
-    val savingLiveData: LiveData<List<NormalRate>> = _currencySavedLiveData
+    val currencySavedLiveData: LiveData<List<NormalRate>> = _currencySavedLiveData
     val itemSaveEventLiveData: LiveData<NormalRate> = _itemSaveEventLiveData
     val itemDeletedEventLiveData: LiveData<NormalRate> = _itemDeletedEventLiveData
-    val errorLiveData:  LiveData<Throwable> = _errorLiveData
+
+    val errorLiveData = SingleLiveEvent<Throwable>()
 
     fun getLatestData(base: String?) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -85,6 +85,6 @@ class CurrencyViewModel(
 
     private fun handleErrors(e: Exception) {
         Log.e("CurrencyViewModel: ", e.toString())
-        _errorLiveData.postValue(e)
+        errorLiveData.postValue(e)
     }
 }
