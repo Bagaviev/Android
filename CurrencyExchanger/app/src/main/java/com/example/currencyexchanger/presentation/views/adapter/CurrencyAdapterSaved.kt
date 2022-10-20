@@ -12,23 +12,30 @@ import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
  * @created 11.10.2022
  */
 class CurrencyAdapterSaved(
-    private val currencyList: ArrayList<NormalRate>,
+    private val currencyList: MutableList<NormalRate>,
     private val mainViewModel: CurrencyViewModel
-) : RecyclerView.Adapter<CurrencyViewHolder>() {
+) : RecyclerView.Adapter<CurrencyViewHolderSaved>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        CurrencyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))
+        CurrencyViewHolderSaved(LayoutInflater.from(parent.context).inflate(R.layout.list_item_fav, parent, false))
 
-    override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CurrencyViewHolderSaved, position: Int) {
         val item = currencyList[position]
 
         holder.apply {
-            textName.text = item.name
-            textValue.text = item.value.toString()
+            textNameFav.text = item.name
+            textValueFav.text = item.value.toString()
         }
 
-        holder.buttonSave.setOnClickListener { mainViewModel.deleteItem(item) }
+        holder.buttonSaveFav.setOnClickListener { mainViewModel.deleteItem(item) }
     }
 
     override fun getItemCount() = currencyList.size
+
+    fun removeItem(itemToRemove: NormalRate) {
+        if (currencyList.isNotEmpty()) {
+            currencyList.remove(itemToRemove)
+            notifyDataSetChanged()
+        }
+    }
 }

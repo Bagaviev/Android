@@ -22,12 +22,15 @@ class CurrencyViewModel(
     private val _currencyLatestLiveData = MutableLiveData<ExchangeModel>()
     private val _progressLiveData = MutableLiveData<Boolean>()
     private val _currencySavedLiveData = MutableLiveData<List<NormalRate>>()
-    private val _itemEventLiveData = MutableLiveData<NormalRate>()
+    private val _itemSaveEventLiveData = MutableLiveData<NormalRate>()
+    private val _itemDeletedEventLiveData = MutableLiveData<NormalRate>()
     private val _errorLiveData = MutableLiveData<Throwable>()
 
     val currencyLatestLiveData: LiveData<ExchangeModel> = _currencyLatestLiveData
     val progressLiveData: LiveData<Boolean> = _progressLiveData
     val savingLiveData: LiveData<List<NormalRate>> = _currencySavedLiveData
+    val itemSaveEventLiveData: LiveData<NormalRate> = _itemSaveEventLiveData
+    val itemDeletedEventLiveData: LiveData<NormalRate> = _itemDeletedEventLiveData
     val errorLiveData:  LiveData<Throwable> = _errorLiveData
 
     fun getLatestData(base: String?) {
@@ -54,7 +57,6 @@ class CurrencyViewModel(
                 _progressLiveData.postValue(false)
             } catch (e: Exception) {
                 handleErrors(e)
-//                _savingLiveData.postValue(emptyList())
             }
         }
     }
@@ -63,6 +65,7 @@ class CurrencyViewModel(
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 interactor.saveItem(item)
+                _itemSaveEventLiveData.postValue(item)
             } catch (e: Exception) {
                 handleErrors(e)
             }
@@ -73,7 +76,7 @@ class CurrencyViewModel(
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 interactor.deleteItem(item)
-                _progressLiveData.postValue(false)
+                _itemDeletedEventLiveData.postValue(item)
             } catch (e: Exception) {
                 handleErrors(e)
             }

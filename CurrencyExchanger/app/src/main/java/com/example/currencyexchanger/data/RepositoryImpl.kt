@@ -8,7 +8,6 @@ import com.example.currencyexchanger.data.network.NetworkModule
 import com.example.currencyexchanger.domain.Repository
 import com.example.currencyexchanger.models.presentation.ExchangeModel
 import com.example.currencyexchanger.models.presentation.NormalRate
-import com.example.currencyexchanger.utils.Constants.Companion.EMPTY_STRING
 
 /**
  * @author Bulat Bagaviev

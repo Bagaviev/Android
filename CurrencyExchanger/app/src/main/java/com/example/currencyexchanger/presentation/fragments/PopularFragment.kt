@@ -7,7 +7,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -18,6 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.currencyexchanger.R
 import com.example.currencyexchanger.databinding.FragmentPopularBinding
 import com.example.currencyexchanger.models.presentation.ExchangeModel
+import com.example.currencyexchanger.models.presentation.NormalRate
 import com.example.currencyexchanger.presentation.viewmodel.CurrencyViewModel
 import com.example.currencyexchanger.presentation.views.adapter.CurrencyAdapter
 import com.example.currencyexchanger.utils.Utility
@@ -29,9 +29,11 @@ import kotlin.system.exitProcess
  */
 class PopularFragment: Fragment() {
 
-    // todo сохранение в бд элемента списка выбранного
-    // todo экран с сохрами (чтение списка сохраненных и фильтрация запроса) - сюда же обработка пустого списка
-    // todo бесконечный рефакторинг и полировка (launcher icon, уменьшение дублирования кода и верстки и тд, бага с диалогами об ошибке)
+    // todo дисклеймер, что сохров еще нет, текстовка
+    // todo singleliveevent
+
+    // todo launcher icon
+    // todo di moment
 
     private var _binding: FragmentPopularBinding? = null
     private val binding get() = _binding!!
@@ -50,6 +52,7 @@ class PopularFragment: Fragment() {
             currencyLatestLiveData.observe(viewLifecycleOwner) { data -> showData(data) }
             progressLiveData.observe(viewLifecycleOwner) { progress -> showProgress(progress) }
             errorLiveData.observe(viewLifecycleOwner) { error -> showError(error) }
+            itemSaveEventLiveData.observe(viewLifecycleOwner) { item -> showToast(item) }
         }
     }
 
@@ -122,6 +125,10 @@ class PopularFragment: Fragment() {
             timeLoadedTv.text = data.timeLoaded
             counterTv.text = data.rates.size.toString()
         }
+    }
+
+    private fun showToast(item: NormalRate) {
+        Toast.makeText(activity, "Валюта ${item.name} сохранена", Toast.LENGTH_SHORT).show()
     }
 
     private fun showProgress(isVisible: Boolean) {

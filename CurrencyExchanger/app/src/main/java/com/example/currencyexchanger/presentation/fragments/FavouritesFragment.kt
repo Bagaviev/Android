@@ -44,9 +44,9 @@ class FavouritesFragment: Fragment() {
             savingLiveData.observe(viewLifecycleOwner) { data -> showData(data) }
             progressLiveData.observe(viewLifecycleOwner) { progress -> showProgress(progress) }
             errorLiveData.observe(viewLifecycleOwner) { error -> showError(error) }
+            itemDeletedEventLiveData.observe(viewLifecycleOwner) { item -> showToastAndUpdateList(item) }
         }
     }
-
 
     private fun initViews() {
         with(binding) {
@@ -112,9 +112,30 @@ class FavouritesFragment: Fragment() {
     private fun showData(data: List<NormalRate>) {
         with(binding) {
             Log.e("fragment", data.toString())
-            recViewFav.adapter = CurrencyAdapterSaved(data as ArrayList<NormalRate>, sharedViewModel)
+            recViewFav.adapter = CurrencyAdapterSaved(data.toMutableList(), sharedViewModel)
             recViewFav.adapter?.notifyDataSetChanged()
+            val otherData = sharedViewModel.currencyLatestLiveData.value
+            timeLoadedTvFav.text = otherData?.timeLoaded
+            counterTvFav.text = data.size.toString()
             swipeRefreshFav.isRefreshing = false
+            showPlaceholder(data)
+        }
+    }
+
+    private fun showPlaceholder(data: List<NormalRate>) {
+        with(binding) {
+            if (data.isNullOrEmpty()) {
+                placeholderTvFav.visibility = View.VISIBLE
+            } else {
+                placeholderTvFav.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun showToastAndUpdateList(item: NormalRate) {
+        with(binding) {
+            (recViewFav.adapter as CurrencyAdapterSaved).removeItem(item)
+            Toast.makeText(activity, "Валюта ${item.name} удалена", Toast.LENGTH_SHORT).show()
         }
     }
 
