@@ -1,13 +1,12 @@
-package com.example.meteohub.data
+package com.example.meteohubapp.data
 
 import android.location.Location
-import android.location.LocationManager
-import com.example.meteohub.data.db.CityDao
-import com.example.meteohub.data.location.LocationModule
-import com.example.meteohub.data.network.IOpenWeatherApi
-import com.example.meteohub.domain.IRepository
-import com.example.meteohub.domain.api_model.RequestMain
-import com.example.meteohub.domain.our_model.City
+import com.example.meteohubapp.data.db.CityDao
+import com.example.meteohubapp.data.location.LocationModule
+import com.example.meteohubapp.data.network.IOpenWeatherApi
+import com.example.meteohubapp.domain.IRepository
+import com.example.meteohubapp.domain.api_model.RequestMain
+import com.example.meteohubapp.domain.our_model.City
 import io.reactivex.Maybe
 import io.reactivex.Single
 import javax.inject.Inject

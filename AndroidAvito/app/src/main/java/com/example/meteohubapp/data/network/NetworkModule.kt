@@ -1,7 +1,7 @@
-package com.example.meteohub.data.network
+package com.example.meteohubapp.data.network
 
-import com.example.meteohub.domain.api_model.RequestMain
 import com.example.meteohub.utils.Constants.Companion.BASE_URL
+import com.example.meteohubapp.domain.api_model.RequestMain
 import dagger.Module
 import dagger.Provides
 import io.reactivex.Single

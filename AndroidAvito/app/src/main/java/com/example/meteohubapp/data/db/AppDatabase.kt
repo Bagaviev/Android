@@ -1,8 +1,8 @@
-package com.example.meteohub.data.db
+package com.example.meteohubapp.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.meteohub.domain.our_model.City
+import com.example.meteohubapp.domain.our_model.City
 
 /**
  * @author Bulat Bagaviev

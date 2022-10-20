@@ -1,6 +1,6 @@
-package com.example.meteohub.data.network
+package com.example.meteohubapp.data.network
 
-import com.example.meteohub.domain.api_model.RequestMain
+import com.example.meteohubapp.domain.api_model.RequestMain
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

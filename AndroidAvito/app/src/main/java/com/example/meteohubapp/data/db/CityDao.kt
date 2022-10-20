@@ -1,9 +1,9 @@
-package com.example.meteohub.data.db
+package com.example.meteohubapp.data.db
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.meteohub.domain.our_model.City
+import com.example.meteohubapp.domain.our_model.City
 
 /**
  * @author Bulat Bagaviev

@@ -1,4 +1,4 @@
-package com.example.meteohub.data.location
+package com.example.meteohubapp.data.location
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -12,8 +12,8 @@ import android.provider.Settings
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.core.content.ContextCompat.startActivity
-import com.example.meteohub.di.ApplicationResLocator
-import com.example.meteohub.domain.our_model.City
+import com.example.meteohubapp.di.ApplicationResLocator
+import com.example.meteohubapp.domain.our_model.City
 import java.util.*
 
 /**

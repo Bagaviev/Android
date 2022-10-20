@@ -1,7 +1,7 @@
-package com.example.meteohub.data.converter
+package com.example.meteohubapp.data.converter
 
-import com.example.meteohub.domain.api_model.RequestMain
-import com.example.meteohub.domain.our_model.WeeklyWeather
+import com.example.meteohubapp.domain.api_model.RequestMain
+import com.example.meteohubapp.domain.our_model.WeeklyWeather
 import java.lang.String
 import java.text.SimpleDateFormat
 import java.util.*
