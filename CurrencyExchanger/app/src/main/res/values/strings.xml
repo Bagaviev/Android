@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">CurrencyExchanger</string>
+    <string name="app_name">Crypto scam app</string>
     <string name="timing_message">Загружено</string>
     <string name="sort_message">Сортировка:</string>
     <string name="currency_message">Валюта:</string>
     <string name="default_currency">EUR</string>
+    <string name="text_placeholder">Список сохраненных пуст, добавьте их на вкладке Популярное</string>
 </resources>

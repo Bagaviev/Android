@@ -29,10 +29,7 @@ import kotlin.system.exitProcess
  */
 class PopularFragment: Fragment() {
 
-    // todo дисклеймер, что сохров еще нет, текстовка
     // todo singleliveevent
-
-    // todo launcher icon
     // todo di moment
 
     private var _binding: FragmentPopularBinding? = null
