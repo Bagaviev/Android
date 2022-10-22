@@ -85,6 +85,6 @@ api.openweathermap.org/data/2.5/onecall?lat=55.727649&lon=37.536683&exclude=minu
 * Добавлен swipeRefreshLayout
     
 ### Скрины:
-<a href="url"><img src="https://github.com/Bagaviev/Android/tree/master/AndroidAvito/screen1.jpeg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/Android/tree/master/AndroidAvito/screen2.jpeg" align="left" height="500" width="250" ></a>
-<a href="url"><img src="https://github.com/Bagaviev/Android/tree/master/AndroidAvito/screen3.jpeg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/AndroidAvito/screen1.jpeg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/AndroidAvito/screen2.jpeg" align="left" height="500" width="250" ></a>
+<a href="url"><img src="https://github.com/Bagaviev/Android/blob/master/AndroidAvito/screen3.jpeg" align="left" height="500" width="250" ></a>
