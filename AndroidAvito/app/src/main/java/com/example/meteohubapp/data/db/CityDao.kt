@@ -7,9 +7,8 @@ import com.example.meteohubapp.domain.our_model.City
 
 /**
  * @author Bulat Bagaviev
- * @created 20.11.2021
+ * @created 22.10.2022
  */
-
 @Dao
 interface CityDao {
     @Query("SELECT * FROM Cities WHERE abs(lat - :latArg) < 0.5 AND abs(lon - :lonArg) < 0.5")

@@ -13,9 +13,8 @@ import javax.inject.Inject
 
 /**
  * @author Bulat Bagaviev
- * @created 10.11.2021
+ * @created 22.10.2022
  */
-
 class Repository
 @Inject constructor (var networkConnector: IOpenWeatherApi): IRepository {
 

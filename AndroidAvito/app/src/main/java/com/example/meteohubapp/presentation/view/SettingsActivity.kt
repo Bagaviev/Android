@@ -3,10 +3,8 @@ package com.example.meteohubapp.presentation.view
 import android.Manifest
 import android.R
 import android.content.pm.PackageManager
-import android.location.Location
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.SearchView
@@ -26,6 +24,10 @@ import com.example.meteohubapp.utils.Utility
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 
+/**
+ * @author Bulat Bagaviev
+ * @created 22.10.2022
+ */
 class SettingsActivity : AppCompatActivity() {
     private var binding: ActivitySettingsBinding? = null
 

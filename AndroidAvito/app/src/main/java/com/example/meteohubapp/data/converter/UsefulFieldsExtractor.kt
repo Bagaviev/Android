@@ -8,9 +8,8 @@ import java.util.*
 
 /**
  * @author Bulat Bagaviev
- * @created 13.11.2021
+ * @created 22.10.2022
  */
-
 class UsefulFieldsExtractor {
 
     companion object {

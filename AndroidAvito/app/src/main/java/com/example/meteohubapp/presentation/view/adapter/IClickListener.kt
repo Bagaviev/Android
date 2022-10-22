@@ -4,9 +4,8 @@ import com.example.meteohubapp.domain.our_model.WeeklyWeather
 
 /**
  * @author Bulat Bagaviev
- * @created 14.11.2021
+ * @created 22.10.2022
  */
-
 interface IClickListener {
     fun openItem(position: Int, weather: WeeklyWeather)
 }

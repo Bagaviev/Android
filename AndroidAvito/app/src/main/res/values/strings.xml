@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MeteoHub</string>
+    <string name="app_name">МетеоHub</string>
+    <string name="curr_lat">curr_lat</string>
+    <string name="curr_lon">curr_lon</string>
 </resources>

@@ -7,9 +7,8 @@ import android.net.ConnectivityManager
 
 /**
  * @author Bulat Bagaviev
- * @created 21.11.2021
+ * @created 22.10.2022
  */
-
 class Utility {
 
     fun provideAlertDialog(context: Context, message: String): AlertDialog {

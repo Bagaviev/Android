@@ -7,9 +7,8 @@ import dagger.Module
 
 /**
  * @author Bulat Bagaviev
- * @created 19.11.2021
+ * @created 22.10.2022
  */
-
 @Module
 interface RepositoryModule {
     @Binds

@@ -4,9 +4,9 @@ import java.io.Serializable
 import java.util.*
 
 /**
-
+ * @author Bulat Bagaviev
+ * @created 22.10.2022
  */
-
 data class WeeklyWeather (
     /** @Value Поле дата */
     var dt: String?,

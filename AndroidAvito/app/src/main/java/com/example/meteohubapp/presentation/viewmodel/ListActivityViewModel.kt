@@ -1,6 +1,5 @@
 package com.example.meteohubapp.presentation.viewmodel
 
-import android.provider.UserDictionary.Words.APP_ID
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,11 +15,10 @@ import javax.inject.Inject
 
 /**
  * @author Bulat Bagaviev
- * @created 10.11.2021
+ * @created 22.10.2022
  *
  * @param repository репозиторий бла бла
  */
-
 class ListActivityViewModel
 @Inject constructor (var repository: IRepository,
                      var applicationResLocator: ApplicationResLocator): ViewModel() {

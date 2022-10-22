@@ -1,16 +1,16 @@
 package com.example.meteohubapp.presentation.view
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.meteohubapp.presentation.view.ListActivity
-import com.example.meteohubapp.R
 import com.example.meteohubapp.databinding.ActivityDetailBinding
 import com.example.meteohubapp.domain.our_model.WeeklyWeather
 import com.example.meteohubapp.utils.Constants
 import com.squareup.picasso.Picasso
 
-
+/**
+ * @author Bulat Bagaviev
+ * @created 22.10.2022
+ */
 class DetailActivity : AppCompatActivity() {
     private var binding: ActivityDetailBinding? = null
 

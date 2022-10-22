@@ -10,9 +10,8 @@ import io.reactivex.Single
 
 /**
  * @author Bulat Bagaviev
- * @created 11.11.2021
+ * @created 22.10.2022
  */
-
 interface IRepository {
     fun loadWeatherAsync(lat: Double, lon: Double, app_id: String?): Single<RequestMain?>?
 

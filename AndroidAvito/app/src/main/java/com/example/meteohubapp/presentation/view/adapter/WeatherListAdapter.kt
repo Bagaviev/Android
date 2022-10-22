@@ -10,9 +10,8 @@ import com.example.meteohubapp.domain.our_model.WeeklyWeather
 
 /**
  * @author Bulat Bagaviev
- * @created 14.11.2021
+ * @created 22.10.2022
  */
-
 class WeatherListAdapter(private val weatherList: List<WeeklyWeather>, private val listener: IClickListener) : RecyclerView.Adapter<WeatherViewHolder>() {
 
     override fun onCreateViewHolder(parent:  ViewGroup, viewType: Int): WeatherViewHolder {

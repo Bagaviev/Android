@@ -9,9 +9,8 @@ import com.example.meteohubapp.domain.our_model.City
 
 /**
  * @author Bulat Bagaviev
- * @created 19.11.2021
+ * @created 22.10.2022
  */
-
 open class ApplicationResLocator: Application() {
     private var dbInstance: AppDatabase? = null
     private var locationInstance: LocationManager? = null

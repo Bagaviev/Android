@@ -2,9 +2,8 @@ package com.example.meteohubapp.utils
 
 /**
  * @author Bulat Bagaviev
- * @created 23.11.2021
+ * @created 22.10.2022
  */
-
 class Constants {
     companion object {
         const val APP_ID = "4e58c5be8ff989deef7e876753dfb670"

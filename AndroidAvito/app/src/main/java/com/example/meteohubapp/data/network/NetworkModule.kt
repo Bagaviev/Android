@@ -1,6 +1,6 @@
 package com.example.meteohubapp.data.network
 
-import com.example.meteohub.utils.Constants.Companion.BASE_URL
+import com.example.meteohubapp.utils.Constants.Companion.BASE_URL
 import com.example.meteohubapp.domain.api_model.RequestMain
 import dagger.Module
 import dagger.Provides
@@ -11,9 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * @author Bulat Bagaviev
- * @created 10.11.2021
+ * @created 22.10.2022
  */
-
 @Module
 class NetworkModule: IOpenWeatherApi {
 

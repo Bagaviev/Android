@@ -18,9 +18,8 @@ import java.util.*
 
 /**
  * @author Bulat Bagaviev
- * @created 24.11.2021
+ * @created 22.10.2022
  */
-
 class LocationModule(var applicationResLocator: ApplicationResLocator) {
 
     @SuppressLint("MissingPermission")

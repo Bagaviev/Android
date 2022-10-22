@@ -6,9 +6,8 @@ import com.example.meteohubapp.domain.our_model.City
 
 /**
  * @author Bulat Bagaviev
- * @created 20.11.2021
+ * @created 22.10.2022
  */
-
 @Database(entities = [City::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun cityDao(): CityDao

@@ -2,7 +2,6 @@ package com.example.meteohubapp.presentation.viewmodel
 
 import android.location.Location
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,9 +18,8 @@ import javax.inject.Inject
 
 /**
  * @author Bulat Bagaviev
- * @created 22.11.2021
+ * @created 22.10.2022
  */
-
 class SettingsActivityViewModel
 @Inject constructor(var repository: IRepository,
                     var applicationResLocator: ApplicationResLocator): ViewModel() {

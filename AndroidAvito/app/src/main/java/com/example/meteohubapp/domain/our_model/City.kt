@@ -5,9 +5,8 @@ import androidx.room.PrimaryKey
 
 /**
  * @author Bulat Bagaviev
- * @created 20.11.2021
+ * @created 22.10.2022
  */
-
 @Entity(tableName = "Cities")
 data class City (
     @PrimaryKey
