@@ -5,15 +5,15 @@
 
 Заковыристая структура json, решилось хардкодом полей.<br/>
 
-{
-  "success": true,
-  "symbols": {
-    "AED": "United Arab Emirates Dirham",
-    "AFN": "Afghan Afghani",
-    "ALL": "Albanian Lek",
-    "AMD": "Armenian Dram",
-    [...]
-    }
+{<br/>
+  "success": true,<br/>
+  "symbols": {<br/>
+    "AED": "United Arab Emirates Dirham",<br/>
+    "AFN": "Afghan Afghani",<br/>
+    "ALL": "Albanian Lek",<br/>
+    "AMD": "Armenian Dram",<br/>
+    [...]<br/>
+    }<br/>
 }<br/>
 
 250 запросов в месяц бесплатно, вторая итерация.<br/>
