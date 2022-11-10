@@ -9,7 +9,6 @@ import android.location.Location
 import android.location.LocationManager
 import android.os.Build
 import android.provider.Settings
-import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.core.content.ContextCompat.startActivity
 import com.example.meteohubapp.di.ApplicationResLocator
@@ -30,7 +29,6 @@ class LocationModule(var applicationResLocator: ApplicationResLocator) {
         return locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     fun isLocationGranted() =
         checkSelfPermission(applicationResLocator, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
 
@@ -55,7 +53,6 @@ class LocationModule(var applicationResLocator: ApplicationResLocator) {
         return locA.distanceTo(locB)
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     fun getClosestCity(locationToCalc: Location, cities: List<City>): City {
         val map: MutableMap<Float, City> = TreeMap()
 

@@ -1,5 +1,6 @@
 package com.example.meteohubapp.data.converter
 
+import com.example.meteohubapp.di.ApplicationResLocator
 import com.example.meteohubapp.domain.api_model.RequestMain
 import com.example.meteohubapp.domain.our_model.WeeklyWeather
 import java.lang.String
@@ -30,6 +31,11 @@ class UsefulFieldsExtractor {
             var dailies = mainRequest.daily
 
             if (dailies != null) {
+
+//                if () {
+////                    ApplicationResLocator.getSelf()..resources.configuration.locales[0].country.equals("RU")
+//                }
+
                 val mainDateFormat = SimpleDateFormat("EEEE, d MMMM", Locale("ru"))
                 val additionalDateFormat = SimpleDateFormat("HH:mm", Locale("ru"))
 

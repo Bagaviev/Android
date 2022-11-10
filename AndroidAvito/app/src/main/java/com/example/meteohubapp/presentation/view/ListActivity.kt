@@ -3,11 +3,10 @@ package com.example.meteohubapp.presentation.view
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
@@ -26,7 +25,6 @@ import com.example.meteohubapp.presentation.view.adapter.WeatherListAdapter
 import com.example.meteohubapp.presentation.viewmodel.ListActivityViewModel
 import com.example.meteohubapp.utils.Constants
 import com.example.meteohubapp.utils.Utility
-import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
@@ -43,13 +41,12 @@ class ListActivity : AppCompatActivity() {
 
     private var savedCity: City? = null
 
-    private var utils: Utility? = Utility()
+    private var utils: Utility = Utility()
 
     companion object {
         var BUNDLE_SELECTED_DAY_KEY: String? = "BUNDLE_SELECTED_DAY_KEY"
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -60,21 +57,25 @@ class ListActivity : AppCompatActivity() {
         val view = binding!!.root
         setContentView(view)
 
-        if (!utils?.isNetworkAvailable(this)!!) {
-            val dialog = utils?.provideAlertDialog(this, Constants.NO_NETWORK_CONNECTION)
-            setupDialog(this, utils!!, dialog!!)
+        if (!utils.isNetworkAvailable(this)) {
+            val dialog = utils.provideAlertDialog(this, resources.getString(R.string.no_network_connection))
+            setupDialog(this, utils, dialog)
         } else {
             createViewModel()
             subscribeForLiveData()
         }
 
         initRecycler()
+
+        if (applicationContext.resources.configuration.locales[0].country.equals("RU")) {
+            showVpnDisclaimer()
+        }
     }
 
     override fun onStart() {
         super.onStart()
 
-        if (utils?.isNetworkAvailable(this)!!) {
+        if (utils.isNetworkAvailable(this)!!) {
             initSwipeRefresh()
             makeRequest()
         }
@@ -82,7 +83,6 @@ class ListActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         savedCity = null
-        utils = null
         super.onDestroy()
     }
 
@@ -105,12 +105,15 @@ class ListActivity : AppCompatActivity() {
     private fun makeRequest() {
         handleSavedCity()
         listActivityViewModel.publishWeatherLiveData(savedCity!!.lat, savedCity!!.lon)
-
         binding?.buttonSettings?.setOnClickListener { startSettings() }
     }
 
     private fun showError(error: Throwable) {
-        Snackbar.make(binding?.root!!, error.toString(), BaseTransientBottomBar.LENGTH_LONG).show()
+        Snackbar.make(binding?.root!!, error.toString(), Snackbar.LENGTH_LONG).show()
+    }
+
+    private fun showVpnDisclaimer() {
+        Snackbar.make(binding?.root!!, resources.getString(R.string.vpn_msg), Snackbar.LENGTH_LONG).show()
     }
 
     private fun showProgress(isVisible: Boolean) {
@@ -147,15 +150,15 @@ class ListActivity : AppCompatActivity() {
 
     private fun onRefresh() {
         listActivityViewModel.publishWeatherLiveData(savedCity!!.lat, savedCity!!.lon)
-        Toast.makeText(this@ListActivity, "Данные обновлены", Toast.LENGTH_LONG).show()
+        Toast.makeText(this@ListActivity, getString(R.string.refresh_msg), Toast.LENGTH_LONG).show()
     }
 
     private fun handleSavedCity() {
         savedCity = listActivityViewModel.applicationResLocator.readFromPrefs()
 
         if (savedCity!!.lat == 0.0) {
-            val dialog = utils?.provideAlertDialog(this, Constants.NO_CITY_SELECTED)
-            setupDialog(this, utils!!, dialog!!)
+            val dialog = utils.provideAlertDialog(this, resources.getString(R.string.no_city_selected))
+            setupDialog(this, utils, dialog)
             startSettings()
         }
     }

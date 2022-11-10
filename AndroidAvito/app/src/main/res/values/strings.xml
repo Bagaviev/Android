@@ -1,5 +1,20 @@
 <resources>
-    <string name="app_name">МетеоHub</string>
-    <string name="curr_lat">curr_lat</string>
-    <string name="curr_lon">curr_lon</string>
+    <string name="app_name" translatable="false">МетеоHub</string>
+    <string name="curr_lat" translatable="false">curr_lat</string>
+    <string name="curr_lon" translatable="false">curr_lon</string>
+    <string name="vpn_msg">A vpn may be needed to request from Russia!</string>
+    <string name="no_city_selected">To view the forecast, you need to select a settlement, you can use geolocation or manual input</string>
+    <string name="city_not_found">It looks like there is no large settlement nearby, try manual selection from the list</string>
+    <string name="no_network_connection">There is no internet connection, without it the weather cannot be downloaded :(</string>
+    <string name="no_permission">To automatically search for a city, you need GPS permission, or you can use manual search</string>
+    <string name="no_permission_roughly">You refused to give permission for GPS, all data on the phone will be erased, and they have already left for you</string>
+    <string name="no_gps_module">Your device does not have a GPS module, you can use the manual search</string>
+    <string name="refresh_msg">Data updated</string>
+    <string name="city_selected">Selected city:</string>
+    <string name="city_selected_short">City:</string>
+    <string name="dialog_title">Attention!</string>
+    <string name="detail_title">Weather indicators</string>
+    <string name="input_hint">Enter the name of the city</string>
+    <string name="settings">Settings</string>
+    <string name="location_title">Current location</string>
 </resources>

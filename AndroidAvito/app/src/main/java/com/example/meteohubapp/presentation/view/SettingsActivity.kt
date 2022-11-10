@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -55,7 +54,6 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onStart() {
         handleSavedCity()
 
@@ -80,28 +78,28 @@ class SettingsActivity : AppCompatActivity() {
         savedCity = settingsActivityViewModel.applicationResLocator.readFromPrefs()
 
         if (savedCity!!.lat == 0.0) {
-            val dialog = utils?.provideAlertDialog(this, Constants.NO_CITY_SELECTED)
+            val dialog = utils?.provideAlertDialog(this, resources.getString(com.example.meteohubapp.R.string.no_city_selected))
             dialog?.show()
         }
     }
 
     private fun handleNoGpsModule() {
-        val dialog = utils?.provideAlertDialog(this, Constants.NO_GPS_MODULE)
+        val dialog = utils?.provideAlertDialog(this, resources.getString(com.example.meteohubapp.R.string.no_gps_module))
         dialog?.show()
     }
 
     private fun handleDenyPermission() {
-        val dialog = utils?.provideAlertDialog(this, Constants.NO_PERMISSION)
+        val dialog = utils?.provideAlertDialog(this, resources.getString(com.example.meteohubapp.R.string.no_permission))
         dialog?.show()
     }
 
     private fun handleDenyPermissionRoughly() {
-        val dialog = utils?.provideAlertDialog(this, Constants.NO_PERMISSION_ROUGHLY)
+        val dialog = utils?.provideAlertDialog(this, resources.getString(com.example.meteohubapp.R.string.no_permission_roughly))
         dialog?.show()
     }
 
     private fun handleAtlanticOceanLocation() {
-        val dialog = utils?.provideAlertDialog(this, Constants.CITY_NOT_FOUND)
+        val dialog = utils?.provideAlertDialog(this, resources.getString(com.example.meteohubapp.R.string.city_not_found))
         dialog?.show()
     }
 
@@ -129,10 +127,13 @@ class SettingsActivity : AppCompatActivity() {
         })
     }
 
-    private fun showSelectedCity(city: City) {
-        Toast.makeText(this@SettingsActivity, "Выбран город: ${city.cityName}", Toast.LENGTH_LONG).show()
+    private fun showSelectedCity(city: City) { // getString(R.string.city_selected)
+        Toast.makeText(this@SettingsActivity,
+            getString(com.example.meteohubapp.R.string.city_selected) + " " + city.cityName
+            , Toast.LENGTH_LONG).show()
+
         binding?.selectedCityTv?.apply {
-            text = "Город: ${city.cityName}"
+            text = getString(com.example.meteohubapp.R.string.city_selected_short) + " "+ city.cityName
             visibility = View.VISIBLE
         }
     }
@@ -171,7 +172,6 @@ class SettingsActivity : AppCompatActivity() {
         else binding?.progressBar2?.visibility = View.INVISIBLE
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun handleGps() {
         if (settingsActivityViewModel.locationModule!!.isGpsAvailableOnDevice()) {
             if (settingsActivityViewModel.locationModule!!.isLocationGranted()) {
@@ -185,7 +185,6 @@ class SettingsActivity : AppCompatActivity() {
             handleNoGpsModule()
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 

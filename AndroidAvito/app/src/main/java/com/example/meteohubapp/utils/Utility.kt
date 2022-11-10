@@ -3,6 +3,7 @@ package com.example.meteohubapp.utils
 import android.app.AlertDialog
 import android.content.Context
 import android.net.ConnectivityManager
+import com.example.meteohubapp.R
 
 
 /**
@@ -13,7 +14,7 @@ class Utility {
 
     fun provideAlertDialog(context: Context, message: String): AlertDialog {
         return AlertDialog.Builder(context)
-            .setTitle("Внимание!")
+            .setTitle(context.getString(R.string.dialog_title))
             .setMessage(message)
             .setPositiveButton("Ок", null)
             .create()

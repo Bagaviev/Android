@@ -9,7 +9,7 @@
         android:background="@drawable/gradient_selector_bg">
 
     <TextView
-            android:text="Погодные показатели"
+            android:text="@string/detail_title"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +45,6 @@
             android:padding="2dp" />
 
     <TextView
-            android:text="TextView"
             android:layout_width="300dp"
             android:layout_height="1dp"
             android:id="@+id/textViewDivH"

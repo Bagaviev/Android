@@ -1,0 +1,17 @@
+<resources>
+    <string name="vpn_msg">Для запроса из России может понадобиться vpn!</string>
+    <string name="no_city_selected">Для просмотра прогноза, нужно выбрать населенный пункт, можете воспользоваться геолокацией или ручным вводом</string>
+    <string name="city_not_found">Похоже, что рядом не нашлось крупного населенного пункта, попробуйте ручной выбор из списка</string>
+    <string name="no_network_connection">Отсутствует подключение к интернету, без него погоду не загрузить :(</string>
+    <string name="no_permission">Для автоматического поиска города нужно разрешение на GPS, либо же можно воспользоваться ручным поиском</string>
+    <string name="no_permission_roughly">Вы отказались давать разрешение на GPS, все данные на телефоне будут стерты, а к вам уже выехали</string>
+    <string name="no_gps_module">На вашем девайсе отсутствует GPS-модуль, можете воспользоваться ручным поиском</string>
+    <string name="refresh_msg">Данные обновлены</string>
+    <string name="city_selected">Выбран город:</string>
+    <string name="city_selected_short">Город:</string>
+    <string name="dialog_title">Внимание!</string>
+    <string name="detail_title">Погодные показатели</string>
+    <string name="input_hint">Введите название города</string>
+    <string name="settings">Настройки</string>
+    <string name="location_title">Текущее местоположение</string>
+</resources>

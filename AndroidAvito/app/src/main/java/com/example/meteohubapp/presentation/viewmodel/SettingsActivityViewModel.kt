@@ -2,7 +2,6 @@ package com.example.meteohubapp.presentation.viewmodel
 
 import android.location.Location
 import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -48,7 +47,6 @@ class SettingsActivityViewModel
         mDisposable?.add(disposable)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun publishCityByCurrentLocationLiveData(location: Location?) { // по локации запрос в бд, получаем скоращенный список близлежащих городов и из него находим один самый близкий
         var disposable = repository.loadCitiesByCoordAsync(location?.latitude!!, location.longitude, appDb?.cityDao()!!)
 
@@ -66,7 +64,6 @@ class SettingsActivityViewModel
         mDisposable?.add(disposable)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     fun findCurrentCityAsync() {    // нашли локацию (метод рычаг из активити) далее управление идет в publishCityByCurrentLocationLiveData
         var disposable = repository.loadLocationAsync(locationModule!!)
 
