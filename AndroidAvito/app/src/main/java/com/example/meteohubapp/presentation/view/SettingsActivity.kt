@@ -133,7 +133,7 @@ class SettingsActivity : AppCompatActivity() {
             , Toast.LENGTH_LONG).show()
 
         binding?.selectedCityTv?.apply {
-            text = getString(com.example.meteohubapp.R.string.city_selected_short) + " "+ city.cityName
+            text = getString(com.example.meteohubapp.R.string.city_selected_short) + " " + city.cityName
             visibility = View.VISIBLE
         }
     }

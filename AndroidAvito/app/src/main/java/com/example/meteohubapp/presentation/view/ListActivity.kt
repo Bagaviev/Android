@@ -27,6 +27,9 @@ import com.example.meteohubapp.utils.Constants
 import com.example.meteohubapp.utils.Utility
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -75,7 +78,7 @@ class ListActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        if (utils.isNetworkAvailable(this)!!) {
+        if (utils.isNetworkAvailable(this)) {
             initSwipeRefresh()
             makeRequest()
         }

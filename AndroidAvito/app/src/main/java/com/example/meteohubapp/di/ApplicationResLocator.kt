@@ -22,7 +22,7 @@ open class ApplicationResLocator: Application() {
     override fun onCreate() {
         if (dbInstance == null) {
             dbInstance = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "city.db")
-                .createFromAsset("app.db")
+                .createFromAsset("city.db")
                 .build()
         }
 
@@ -43,6 +43,7 @@ open class ApplicationResLocator: Application() {
     fun saveToPrefs(city: City) {
         getSharedPreferences("Prefs", MODE_PRIVATE).edit().apply {
             putString("cityName", city.cityName).apply()
+            putString("cityNameRu", city.cityNameRu).apply()
             putFloat("lat", city.lat.toFloat()).apply()
             putFloat("lon", city.lon.toFloat()).apply()
         }
@@ -50,9 +51,10 @@ open class ApplicationResLocator: Application() {
 
     fun readFromPrefs(): City {
         val cityName = getSharedPreferences("Prefs", MODE_PRIVATE).getString("cityName", "-")
+        val cityNameRu = getSharedPreferences("Prefs", MODE_PRIVATE).getString("cityNameRu", "-")
         val lat = getSharedPreferences("Prefs", MODE_PRIVATE).getFloat("lat", 0f)
         val lon = getSharedPreferences("Prefs", MODE_PRIVATE).getFloat("lon", 0f)
-        return City(-1, cityName!!, "-", lat.toDouble(), lon.toDouble())
+        return City(-1, cityName!!, "-", cityNameRu!!, "-", lat.toDouble(), lon.toDouble())
     }
 
     fun getSelf(): ApplicationResLocator {

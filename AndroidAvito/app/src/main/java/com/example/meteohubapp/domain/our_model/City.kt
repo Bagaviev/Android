@@ -13,6 +13,8 @@ data class City (
     var id: Int,
     var cityName: String,
     var countryName: String,
+    var cityNameRu: String,
+    var countryNameRu: String,
     var lat: Double,
     var lon: Double
 )

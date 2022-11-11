@@ -29,6 +29,7 @@ class Utility {
 
     private fun loadToDb() {
         Thread {
+            val db = (applicationContext as ApplicationResLocator).getRoomInstance()
             val cityListTmp2 = prepareCsv()
             db.cityDao().insertAll(cityListTmp2)
 
@@ -40,7 +41,7 @@ class Utility {
 
     private fun prepareCsv(): List<City> {
         val cityListTmp = arrayListOf<City>()
-        val `is` = resources.openRawResource(R.raw.translated)
+        val `is` = resources.openRawResource(R.raw.cities_db_translated)
 
         try {
             BufferedReader(InputStreamReader(`is`, "UTF-8")).use { reader ->
@@ -51,8 +52,10 @@ class Utility {
                         Integer.valueOf(data[0]),
                         data[1],
                         data[2],
-                        Double.valueOf(data[3]),
-                        Double.valueOf(data[4]))
+                        data[3],
+                        data[4],
+                        data[5].toDouble(),
+                        data[6].toDouble())
                     )
                 }
             }
@@ -61,7 +64,6 @@ class Utility {
         }
         return cityListTmp
     }
-}
 
 // Legacy версия метода из наработке по похожей задачи, где обходился без Sqlite (по сути Like expression)
 
