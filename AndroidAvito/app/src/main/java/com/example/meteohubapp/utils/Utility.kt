@@ -10,7 +10,7 @@ import com.example.meteohubapp.R
  * @author Bulat Bagaviev
  * @created 22.10.2022
  */
-class Utility {
+object Utility {
 
     fun provideAlertDialog(context: Context, message: String): AlertDialog {
         return AlertDialog.Builder(context)

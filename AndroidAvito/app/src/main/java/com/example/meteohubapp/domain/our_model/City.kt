@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
  * @created 22.10.2022
  */
 @Entity(tableName = "Cities")
-data class City (
+class City (
     @PrimaryKey
     var id: Int,
     var cityName: String,

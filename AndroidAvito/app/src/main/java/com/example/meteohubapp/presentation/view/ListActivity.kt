@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,9 +26,6 @@ import com.example.meteohubapp.utils.Constants
 import com.example.meteohubapp.utils.Utility
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -38,55 +34,31 @@ import java.util.*
  * @created 22.10.2022
  */
 class ListActivity : AppCompatActivity() {
-    private var binding: ActivityListBinding? = null
-
+    private lateinit var binding: ActivityListBinding
     private lateinit var listActivityViewModel: ListActivityViewModel
-
-    private var savedCity: City? = null
-
-    private var utils: Utility = Utility()
-
-    companion object {
-        var BUNDLE_SELECTED_DAY_KEY: String? = "BUNDLE_SELECTED_DAY_KEY"
-    }
+    private lateinit var savedCity: City
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         installSplashScreen()
 
         binding = ActivityListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val view = binding!!.root
-        setContentView(view)
-
-        if (!utils.isNetworkAvailable(this)) {
-            val dialog = utils.provideAlertDialog(this, resources.getString(R.string.no_network_connection))
-            setupDialog(this, utils, dialog)
+        if (!Utility.isNetworkAvailable(this)) {
+            val dialog = Utility.provideAlertDialog(this, resources.getString(R.string.no_network_connection))
+            setupDialog(this, Utility, dialog)
         } else {
+            initRecycler()
             createViewModel()
             subscribeForLiveData()
+            initSwipeRefresh()
+            makeRequest()
         }
-
-        initRecycler()
 
         if (applicationContext.resources.configuration.locales[0].country.equals("RU")) {
             showVpnDisclaimer()
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        if (utils.isNetworkAvailable(this)) {
-            initSwipeRefresh()
-            makeRequest()
-        }
-    }
-
-    override fun onDestroy() {
-        savedCity = null
-        super.onDestroy()
     }
 
     private fun createViewModel() {
@@ -94,12 +66,12 @@ class ListActivity : AppCompatActivity() {
 
         listActivityViewModel = ViewModelProvider(this, object: ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return ListActivityViewModel(repository, (applicationContext as ApplicationResLocator).getSelf()) as T
+                return ListActivityViewModel(repository) as T
             }
         }).get(ListActivityViewModel::class.java)
     }
 
-    private fun subscribeForLiveData() {     // потом прикрутить swipe refresh layout и в нем вызывать только listActivityViewModel.doGet() в коллбеке layout'а, и при этом observeLiveData() больше нигде не вызывать. В таком случае обновление загруженных данных должно произойти само если я все правильно понимаю
+    private fun subscribeForLiveData() {
         listActivityViewModel.getWeatherLiveData().observe(this, this::showData)
         listActivityViewModel.getProgressLiveData().observe(this, this::showProgress)
         listActivityViewModel.getErrorLiveData().observe(this, this::showError)
@@ -107,87 +79,96 @@ class ListActivity : AppCompatActivity() {
 
     private fun makeRequest() {
         handleSavedCity()
-        listActivityViewModel.publishWeatherLiveData(savedCity!!.lat, savedCity!!.lon)
-        binding?.buttonSettings?.setOnClickListener { startSettings() }
+        listActivityViewModel.publishWeatherLiveData(savedCity.lat, savedCity.lon)
+        binding.buttonSettings.setOnClickListener { startSettings() }
     }
 
     private fun showError(error: Throwable) {
-        Snackbar.make(binding?.root!!, error.toString(), Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.root, error.toString(), Snackbar.LENGTH_LONG).show()
     }
 
     private fun showVpnDisclaimer() {
-        Snackbar.make(binding?.root!!, resources.getString(R.string.vpn_msg), Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.root, resources.getString(R.string.vpn_msg), Snackbar.LENGTH_LONG).show()
     }
 
     private fun showProgress(isVisible: Boolean) {
-        if (isVisible) binding?.progressBar?.visibility = View.VISIBLE
-        else binding?.progressBar?.visibility = View.GONE
-    }
-
-    private fun showData(weatherList: List<WeeklyWeather>) {
-        setUpTableauData(weatherList[0])
-        handleDayNightTableau(weatherList[0])
-        initIcons(weatherList[0])
-
-        binding?.swipeRefresh?.isRefreshing = false
-        binding?.viewToday?.setOnClickListener { startDetail(weatherList[0]) }
-
-        binding?.recView!!.adapter = WeatherListAdapter(weatherList.subList(1, weatherList.size - 1), object: IClickListener {
-            override fun openItem(position: Int, weather: WeeklyWeather) { startDetail(weather) }
-        })
-
-        binding?.recView!!.adapter?.notifyDataSetChanged()
-    }
-
-    private fun initRecycler() {
-        val itemDecoration = DividerItemDecoration(binding!!.recView.context, DividerItemDecoration.VERTICAL)
-        itemDecoration.setDrawable(getDrawable(R.drawable.recycler_vertical_divider)!!)
-        binding!!.recView.addItemDecoration(itemDecoration)
-    }
-
-    private fun initSwipeRefresh() {
-        binding?.swipeRefresh?.setOnRefreshListener {
-            onRefresh()
+        with(binding) {
+            if (isVisible) progressBar.visibility = View.VISIBLE
+            else progressBar.visibility = View.GONE
         }
     }
 
+    private fun showData(weatherList: List<WeeklyWeather>) {
+        with(binding) {
+            setUpTableauData(weatherList[0])
+            handleDayNightTableau(weatherList[0])
+            initIcons(weatherList[0])
+
+            swipeRefresh.isRefreshing = false
+            viewToday.setOnClickListener { startDetail(weatherList[0]) }
+
+            recView.adapter = WeatherListAdapter(weatherList.subList(1, weatherList.size - 1), object: IClickListener {
+                override fun openItem(position: Int, weather: WeeklyWeather) { startDetail(weather) }
+            })
+
+            recView.adapter?.notifyDataSetChanged()
+        }
+    }
+
+    private fun initRecycler() {
+        with(binding) {
+            val itemDecoration = DividerItemDecoration(recView.context, DividerItemDecoration.VERTICAL)
+            itemDecoration.setDrawable(getDrawable(R.drawable.recycler_vertical_divider)!!)
+            recView.addItemDecoration(itemDecoration)
+        }
+    }
+
+    private fun initSwipeRefresh() {
+        binding.swipeRefresh.setOnRefreshListener { onRefresh() }
+    }
+
     private fun onRefresh() {
-        listActivityViewModel.publishWeatherLiveData(savedCity!!.lat, savedCity!!.lon)
+        listActivityViewModel.publishWeatherLiveData(savedCity.lat, savedCity.lon)
         Toast.makeText(this@ListActivity, getString(R.string.refresh_msg), Toast.LENGTH_LONG).show()
     }
 
     private fun handleSavedCity() {
-        savedCity = listActivityViewModel.applicationResLocator.readFromPrefs()
+        savedCity = (application as ApplicationResLocator).readFromPrefs()
 
-        if (savedCity!!.lat == 0.0) {
-            val dialog = utils.provideAlertDialog(this, resources.getString(R.string.no_city_selected))
-            setupDialog(this, utils, dialog)
+        if (savedCity.lat == 0.0) {
+            val dialog = Utility.provideAlertDialog(this, resources.getString(R.string.no_city_selected))
+            setupDialog(this, Utility, dialog)
             startSettings()
         }
     }
 
     private fun startDetail(weather: WeeklyWeather) {
-        var intent = Intent(applicationContext, DetailActivity::class.java)
+        val intent = Intent(applicationContext, DetailActivity::class.java)
         intent.putExtra(BUNDLE_SELECTED_DAY_KEY, weather)
         startActivity(intent)
     }
 
     private fun startSettings() {
-        var intent = Intent(applicationContext, SettingsActivity::class.java)
+        val intent = Intent(applicationContext, SettingsActivity::class.java)
         startActivity(intent)
     }
 
     private fun setUpTableauData(todayData: WeeklyWeather) {
-        binding?.textViewCity?.text = savedCity?.cityName
-        binding?.textViewTodayDayT?.text = todayData.dayTemp
-        binding?.textViewTodayNightT?.text = todayData.nightTemp
-        binding?.textViewTodayWindS?.text = todayData.windSpeed
-        binding?.textViewTodayDesc?.text = todayData.description
+        val cityNameLocalised = if (applicationContext.resources.configuration.locales[0].language.equals("RU")) savedCity.cityNameRu
+        else savedCity.cityName
+
+        binding.apply {
+            textViewCity.text = cityNameLocalised
+            textViewTodayDayT.text = todayData.dayTemp
+            textViewTodayNightT.text = todayData.nightTemp
+            textViewTodayWindS.text = todayData.windSpeed
+            textViewTodayDesc.text = todayData.description
+        }
     }
 
     private fun handleDayNightTableau(todayData: WeeklyWeather) {
         val additionalDateFormat = SimpleDateFormat("HH:mm", Locale("ru"))
-        var now = additionalDateFormat.parse(additionalDateFormat.format(Date()))
+        val now = additionalDateFormat.parse(additionalDateFormat.format(Date()))
 
         if (now > todayData.sunriseRaw && now < todayData.sunsetRaw)
             colorizeViewBackground(false)
@@ -196,7 +177,7 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun colorizeViewBackground(isNight: Boolean) {
-        binding?.viewToday?.background?.colorFilter = when (isNight) {
+        binding.viewToday.background?.colorFilter = when (isNight) {
             true -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_night), BlendModeCompat.SRC_ATOP)
             false -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_day), BlendModeCompat.SRC_ATOP)
         }
@@ -206,12 +187,12 @@ class ListActivity : AppCompatActivity() {
         Picasso.get()
             .load(Constants.BASE_ICON + todayData.icon + Constants.ICON_END)
             .fit()
-            .into(binding?.imageViewToday)
+            .into(binding.imageViewToday)
     }
 
     private fun setupDialog(context: Context, utils: Utility, dialog: AlertDialog) {
         dialog.setOnShowListener {
-            var button = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+            val button = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
             dialog.setCancelable(false)
             dialog.setCanceledOnTouchOutside(false)
 
@@ -225,5 +206,9 @@ class ListActivity : AppCompatActivity() {
             }
         }
         dialog.show()
+    }
+
+    companion object {
+        var BUNDLE_SELECTED_DAY_KEY: String? = "BUNDLE_SELECTED_DAY_KEY"
     }
 }

@@ -1,6 +1,5 @@
 package com.example.meteohubapp.data.converter
 
-import com.example.meteohubapp.di.ApplicationResLocator
 import com.example.meteohubapp.domain.api_model.RequestMain
 import com.example.meteohubapp.domain.our_model.WeeklyWeather
 import java.lang.String
@@ -28,13 +27,9 @@ class UsefulFieldsExtractor {
 
         fun convert(mainRequest: RequestMain): List<WeeklyWeather> {
             val result = arrayListOf<WeeklyWeather>()
-            var dailies = mainRequest.daily
+            val dailies = mainRequest.daily
 
             if (dailies != null) {
-
-//                if () {
-////                    ApplicationResLocator.getSelf()..resources.configuration.locales[0].country.equals("RU")
-//                }
 
                 val mainDateFormat = SimpleDateFormat("EEEE, d MMMM", Locale("ru"))
                 val additionalDateFormat = SimpleDateFormat("HH:mm", Locale("ru"))
@@ -53,7 +48,7 @@ class UsefulFieldsExtractor {
                     val dewPoint = day.dewPoint
                     val sunriseRaw = additionalDateFormat.parse(additionalDateFormat.format(Date(day.sunrise.toLong() * 1000)))
                     val sunsetRaw = additionalDateFormat.parse(additionalDateFormat.format(Date(day.sunset.toLong() * 1000)))
-                    var icon = day.weather?.get(0)?.icon
+                    val icon = day.weather?.get(0)?.icon
 
                     result.add(
                         WeeklyWeather(

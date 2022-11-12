@@ -27,14 +27,14 @@ class SettingsActivityViewModel
     private val mErrorLiveData = MutableLiveData<Throwable>()
     private val mProgressLiveData = MutableLiveData<Boolean>()
 
-    private val mAllCityLiveData = MutableLiveData<List<City>>()
-    private val mCityByCoordsLiveData = MutableLiveData<City>()
+    val mAllCityLiveData = MutableLiveData<List<City>>()
+    val mCityByCoordsLiveData = MutableLiveData<City>()
 
     private var appDb: AppDatabase? = applicationResLocator.getRoomInstance()
     var locationModule: LocationModule? = LocationModule(applicationResLocator)
 
     fun publishAllCitiesStringsLiveData() {     // запрос в бд по названию города, возвращаем список городов с похожим названием
-        var disposable = repository.loadAllCitiesAsync(appDb?.cityDao()!!)
+        val disposable = repository.loadAllCitiesAsync(appDb?.cityDao()!!)
 
             .doOnSubscribe { mProgressLiveData.postValue(true) }
             .doAfterTerminate { mProgressLiveData.postValue(false) }
@@ -48,7 +48,7 @@ class SettingsActivityViewModel
     }
 
     private fun publishCityByCurrentLocationLiveData(location: Location?) { // по локации запрос в бд, получаем скоращенный список близлежащих городов и из него находим один самый близкий
-        var disposable = repository.loadCitiesByCoordAsync(location?.latitude!!, location.longitude, appDb?.cityDao()!!)
+        val disposable = repository.loadCitiesByCoordAsync(location?.latitude!!, location.longitude, appDb?.cityDao()!!)
 
             .doOnSubscribe { mProgressLiveData.postValue(true) }
             .doAfterTerminate { mProgressLiveData.postValue(false) }
@@ -65,7 +65,7 @@ class SettingsActivityViewModel
     }
 
     fun findCurrentCityAsync() {    // нашли локацию (метод рычаг из активити) далее управление идет в publishCityByCurrentLocationLiveData
-        var disposable = repository.loadLocationAsync(locationModule!!)
+        val disposable = repository.loadLocationAsync(locationModule!!)
 
             .doOnSubscribe { mProgressLiveData.postValue(true) }
             .doAfterTerminate { mProgressLiveData.postValue(false) }

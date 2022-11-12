@@ -12,33 +12,30 @@ import com.squareup.picasso.Picasso
  * @created 22.10.2022
  */
 class DetailActivity : AppCompatActivity() {
-    private var binding: ActivityDetailBinding? = null
+    private lateinit var binding: ActivityDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
-
-        val view = binding!!.root
-        setContentView(view)
+        setContentView(binding.root)
 
         val dayWeather = intent.getSerializableExtra(ListActivity.BUNDLE_SELECTED_DAY_KEY) as WeeklyWeather
         bindData(dayWeather)
     }
 
     private fun bindData(dayWeather: WeeklyWeather) {
-        binding?.textViewDtDet?.text = dayWeather.dt
-
-        binding?.textViewDTempDet?.text = dayWeather.dayTemp
-        binding?.textViewNTempDet?.text = dayWeather.nightTemp
-        binding?.textViewHumDet?.text = dayWeather.humidity
-
-        binding?.textViewPressDet?.text = dayWeather.pressure
-        binding?.textViewWindSDet?.text = dayWeather.windSpeed
-        binding?.textViewWDegreeDet?.text = dayWeather.windDeg
-
-        binding?.textViewSriseDet?.text = dayWeather.sunrise
-        binding?.textViewSsetDet?.text = dayWeather.sunset
-        binding?.textViewDpointDet?.text = dayWeather.dewPoint
+        with(binding) {
+            textViewDtDet.text = dayWeather.dt
+            textViewDTempDet.text = dayWeather.dayTemp
+            textViewNTempDet.text = dayWeather.nightTemp
+            textViewHumDet.text = dayWeather.humidity
+            textViewPressDet.text = dayWeather.pressure
+            textViewWindSDet.text = dayWeather.windSpeed
+            textViewWDegreeDet.text = dayWeather.windDeg
+            textViewSriseDet.text = dayWeather.sunrise
+            textViewSsetDet.text = dayWeather.sunset
+            textViewDpointDet.text = dayWeather.dewPoint
+        }
 
         initIcons(dayWeather)
     }
@@ -47,6 +44,6 @@ class DetailActivity : AppCompatActivity() {
         Picasso.get()
             .load(Constants.BASE_ICON + dayWeather.icon + Constants.ICON_END)
             .fit()
-            .into(binding?.imageViewDetail)
+            .into(binding.imageViewDetail)
     }
 }

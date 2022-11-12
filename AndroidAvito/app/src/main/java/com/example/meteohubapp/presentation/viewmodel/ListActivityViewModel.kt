@@ -20,8 +20,7 @@ import javax.inject.Inject
  * @param repository репозиторий бла бла
  */
 class ListActivityViewModel
-@Inject constructor (var repository: IRepository,
-                     var applicationResLocator: ApplicationResLocator): ViewModel() {
+@Inject constructor (var repository: IRepository): ViewModel() {
 
     private var mDisposable: CompositeDisposable? = CompositeDisposable()
     private val mErrorLiveData = MutableLiveData<Throwable>()
@@ -30,7 +29,7 @@ class ListActivityViewModel
     private val mWeatherLiveData = MutableLiveData<List<WeeklyWeather>>()
 
     fun publishWeatherLiveData(lat: Double, lon: Double) {
-        var disposable = repository.loadWeatherAsync(lat, lon, APP_ID)!!
+        val disposable = repository.loadWeatherAsync(lat, lon, APP_ID)!!
 
             .doOnSubscribe { mProgressLiveData.postValue(true) }
             .doAfterTerminate { mProgressLiveData.postValue(false) }
