@@ -46,7 +46,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun initSearchView(cities: List<City>) {
-        val keys: List<String> = if (applicationContext.resources.configuration.locales[0].language.equals("RU"))
+        val keys: List<String> = if (applicationContext.resources.configuration.locale.language.equals("ru"))
             cities.map { it.cityNameRu + ", " + it.countryNameRu }
         else
             cities.map { it.cityName + ", " + it.countryName }
@@ -79,7 +79,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun showSelectedCity(city: City) {
-        val cityNameLocalised = if (applicationContext.resources.configuration.locales[0].language.equals("RU")) city.cityNameRu
+        val cityNameLocalised = if (applicationContext.resources.configuration.locale.language.equals("ru")) city.cityNameRu
         else city.cityName
 
         Toast.makeText(

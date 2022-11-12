@@ -154,7 +154,7 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun setUpTableauData(todayData: WeeklyWeather) {
-        val cityNameLocalised = if (applicationContext.resources.configuration.locales[0].language.equals("RU")) savedCity.cityNameRu
+        val cityNameLocalised = if (applicationContext.resources.configuration.locale.language.equals("ru")) savedCity.cityNameRu
         else savedCity.cityName
 
         binding.apply {
