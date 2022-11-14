@@ -11,6 +11,8 @@ class Constants {
         const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
         const val GPS_PERMISSION_CODE = 1;
         const val ICON_END = "@4x.png"
+        const val EN_LOCALE = "en"
+        const val RU_LOCALE = "ru"
         var BASE_ICON = "https://openweathermap.org/img/wn/"
     }
 }

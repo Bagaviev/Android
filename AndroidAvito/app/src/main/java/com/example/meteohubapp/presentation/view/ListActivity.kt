@@ -23,6 +23,7 @@ import com.example.meteohubapp.presentation.view.adapter.IClickListener
 import com.example.meteohubapp.presentation.view.adapter.WeatherListAdapter
 import com.example.meteohubapp.presentation.viewmodel.ListActivityViewModel
 import com.example.meteohubapp.utils.Constants
+import com.example.meteohubapp.utils.Constants.Companion.RU_LOCALE
 import com.example.meteohubapp.utils.Utility
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
@@ -56,7 +57,7 @@ class ListActivity : AppCompatActivity() {
             makeRequest()
         }
 
-        if (applicationContext.resources.configuration.locales[0].country.equals("RU")) {
+        if (applicationContext.resources.configuration.locales[0].country.equals(RU_LOCALE.uppercase())) {
             showVpnDisclaimer()
         }
     }
@@ -79,7 +80,12 @@ class ListActivity : AppCompatActivity() {
 
     private fun makeRequest() {
         handleSavedCity()
-        listActivityViewModel.publishWeatherLiveData(savedCity.lat, savedCity.lon)
+
+        if (applicationContext.resources.configuration.locale.language.equals(RU_LOCALE))
+            listActivityViewModel.loadWeatherRu(savedCity.lat, savedCity.lon)
+        else
+            listActivityViewModel.loadWeather(savedCity.lat, savedCity.lon)
+
         binding.buttonSettings.setOnClickListener { startSettings() }
     }
 
@@ -128,7 +134,11 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun onRefresh() {
-        listActivityViewModel.publishWeatherLiveData(savedCity.lat, savedCity.lon)
+        if (applicationContext.resources.configuration.locale.language.equals(RU_LOCALE))
+            listActivityViewModel.loadWeatherRu(savedCity.lat, savedCity.lon)
+        else
+            listActivityViewModel.loadWeather(savedCity.lat, savedCity.lon)
+
         Toast.makeText(this@ListActivity, getString(R.string.refresh_msg), Toast.LENGTH_LONG).show()
     }
 
@@ -154,7 +164,7 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun setUpTableauData(todayData: WeeklyWeather) {
-        val cityNameLocalised = if (applicationContext.resources.configuration.locale.language.equals("ru")) savedCity.cityNameRu
+        val cityNameLocalised = if (applicationContext.resources.configuration.locale.language.equals(RU_LOCALE)) savedCity.cityNameRu
         else savedCity.cityName
 
         binding.apply {
@@ -167,7 +177,7 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun handleDayNightTableau(todayData: WeeklyWeather) {
-        val additionalDateFormat = SimpleDateFormat("HH:mm", Locale("ru"))
+        val additionalDateFormat = SimpleDateFormat("HH:mm", Locale(RU_LOCALE))
         val now = additionalDateFormat.parse(additionalDateFormat.format(Date()))
 
         if (now > todayData.sunriseRaw && now < todayData.sunsetRaw)

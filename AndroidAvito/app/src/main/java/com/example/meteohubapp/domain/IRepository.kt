@@ -13,7 +13,7 @@ import io.reactivex.Single
  * @created 22.10.2022
  */
 interface IRepository {
-    fun loadWeatherAsync(lat: Double, lon: Double, app_id: String?): Single<RequestMain?>?
+    fun loadWeatherAsync(lat: Double, lon: Double, app_id: String?, locale: String): Single<RequestMain?>?
 
     fun loadCitiesByCoordAsync(lat: Double, lon: Double, dbConnector: CityDao): Single<List<City>>
 

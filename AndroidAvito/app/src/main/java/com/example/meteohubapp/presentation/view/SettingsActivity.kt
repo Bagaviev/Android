@@ -17,6 +17,7 @@ import com.example.meteohubapp.domain.IRepository
 import com.example.meteohubapp.domain.our_model.City
 import com.example.meteohubapp.presentation.viewmodel.SettingsActivityViewModel
 import com.example.meteohubapp.utils.Constants.Companion.GPS_PERMISSION_CODE
+import com.example.meteohubapp.utils.Constants.Companion.RU_LOCALE
 import com.example.meteohubapp.utils.Utility
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
@@ -37,7 +38,7 @@ class SettingsActivity : AppCompatActivity() {
         createViewModel()
         subscribeForLiveData()
 
-        settingsActivityViewModel.publishAllCitiesStringsLiveData()
+        settingsActivityViewModel.loadAllCities()
 
         binding.imageButtonGps.setOnClickListener { handleGps() }
         binding.searchView.setOnQueryTextFocusChangeListener { _, _ ->
@@ -46,7 +47,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun initSearchView(cities: List<City>) {
-        val keys: List<String> = if (applicationContext.resources.configuration.locale.language.equals("ru"))
+        val keys: List<String> = if (applicationContext.resources.configuration.locale.language.equals(RU_LOCALE))
             cities.map { it.cityNameRu + ", " + it.countryNameRu }
         else
             cities.map { it.cityName + ", " + it.countryName }
@@ -79,7 +80,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun showSelectedCity(city: City) {
-        val cityNameLocalised = if (applicationContext.resources.configuration.locale.language.equals("ru")) city.cityNameRu
+        val cityNameLocalised = if (applicationContext.resources.configuration.locale.language.equals(RU_LOCALE)) city.cityNameRu
         else city.cityName
 
         Toast.makeText(
@@ -167,7 +168,7 @@ class SettingsActivity : AppCompatActivity() {
 
             if (settingsActivityViewModel.locationModule!!.isLocationGranted()) {
                 settingsActivityViewModel.locationModule!!.handleGpsSettings(this)
-                settingsActivityViewModel.findCurrentCityAsync()
+                settingsActivityViewModel.getCurrentCity()
             } else
                 requestPermissions(
                     arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
@@ -185,7 +186,7 @@ class SettingsActivity : AppCompatActivity() {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     try {
                         settingsActivityViewModel.locationModule!!.handleGpsSettings(this)
-                        settingsActivityViewModel.findCurrentCityAsync()
+                        settingsActivityViewModel.getCurrentCity()
                     } catch (e: SecurityException) {
                         showError(e)
                     }

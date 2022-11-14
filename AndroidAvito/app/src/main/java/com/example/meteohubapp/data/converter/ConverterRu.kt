@@ -2,6 +2,7 @@ package com.example.meteohubapp.data.converter
 
 import com.example.meteohubapp.domain.api_model.RequestMain
 import com.example.meteohubapp.domain.our_model.WeeklyWeather
+import com.example.meteohubapp.utils.Constants.Companion.RU_LOCALE
 import java.lang.String
 import java.text.SimpleDateFormat
 import java.util.*
@@ -10,16 +11,15 @@ import java.util.*
  * @author Bulat Bagaviev
  * @created 22.10.2022
  */
-class UsefulFieldsExtractor {
+class ConverterRu {
 
     companion object {
         /**  */
         private const val HPA_TO_HGMM_COEF = 1.333
 
         /**
-         * Конвертер и форматтер типов данных json
+         * Конвертер и форматтер типов данных json, конвертирует в русский язык
          * Метод преобразующий объект запроса из сети RequestMain к самодельному списку объектов WeeklyWeather.
-         *
          *
          * @param mainRequest объект запроса из OkHttpClient, составной json, содержит полный набор атрибутов предметной области погоды.
          * @return Список вспомогательных объектов, с сокращенным под наши нужды набором атрибутов, приведенными типами, а также с заданным форматированием для вывода..
@@ -31,8 +31,8 @@ class UsefulFieldsExtractor {
 
             if (dailies != null) {
 
-                val mainDateFormat = SimpleDateFormat("EEEE, d MMMM", Locale("ru"))
-                val additionalDateFormat = SimpleDateFormat("HH:mm", Locale("ru"))
+                val mainDateFormat = SimpleDateFormat("EEEE, d MMMM", Locale(RU_LOCALE))
+                val additionalDateFormat = SimpleDateFormat("HH:mm", Locale(RU_LOCALE))
 
                 for (day in dailies) {
                     val dt = mainDateFormat.format(Date(day.dt * 1000))

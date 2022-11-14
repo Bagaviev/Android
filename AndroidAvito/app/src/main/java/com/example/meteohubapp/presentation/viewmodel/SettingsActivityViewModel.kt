@@ -1,7 +1,6 @@
 package com.example.meteohubapp.presentation.viewmodel
 
 import android.location.Location
-import android.os.Build
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,7 +32,7 @@ class SettingsActivityViewModel
     private var appDb: AppDatabase? = applicationResLocator.getRoomInstance()
     var locationModule: LocationModule? = LocationModule(applicationResLocator)
 
-    fun publishAllCitiesStringsLiveData() {     // запрос в бд по названию города, возвращаем список городов с похожим названием
+    fun loadAllCities() {     // запрос в бд по названию города, возвращаем список городов с похожим названием
         val disposable = repository.loadAllCitiesAsync(appDb?.cityDao()!!)
 
             .doOnSubscribe { mProgressLiveData.postValue(true) }
@@ -47,7 +46,7 @@ class SettingsActivityViewModel
         mDisposable?.add(disposable)
     }
 
-    private fun publishCityByCurrentLocationLiveData(location: Location?) { // по локации запрос в бд, получаем скоращенный список близлежащих городов и из него находим один самый близкий
+    private fun loadCityByLocation(location: Location?) { // по локации запрос в бд, получаем сокращенный список близлежащих городов и из него находим один самый близкий
         val disposable = repository.loadCitiesByCoordAsync(location?.latitude!!, location.longitude, appDb?.cityDao()!!)
 
             .doOnSubscribe { mProgressLiveData.postValue(true) }
@@ -64,7 +63,7 @@ class SettingsActivityViewModel
         mDisposable?.add(disposable)
     }
 
-    fun findCurrentCityAsync() {    // нашли локацию (метод рычаг из активити) далее управление идет в publishCityByCurrentLocationLiveData
+    fun getCurrentCity() {    // нашли локацию (метод рычаг из активити) далее управление идет в publishCityByCurrentLocationLiveData
         val disposable = repository.loadLocationAsync(locationModule!!)
 
             .doOnSubscribe { mProgressLiveData.postValue(true) }
@@ -74,7 +73,7 @@ class SettingsActivityViewModel
             .observeOn(AndroidSchedulers.mainThread())
 
             .doOnError (mErrorLiveData::setValue)
-            .subscribe { item -> publishCityByCurrentLocationLiveData(item) }
+            .subscribe { item -> loadCityByLocation(item) }
 
         mDisposable?.add(disposable)
     }
