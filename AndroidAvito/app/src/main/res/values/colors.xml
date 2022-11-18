@@ -9,13 +9,21 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="light_blue_appbars">#C195B1E1</color>
+    <color name="appbars_dark">#BA202020</color>
     <color name="main_background">#B4DCDCDC</color>
     <color name="cells_items_day">#D8FFFFFF</color>
+    <color name="cells_items_dark">#D8303030</color>
     <color name="main_rect_day">#F2F1F1CA</color>
+    <color name="main_rect_day_dark">#F2636350</color>
     <color name="main_rect_night">#FDB7D0EF</color>
+    <color name="main_rect_night_dark">#BF00234E</color>
     <color name="ads">#569F60</color>
+    <color name="ads_dark">#BE002E07</color>
     <color name="rounded_small_items">#C4D3D1F1</color>
     <color name="rounded_small_items_alt">#D7BBE4CC</color>
+    <color name="rounded_small_items_dark">#D71B1B1B</color>
     <color name="bottom_grad">#BF5FE671</color>
     <color name="top_grad">#BA748AC1</color>
+    <color name="bottom_grad_dark">#BF000000</color>
+    <color name="top_grad_dark">#BA202020</color>
 </resources>

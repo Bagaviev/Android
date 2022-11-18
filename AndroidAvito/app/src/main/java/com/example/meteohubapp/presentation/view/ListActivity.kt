@@ -3,6 +3,7 @@ package com.example.meteohubapp.presentation.view
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -186,11 +187,23 @@ class ListActivity : AppCompatActivity() {
             colorizeViewBackground(true)
     }
 
-    private fun colorizeViewBackground(isNight: Boolean) {
-        binding.viewToday.background?.colorFilter = when (isNight) {
-            true -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_night), BlendModeCompat.SRC_ATOP)
-            false -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_day), BlendModeCompat.SRC_ATOP)
+    private fun colorizeViewBackground(isGeoNight: Boolean) {
+        if (!isDarkMode()) {
+            binding.viewToday.background?.colorFilter = when (isGeoNight) {
+                true -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_night), BlendModeCompat.SRC_ATOP)
+                false -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_day), BlendModeCompat.SRC_ATOP)
+            }
+        } else {
+            binding.viewToday.background?.colorFilter = when (isGeoNight) {
+                true -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_night_dark), BlendModeCompat.SRC_ATOP)
+                false -> BlendModeColorFilterCompat.createBlendModeColorFilterCompat(resources.getColor(R.color.main_rect_day_dark), BlendModeCompat.SRC_ATOP)
+            }
         }
+    }
+
+    private fun isDarkMode(): Boolean {
+        val nightModeFlags = this.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES
     }
 
     private fun initIcons(todayData: WeeklyWeather) {
