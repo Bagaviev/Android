@@ -1,19 +1,17 @@
-проверки day / night tableau, пары диалогов
+проверки 
+	работу с minSdk / hiSdk c нуля
+	на маленьком/больших экранах (растяжимость табло чек)
 
-1) Проверить работу с minSdk / hiSdk
+2) Баннер [https://yandex.ru/dev/mobile-ads/]	
 
-2) Проверить работу на маленьком/больших экранах (растяжимость табло чек)
-
-3) Баннер
+3) API key moment / API capacity
 
 4) Иконка
 
-5) API key moment / API capacity
+5) obfuscation moment
 
-6) obfuscation moment
+6) Прикрываем репу вторую
 
-7) Прикрываем репу вторую
+7) Паблишинг в Google Play
 
-8) Паблишинг в Google Play
-
-9) упд линкедин / хх
+8) упд линкедин / хх
