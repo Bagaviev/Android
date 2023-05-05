@@ -1,3 +1,53 @@
+Recoursively open/close dirs
+
+Держим стрелку влево или вправо зажатой долго
+
+
+MVI android
+
+Надстройка над mvvm
+Actions States основные новые определения (маппинг одних на другие)
+По сути задает states для активити/фрагмента, появляется доп метод в viewmodel
+sealed class Actions {
+object ViewInitialized: Actions()
+object ButtonClicked: Actions()
+}
+Это обрабатывается в onAction(action) {
+when(action) {
+MainAction.ViewInitialized -> loading.set(true)
+... fetchMessages()
+} }
+Далее в активити мы не просто дергаем метод вьюмодели, а указываем, что хотим сделать типа:
+vm.OnAction(Actions.ButtonClicked)
+Observe лайвдату так же
+Для снижения неопределенности состояний.
+Разделение viewmodel на состояния state
+Sealed class MainState() {
+object Loading: MainSate()
+object Error: ...
+class Data(val message: String): MainState()
+}
+И state: Observable<MainState>. После чего можно удалить livedata с прогрессом, данными и ошибкой
+В активити снова when появляется на обработку стейтов
+Кароче добавляет порядка этот подход при работе с livedata (или observable)
+Типа во вьюмодели больше не сырые данные толкаем, а потомков MainState
+Это типа redux только для андроид
+StateMachine (далее Redux)
+Но при смене состояний может потеряться инфа, для этого нужен reducer, и side effeft
+
+
+Recycler callbacks
+
+Есть onScrollStateChanged()
+Есть onScrolled()
+Можно подписаться на эти события и выполнять какие то полезные действия (момент с тултипом)
+
+
+Figma moment
+
+Есть классная кнопка +, где parent component, она выделит целиком компонент, если нажать только на дочерний, там будет описание его
+
+
 Android studio git nickname
 
 Задается через скрытый файл ~/.gitConfig, там параметр указать нужно с ником
