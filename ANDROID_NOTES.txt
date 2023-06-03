@@ -1,3 +1,25 @@
+AppBar vs Toolbar vs ActionBar
+
+Кароче тулбар самое последнее и актуальное название этой области приложения. Наиболее гибка и кастомизируемая
+
+
+MVI Avito
+
+Все на flow сделано (аналог потоков в Rx, которые теперь на корутинах)
+Между interactor (теперь он кидает actions) и viewmodel еще 2 класса появляются actor и reducer
+UseCase, он же интерактор, используется в actor (это when с маппингом actions на вызовы usecase) и bootstrap (это init блок вьюмодели)
+Интерактор делает запрос на бек на корутине, возвращает state обернутый в action
+Конвертер ковертит модель ответа бека на states
+Кароче actor это вот все то, что было isError, loading, DataLoaded во вьюмодели, теперь здесь, смесь Rx и try catch вместе с thread.start{}. Возвращает Flow<InternalActions>. Мапит user actions на states
+Reducer еще есть сущность там живет when, который мапит internalActions на states.
+У вьюмодели состояние теперь не разбросано по livedata,
+Во фрагменте when с обработкой states
+Своя допиленная viewmodel, которая работает уже не с примитивами livedat, а абстрагированными потоками state и actions
+InternalAction моделька появляется, State, OneTimeEvent
+StateFlow (eventFlow) <=> observable
+Концепция, меняется state перерисовывается UI, а не когда меняются данные лайвдат
+
+
 Recent files AS
 
 Cmd + e
