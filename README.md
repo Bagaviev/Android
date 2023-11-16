@@ -3,9 +3,11 @@
 Наработки по Android mobile development</br></br>
 
 Текущий стек для изучения:</br>
-- MVI</br>
-- Hilt</br>
-- Jetpack Compose</br>
-- Coroutines + Flow</br>
+- Koin </br>
+- Ads banner interation</br>
+- Google play publish (Meteo.Hub)</br>
+- Bluetooth</br>
+- Background work on latest APIs</br>
+- Map SDK</br>
 
 Bottom text.</br>
