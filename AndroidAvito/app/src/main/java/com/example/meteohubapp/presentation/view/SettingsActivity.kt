@@ -100,7 +100,7 @@ class SettingsActivity : AppCompatActivity() {
             (applicationContext as ApplicationResLocator).appComponent.getRepository()
 
         settingsActivityViewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 return SettingsActivityViewModel(
                     repository,
                     (applicationContext as ApplicationResLocator).getSelf()

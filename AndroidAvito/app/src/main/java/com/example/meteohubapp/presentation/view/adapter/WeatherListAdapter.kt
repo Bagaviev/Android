@@ -1,5 +1,6 @@
 package com.example.meteohubapp.presentation.view.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,10 +15,16 @@ import com.example.meteohubapp.domain.our_model.WeeklyWeather
  */
 class WeatherListAdapter(private val weatherList: List<WeeklyWeather>, private val listener: IClickListener) : RecyclerView.Adapter<WeatherViewHolder>() {
 
-    override fun onCreateViewHolder(parent:  ViewGroup, viewType: Int) =
-         WeatherViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))
+    override fun onCreateViewHolder(parent:  ViewGroup, viewType: Int): WeatherViewHolder {
+        Log.e("", "onCreateViewHolder()")
+        return WeatherViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+        )
+    }
 
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
+        Log.e("", "onBindViewHolder()")
+
         val weather = weatherList[position]
 
         holder.apply {

@@ -67,7 +67,7 @@ class ListActivity : AppCompatActivity() {
         val repository: IRepository = (applicationContext as ApplicationResLocator).appComponent.getRepository()
 
         listActivityViewModel = ViewModelProvider(this, object: ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 return ListActivityViewModel(repository) as T
             }
         }).get(ListActivityViewModel::class.java)

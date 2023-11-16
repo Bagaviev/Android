@@ -16,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TestingEmptyCons instance = new TestingEmptyCons();
+        instance.getAbg();
+        TestingEmptyCons2 instance2 = new TestingEmptyCons2();
+        instance2.getName();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
