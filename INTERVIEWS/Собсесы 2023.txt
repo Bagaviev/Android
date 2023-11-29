@@ -1,0 +1,1901 @@
+Собесы:
+
+1)  Росбанк [Прошел, отказался]
+	 росбанк уведомления сообщения, баннеры. коммуникаций, платформенная.
+	 удаленка россия
+	 один этап собеса тимлид
+	 вилка ок
+	 
+2)  Озон [Потрачено]
+     приложение покупателя продавца
+	 слои чистой архитектуры - ответил
+	 linkedlist arraylist как реализованы - ответил
+	 что является компонентами андроид фрагмент активити сервис аппликейнш (апликейшн и фрагмент не являются) - тупанул
+	 data класс с пустым конструктором и полями в теле - можно только через дефолтные значения, если нет 
+	 state flow shared flow разница
+	 compose layout
+	 launch async - первый это типо как runnable, второй это как callable - мы можем await deffered сделать после async блока
+	 https://medium.com/@husayn.fakher/exploring-the-differences-between-launch-and-async-in-kotlin-coroutines-10-questions-answered-4b7c2280e87f#:~:text=async%2C%20like%20launch%2C%20starts%20a,result%20at%20a%20later%20stage.
+	 удаленка
+	 мидла вилка ок 
+	
+3) Тинькофф [Потрачено]
+	retrofit 
+	dagger 2
+	mvvi
+	mvi compose 
+	QR команды
+	Тех скрининг мидл. Алгосекция - на второй части?
+	большое интервью 2ч
+	удаленка по россии и хабы
+	платформа нет фичи да
+	графики нет	
+	маркетплейс
+	
+4) Альфа банк [Потрачено]
+	удаленно из россии и других стран
+	тех скринг 
+	коммунакиции банеры для юр лиц (платформа? вроде нет). продуктовая основная страница юрлица, виджеты
+	скрам мастер.
+	по вилке ок квартальная премия 2-3 оклада
+	техника - маки
+	чат бот на 10 вопросов технические пред. На днях пройти. 
+	2 интервью технических теория практика - алго нет.
+	финальное
+	
+5) Совкомбанк офисный формат, согласовывают удаленку для андроид. Нет удаленки [СКИП]
+	платформа нет
+	халва rx java dagger mvvm 
+	страхование вниутреннее коруины mvi
+	вилка ок
+	удаленка
+	этапы с тимлидом технический алго нет ревью есть
+	начальник мобильной разработки кек
+	
+6) it one Люксофт [Потрачено]
+	Аутсорс - дочерняя компания
+	банковские приложухи газпромбанк втб иннотех сбер госуслуг ключ идентификации, почта россии
+	гпп, втб, почта россии
+	удаленка есть обычная
+	вилка пизда большая
+	гибкое начало дня, темы. Собес потом команды.
+	тех интерьвю
+	маркетплейс типа
+	
+7) Кион [Потрачено]
+	приложение андроид (котлин) тв или мобильный апп (с корутинами)
+	10 чел ролей
+	есть фичевые
+	удаленка
+	алгоритмы нет
+	2 этапа
+	вилка ок, миддла
+	удаленка в мск - проблема. гибрид. Со скрипом.
+	
+8) 	Витрина ТВ (СТС) удаленка частичная гибридный режим 3 дня в офисе [СКИП] 
+	обещала вернуться
+	
+9) Юрент 3 этапа - дмс нет на всякий. клиенские и про операционные [WIN ПРОШЛИ ИДЕМ]
+	удаленка гуд савеловская. удаленка далекая
+	человек скока - 100 человек всего, андроидов - 7 в компании, 3 андроид меня ищут. в операционную команду и между народноую
+	скрам как тимлид дейлики
+	вилка как попадаю
+	законодательство сезонность
+	ранний дейлик изза релокентов
+	поменьше работы зимой
+	С# беекенд
+
+10) Сибинтек Роснефть - диспетчеризация бензовозов, стартанули в начале лета [ЗАГЛОХЛО]
+	штат ит компании сотни
+	1 андроид разработчик, 12 человек, пара бекенд.
+	удаленка - 2 недели онбординг, строго рф, в регионе
+	вилка ок возможно больше
+	
+11) Дзен - павелецкая [НЕ РАЗВИВАЛ ИЗЗА ВК]
+	базовое качество (7 чел, лид) - фичевые. Тесты, реклама. [Дизайн систему и сборку делают спиды]. Платформенная команда.
+	продуктовые скрам, стек котлин, корутины, даггер, композе, ммввм
+	core новостей пользователей 
+	удаленка есть 
+	43 анроида, core команда 
+	вилка		
+	команда
+	сколько андроидов сколько в команде
+	что делать
+	Марусю другой рекрутер - ВК [в офис]
+	описание секций - алгоритмов есть 1.5ч
+
+12) Рутюб [ПОТРАЧЕНО]
+	удаленка
+	вилка - мидл 15% премия
+	андроидов сколько 13 техлид
+	платформа и дизайн система
+	когда ютуб блокируют - не ответили
+	фича или платформа	
+
+	
+13) Сберздоровье [ОТКАЗ ПОСЛЕ HR]
+	платформеннная команда, носимые стуройства и супераапп (это вакансия)
+	corutines kotlin dagger - compose в планах
+	удаленка по рф
+	5 анриод техлид 2 бекенд
+	автозаводская
+	10 30 дейлики 
+	6 андроид по 1 андроид отдельный в фичу 
+	платформа фича
+	премий нет (выше оклад надо)
+	bluetooth geo
+	вилка
+	
+14) Сбер браузер [СКИП]
+	мало инфы, гибрид скорее всего только
+	
+15) Крис ВК [ТИШИНА ПОСЛЕ 2-Х ЭТАПОВ]
+	удаленка есть 
+	- Маруся в андроид девайсы, часы, тв (не мобилка) - вместо пульта тв
+	compose фулл корутины mvvm dagger 
+	вилка ок
+	3 андроида - ruzz с марусей телеки, магнитолы, андроид авто
+	кор вк
+	этапы техническое на 1.5 часа язык платформа, рефакторинг, без алгоритмов
+	тех скрин 
+	- vk play live (без exoplayer команда видео) mvi, xml, compose нет, hilt
+	5 андроид лид андроид
+	скрам 
+	все встречи тимлид
+	
+16) Банки ру (вернется с ответом) [ОТКАЗ ПОСЛЕ HR]
+	вилка ок
+	удаленка ок [за пределами рф] - в Армении и Казахстане есть представительства.
+	команда - сколько андроидов, вторым первым, что делаете
+	6 анроидов - коммунальные
+	2 года приложухи
+	400 человек
+	2 этапа те собес и тимлид (познакомиться)
+	mvi, single activity, kotlin, coroutines, dagger, cicerone, retrofit, moshi, constatint layout
+	разделы java kotlin
+	есть дизайн система, платформа
+	с 11 до 8
+	
+17) Госуслуги ростелек (вернется с ответом) [ПОТРАЧЕНО]
+	удаленка - 100% есть (гибрид)
+	сколько андроидов 4ый
+	вилка входит
+	стек
+	с военным
+	отсрочка
+	1 этап тех собес 1.5 часа без лайвкодинга
+	сразу
+		
+18) BetBoom [НЕПРИЯТНО]
+	KMM, проект международный, не российский, не перекликаются, латинское
+	удаленка далекая (встреч не много)
+	сколько android - 2 (лид, мидл-сеньор), разработка продуктовая
+	багосборщик
+	отбор какой 
+	платформа и дизайн система (дизайнера нет) - нет
+	сколько всего человек в ит, порядки 800 человек
+	xml или compose (уже компоуз), mvvm, rxjava нет coroutines да
+	вилка - ок
+	этап, секция одна, сб потом, алго нет.
+	еще добавить firebase однократно
+	
+			
+19) СберDevices [НЕ СТАЛ]
+	устройства
+	асистенты
+	голосовые продукты
+	100 андриод
+	+- 10 команд
+	есть низкоуровненые команды
+	4 вакансии
+	- Салют	(умный дом алисы типа)
+		7 андроид 
+		compose переписывают backend driven ui
+	- Салют ТВ оболочка для телека, игровое направление
+		30 андроид
+		rnd 3 андроида
+	- Умный дом 
+		сберпортал, сбербум, сбертв, UI 
+	- b2b 
+		умные доски устройства	
+		sberchat, понятно
+	
+==========================Android materials==========================
+
+viewgroup extends view
+
+диплинки обрабатываются через manifest, также через интент action view вытаскиваются параметры
+
+launch modes sctivity
+		standard (много инстансов активити внутри одного таска или разных)
+		singleTop (кароче на верху стека только один инстанс в таске, если же глубже, то повторно создастся. Если есть, то откроется существ активити), 
+		singleTask без affinity (мутная тема, если глубже по стеку есть активити то промежуточные будут дропнуты и последняя откроется поверх старая), 
+				   если с то создастся отдельно таска где будет одна новая активити
+		singleInstance (только одна активити в таске может быть, повторный запуск экрана создаст еще один таск),
+внутри таски живут активити стеком, по сути таска это коллекция активити
+скрытые активити в состоянии stopped
+первая открытая актиити приложения называется рутовой
+с 12 андроида при нажатии назад активити уже не убивается, а идет в background состояние
+
+selector (тут как level-list для состояний вкл выкл в bottom navigation например), layer-list (для простых анимаций типа заполнения картинки, также для простых примитивов рисования), level-list (drawable который может содержать несколько состояний), shape для задания контуров или градиентов
+
+отложенный infalte view - ViewStub
+
+object vs Object Class
+mutable immutable коллекции
+
+recycler - adapter, viewholder (create, bind, count). Разнотипные списки с разными viewholder. Пробсро клика из активити в adapter через интерфейс
+
+text changed listener, edittext
+
+можно создать приложение без активити (service + broadcast receiver), подшаманив edit configurations 
+
+for i in range теперь заменяется такой ебалой for (i in 0..1)
+for i in list.indices такая конструкция существует
+
+у data класса может отсутствовать тело, а быть только primary конструктор (не пустой при этом), также он не может быть open, тк final, еще он не может содержать не проперти параметры
+
+activity lifecycle oncreate(логика однократная для активити, лейаут там, savedinstance state прилетает) onstart(краткосрочный процесс, тут можно листенеры вешать, это дергается после onstop activity) onresume (когда экран отображаетсяы)
+onpause (частично видна но перекрыта) - индикатор Multiwindow mode кароче, onStop (не видна)
+когда стартуем другую активити предыдущая pause, затем новая create, start, resume, далее старая уже onStop. Если нажать назад, то последняя onpause первая onrestart onstart onresume первая, а вторая onstop ondestroy
+
+старт новой активити - новый интент, далее startactivity(intent)
+
+A ScrollView can only have one child widget
+
+custom view (почитать подробнее потом) - унаследуемся от view
+attributeSet, styleable - тут атрибуты наши живут, какие будут доступны в xml, еще дефолтные значения можно для этих атрибутов прописать в <style/>
+
+OnMeasure - view понимает каких размеров она будет, учитываются ограничения от парента
+OnLayout - view позиционирует дочерние вью на экране с учетом размеров из OnMeasure. getChildAt и вот это все
+onDraw - тут примитивами рисуем. Вызывается многократно при анимации или перемещении view
+invalidate, только перерисовака, requestLayout - полный пересчет с размерами
+
+delay vs thread sleep - первый метод suspend, не блокирует корутину (поток может взять другую корутину), второй же метод поток будет ждать корутину
+
+touch event
+
+нельзя доступ получить доступ к extension к приватным полям оригинального класса нет
+open модифкатор с методами
+	
+onstartcommmand service в каком потоке*
+
+кароче в onCreate() можно сделать Handler(Main Looper()).postDelayed() и закинуть месседж с тяжелой таской
+ViewStub это оптимизация инфлейтинга вьюшек ленивая
+
+анимации через animator в xml AnimatorInflater, ValueAnimator, также в коде можно
+
+When the system kills an app, there is no guarantee that onDestroy() is called in the app
+
+Schedulers.trampoline() выполняет на текущем потоке после всех задач
+
+ItemTouchHelper для свайпов в списке
+
+fragment lifecycle: onCreate, onCreateView, onViewCreated, далее как у активити, после stop идет onDestroyView, destroy, detach
+весь цикл начинается после onCreate активити. кароче у фрагмента есть более короткий цикл жизни после восстановления нужно данные ресторить выше, чем onCreateView, иначе после пересоздания фрагмента действия будут повторяться
+
+rxjava типы observable single just maybe completable
+disposable observable.range { ... }.subscribeOn { io }.observeOn { main }.subscribe { } 
+
+okhttp request builder
+newCall.execute(request)
+
+service lifecycle - oncreate onstartcommand ondestroy
+стартует как и активити - создается интент, а далее startService(intent)
+
+dagger moments:
+как работало - сначала искали нужную зависимость build gradle, далее импорт подтягивался, и искали в какой граф встроиться нашему собственному (локального андроид модуля), через компонент либо модуль (даггеровский), после чего все взлетало
+module / component / dependencies / классы с @inject конструктором или полями
+component хранилище зависимостей, ищет и создает их (можно методом или как проперти)
+	здесь живет computer и inject(MainActivity) метод
+module говорит как создать (тут мы указываем в параметрах то, что хотим из графа получить, при создании комплексеного объекта, а даггер сам за нас все найдет)
+граф это компонент, там модули указываем
+scope annotation для разделения чтобы дублировать можно было зависимости одинаковых типов данных annotation /@named
+DaggerAppComponent.create().getSomeComputer() для создания графа 
+	это в активити appcomponent.inject(this) делается
+можно положить создание компопнента в application класс (onCreate, onTerminate, onConfigurationChanged, onLowMemory), тут кароче глобальный стейт лежит
+модули разбиты должны быть по логике там сеть аналитика и тд
+иерархия проставляется так типа компонент [модуль1, модуль2] либо компонент [модуль1], однако модуль1 includes модуль2 либо как сеть либо как матрешка кароче
+provides для retrofit
+binds делает все сам - создает реализацию на основе интерфейса
+можно в модулях выстраивать иерархию - типа сначала создаем retrofit, db, потом repository, потом интерактор, и все это в конструкторах будет само подтягиваться
+module - interface для binds, однако для provides - class
+@Inject у конструктора Analytics например сразу скажет графу как эту зависимость создать (если пустой констр, и в модуле можно опустить создание объкта с пустым конструктором)
+appModule корневой может вообще без тела быть классом, вырожденным типа
+все что извне в граф суется, то через provides
+inject на метод повесить можно
+параметры которых в графе нет, те внешние 
+factory create() как раз тут параметр подкидывается внутрь графа
+кароче в моем проекте я почти все сделал правильно дотащил репозиторий в активити, но можно было полем сделать @inject, но это не принципиально, и далее во вьюмодель засунуть, но вот андроид тему кинуть в граф назад уже сложнее
+также связать 2 компонента вместе
+внешние зависимости в компонент вставляются через @Builder interface Builder
+DaggerAppComponent.builder().build()  -  ранее это был daggerAppComponent.create(), а затем inject(this)
+interface AppComponent {
+	@Builder
+	interface Builder {
+		fun build(): AppComponent 
+		fun context(context: Context): Builder
+	}
+}
+те например хотим пробросить context внутрь графа, чтобы он см например мог resourceManager(context) предоставить далее
+builder возвращает builder
+@bindinstance для проброса как раз 
+DaggerApplicationComponent
+  .builder()
+  .applicationContext(applicationContext)
+  .build()
+factory чуть модернизированная версия builder
+interface Component {
+	fun inject(fragment: Fragment) 
+	
+	@Component.Factory
+	interface Factory {
+		fun create(
+			@BindsInstance fragment: Fragment,
+			dependencies: SomeDependencies
+		)
+	}
+	
+	Dependencies {
+		fun router(): Router
+		fun analytics(): Analytics
+	}
+}
+@Qualifier
+annotation class blabla
+AppDeps { можно объявить } так все необоходимые графу зависимости извне можно скопом задать
+@Component(modules=blabla, dependencies=AppDeps)
+interface AppComponent {
+	@Builder
+	interface Builder {
+		fun build(): AppComponent 
+		fun appDeps(appDeps: AppDeps): Builder
+	}
+}
+DaggerApplicationComponent
+  .builder()
+  .appDeps(AppDepsImpl()) // тут надо реализовать возвращение зависимостей отдельным классом, не нравится такой подход
+  .build()
+это для модуляризации используется
+@Scope сколько будет жить инстанс @Singleton инстансы живут все время компонента	
+FeatureComponent через @Subcomponent делается
+компоненты могут быть вложенными друг в друга, но для многомодульности лучше юзать 
+связь 2х разных components делается через dependencies
+@Component(dependencies=OuterComponent::class)
+interface InnerComponent { ... }
+	@Builder
+	interface Builder {
+		fun build(): InnerComponent 
+		fun outerComponent(outerComponent: OuterComponent): Builder
+	}
+}
+таким образом мы внутрь малого компонента подкидываем зависимости из кор внешнего компонента
+след модификация это через интерфейс featureDeps
+interface AppComponent: FeatureDeps {
+override fun application(): Application
+}
+
+lateinit позволяет избежать nullable полей, однако может упасть
+
+onSaveInstanceState/onRestoreInstanceState методы view такие есть
+
+Grid/Linear/Staggered Layout Manager - списки могут быть 3х видов оказывается
+
+composable составной (ui это метод от данных)
+jetpack: navigation, viewmodel, hilt, paging3, rx, flow
+compose не натив
+minSdk21 (5.0)
+кароче проще и оптимизированнее, мультиплатформенное, но гуано на вкус
+ui функция стейта
+типа более верхнеуровневый концепт, декларативный, про что сделать, а не как сделать
+кароче раньше было, что стейт у логики и ui нужно было поддерживать консистентным самим
+типа compose сам перерисовывает ui на основе state (чето эта залупа начинает мне напоминанать наворот mvi по описанию)
+по сути invalidate/notifyDatasetChanged() теперь recompose()
+экран теперь это метод
+компоуз дергает только те методы полстроения ui, данные на которые они подписаны изменились
+@composable вызывается заново
+remember для сохранения с предыдущих вызовов функции
+типо с mvvm хорошо screen state распадается на composable методы 
+appbar, buttons, cards, etc в material стиле сделаны
+layouts compose: 
+	rows, 
+	columns (linearlayout), 
+	box (типа как framelayout, тут views распологаются как стек одна тока может быть)
+	constraint
+	Card
+	Scaffold - это каркас с toolbar, botombar, fab,
+	custom layout
+	Dialog
+	Drawers (меню слева выезжающее)
+	LazyGrids
+пиздец дриснина - внутрь Box() лейаута корутины засовывают...
+LazyColumn - аналог recycler...
+YellowTheme {
+	Scaffold ( bla bla)
+	TopicsList()  // тут метод recycler для Topics, последний это ячейка recycler
+}
+compose можно юзать как часть экрана, или же весь
+https://www.youtube.com/watch?v=CAOM-Kq9MKY&ab_channel=MobileDeveloper
+@composable мб вызвана только из такого блока либо setContent{}
+modifier это нечто среднее между view и context, определяет размеры элемента, поведение, внешний вид, также есть отдельные атрибуты для задания вида
+типа так recycler делается:
+Column {
+   for (s in list) {
+	   Text(text = s)
+   }
+}
+Для обновления UI нужно не просто данные типа чисел строк юзать, а оборачивать в State класс val counter = mutableStateOf(0)
+концепция - вынос состояния из view во вне
+Composable функция читает данные из State, то она автоматически подписывается на его изменения\
+кароче recomposition система делает сама - какие composable методы получили новые данные только те и обновлять вертску должны (причем от рута до вложенного самого)
+однако тк весь метод передергивается, то важно не дублировать создание объектов, для этого Функция remember существует
+val evenOdd = remember { EvenOdd() } тут remember(uppercase) также ключ можно указать при изменении которого будет заново создаваться объект или нет
+stateOf кароче это как livedata, remember как viewmodel
+этапы отрисовки
+Composition of elements
+Layout of elements
+Drawing of elements
+можно кастомный modifier (как билдер сущность), layout сделать...
+fun Modifier.customLayoutModifier() =
+    layout { measurable, constraints ->
+        // ...
+    }
+@Composable
+fun MyBasicColumn(
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit
+) {
+    Layout(
+        modifier = modifier,
+        content = content
+    ) { measurables, constraints ->
+        // measure and position children given constraints logic here
+        // ...
+    }
+}	
+ConstraintLayout содержит Guidelines
+Text.Clickable { ... } 
+в кнопке текста нет, нужно Button() { Text() } делать
+	
+корутины это легковесные потоки (асинхронщина, это про отложенное выполнение задач типа в очереди на одном потоке, тогда как многопоточность это про параллельное выполнение)
+coroutine structured concurrency
+coroutineScope { launch	{... }}
+корутина после отпуска delay может на другом потоке из диспатчера продолжить работу
+корутина не блокируется при suspend, как поток, она отпускает ресурсы для других корутин, типа как notify
+в rx мы ссылки храним на потоки, может утечь, в корутинах все привязаны к жц Scope 
+корутины мб вызваны (те suspend методы, только из других таких же методов либо из Scope)
+GlobalScope {} не юзаем
+RunBlocking {} для запуска из main
+launch vs async есть разница в порядке запуска корутин, async подряд, launch все сразу
+Job return type для launch
+coroutine context сущности можно складывать
+Job/Deffered, имеют 6 состояний
+Parent Job cancel приводит к child cancel и обратно
+Job cancel, isActive, join, callbackWhenEnd
+Dispatchers 
+Default launch async под капотом для интенсивный CPU бекграунд задач, от 2 до кол-ва ядер потоков
+Main на главном потоке, по умолчанию не работает, нужно зависимость подкинуть 
+Unconfined не привящан к потоку в том же где корутина была создана, из ее контекста инфа будет взята
+IO ввод вывод 64 потока так систему не загружает как default, сеть
+CoroutineExceptionHandler
+Launch wout parameters inherits the context of the main runBlocking coroutine which runs in the main thread
+кароче всгда указывать io либо default (если не указать, то будет на главном скорее всего, как и unconfined)
+Context vs Scope разница
+	The coroutine scope is responsible for the structure and parent-child relationships between different coroutines. New coroutines usually need to be started inside a scope.
+	The coroutine context stores additional technical information used to run a given coroutine, like the coroutine custom name, or the dispatcher specifying the threads the coroutine should be scheduled on.
+launch, async, runBlocking {...} это и есть scope
+корутины могут быть вложены друг в друга
+runBlocking тупо тормозим главный поток (для редких кейсов исп-ся)
+корутины живут столько, сколько их scope
+scope может сам отменить корутины
+в scope через job хранятся все корутины
+пока все корутины не добегут, скоуп не завершит свой жц
+CoroutineScope содержит Context
+GlobalScope будет жить пока не доработают корутина
+SuperviserJob - если наебнется child coroutine, scope не отменится, как в случае дефолтном coroutineScope
+запросы должны вызываться не из UI scope, а из другого (нарпимер viewmodel)
+пиздец ебатория скоупы складываются, диспатчеры из контекстов тоже
+try catch для async с нюансами обрабатывается
+channels как blockingQueue (это очередь в которую нельзя впихнуть если она полная - поток локнется, либо если пустая взять элемент)
+	send receive
+	это для коммуникаций событий между корутинами 
+sync moments - нет syncronyzed из java, также нельзя в коде который может быть использован несколькими потоками одновременно в той секции, вызывать корутины
+corutine dispatcher мб однопоточным либо многопоточным	
+Cancel moments - если дернуть cancel() в scope, то текущая корутина не отменятся, но отменяются все последющие, а так для этого надо статус проверять IsActive
+isActive is an extension property системное, те достаточно переопределить и отмена корутины заработает
+join дожидаемся окончания job
+Job сущность в которой запускаются корутины, имеет жц, создается неявно при launch {} или Job() явно
+cancel scope, cancel job
+job = launch {...}
+job.cancel() отменит вторую корутину, но не весь скоуп. Отмена скоупа приведет к отмене дочерних корутин
+по дефолту при отмене корутина бросит CancellationException, надо обработать
+lifecycleScope, viewModelScope
+Checking job.isActive or ensureActive()
+Let other work happen using yield()
+cancelAndJoin дожидаемся завершения как join
+hot cold observables первый эммитит данные независимо есть подписчик или нет, аналог кинотеатр, cold только когда есть подписчик который попросил данные, аналог нетфликс
+hot получает свежие события только
+в Rx дефолтный Observable.interval() к примеру холодный, однако если в конце добавить .publish(), то становится горячим
+Backpressure ситуация когда consumer захлебывается от объема ивентов producer 
+debounce фильтр частоты событий в flow. кейс был, что бекенд дергается не чаще чем раз в 500 мс, когда юзер трогает edittext например
+suspend для одного значения, flow для пачки, как rxjava
+Rx datatypes 
+	Single
+	Maybe
+	Completable
+	Observable
+	Flowable
+flow холодный (observable): collect, emit, есть горячие реализации
+	map
+	onEach
+	filter
+операторы реализованы через extension Flow (rxJava operators - just, from, etc)
+Flow create	
+	flowOf(1,2,3)
+	list.asFlow() - типа как fromCallable {} или Single<Class>
+	flow {
+		emit()	
+	}
+upstream входной поток для Flow (вход map например), downstream выход
+flatMap применяет метод к каждому эл-ту, а затем складывает в коллецкию
+fold/reduce это складывает все события или элементы например в сумму
+flow collect {} = subscribe	{}
+кароче что Streams, что RxJava, Flows, все одна хуйня про поток событий
+Usecase:
+	scope.launch {
+		flow<String> { ... }
+			.filter { ... }
+			.map { ... }
+			.collect { ... }
+	}
+еще можно сделать
+flow<String> {...}
+		...
+		.map {...}
+		.launchIn(scope)
+завершение цепочки можно так еще
+		...
+		.onEach {...}
+		.collect()		// без лямбды
+flow мб бесконечен
+emit <=> collect
+flow.buffer (...) для back pressure handle (debounce)
+callbackFlow еще какой то существует
+flow  {
+	withContext(Dispatchers.Default) {...}  // !нельзя так из другой корутины
+}		 
+типо flow работает в том же контексте, что и collect
+переключение контекста делается через
+launch {	// не указан диспатчер - в месте вызова
+	flow {
+	...
+	emit(5)
+	}.flowOn(Dispatchers.Default)  // меняет контекст выполнения только для upstream типа как SubcribeOn()
+	.onEach {...}	// вот тут кстати Main dispatcher уже по умолч
+	.collect()		// контекс коллектора неизменен - тот, что в месте вызова
+}	
+обработка ошибок в цепочке // как в onError в Rx
+.flow {...}
+.catch {e: Exception ->
+	...
+}
+сам collect в try/catch завернуть можно
+Также в Rx есть пачка hot источников
+	Publish Subject
+	Replay Subject
+	Behavior Subject
+	Async Subject
+Flow холодные стримы, однако SharedFlow это горячий, равно как и StateFlow
+SharedFlow<T>
+	бесконечный поток - не делаем collect.
+	Стандартный flow активен, только когда есть коллектор, этот инстанс живет независимо от подписчиков
+	Может содержать несколько подписчиков
+	не имеет контекста
+	replay cache - сколько эвентов хранит (доставляет) последних
+StateFlow<T> (частный случай sharedFlow), по сути это замена LiveData (нужно настроить repeatOnLifeCycle, отдельное видео есть про это)
+	хранит одно значение последнее и доставляет всем подписчикам
+	новое значение доставляется только если оно изменилось
+	нужно начальное значение передавать в конструктор
+Mutable -NonMutable Stateflow/SharedFlow	
+ViewmodelScope закрывается в onClear() 	
+ViewmodelScope / LifecycleScope (для фрагмента) / ViewLifecycleScope (для фрагмента)	
+есть обертка livedata для корутин
+flowWithLifecycle
+viewLifecycleOwner.lifecycle
+.coroutineScope.launch {
+	viewmodel.dataflow
+		flowWithLifecycle(lifecycle, ...STARTED) // для подписки на flow во фрагменте/активити
+		.collect {}
+}
+diff shared vs state flow
+https://stackoverflow.com/questions/66162586/the-main-difference-between-sharedflow-and-stateflow
+
+хорошие примеры Coroutines Flow + Stateflow UI update
+https://developer.android.com/kotlin/flow/stateflow-and-sharedflow
+https://developer.android.com/kotlin/flow
+индусские
+https://amitshekhar.me/blog/retrofit-with-kotlin-flow
+https://levelup.gitconnected.com/android-basic-app-using-mvvm-hilt-coroutines-flow-retrofit-and-coil-433763542ee0
+
+sealed class LatestNewsUiState {
+    data class Success(val news: List<ArticleHeadline>): LatestNewsUiState()
+    data class Error(val exception: Throwable): LatestNewsUiState()
+}
+===
+ссылочные типы и примитивные 
+	классы (reference 4 byte), string (2 байта)
+	char (2 байта), int (4 байта), double (8 байт), boolean, byte (1 байт), float (4 байта), long (8 байт)
+iterable - collection - java collections - list (arraylist, linkedlist), set (hashset, treeset), queue(priority queue, deque - это как стек), map (hashmap, hashtable, treemap, linkeedhashmap)
+вставка linkedlist, хранение взятие по индексу arraylist
+hashmap просто перезапишет значение с одинаковыми ключами, а hashset не даст вставить вроде прямо
+hash table (синхронизирована, нельзя null в качесвте key) hash map (несинхронизированная тема, допускает nullable ключ-значения, не допускает дубликаты ключей, null ключ hashcoed = 0 )
+hash map o(1) add get, find o(n/m), работает на основе linkedlists либо openaddressing на основе lists. в java Nodes используются, бакеты
+throwable 
+	- error (unchecked runtime) outofmemory, stackoverflow
+	- exception (unchecked)
+		runtime exception (unchecked)
+		indexoutofbounds
+		classcast
+		arithmetic
+		npe
+	checked
+		ioexception
+		illegalaccess
+		nosuchmethod
+		
+Object	(рут всех типов)
+			toString
+			equals
+			hashcode
+			clone
+			wait
+			notify \ notifyAll
+			getClass
+			finalize
+hashcode equals
+	повторный вызов hashcode для одного объекта вернет одно значение
+	если объекты равны equals ==, то hashcode также == (одинаковы)	, однако обратное не всегда срабатывает, случай коллизии
+	если hashcode разные то объекты точно разные
+коллекции работают некорректно если не переопределить оба метода для класса
+kt - нет примитивов, все объект классы обертки Unsigned типы есть
+иерархия типов
+Any - Hashcode, equals, toString (extensions, apply, let, also, все scope функции кароче, isfrozen, iterator)
+	Any - типа как Object
+	Nothing - на этом все тип замыкаются, функция, которая ничего не вернет, типа с исключением пример
+	Unit - void
+	collections - list, set, map (ArrayDeque - stack, queue)
+накинули иммутабельность	
+exceptions - all exceptions are unchecked (нет io ошибок в ide)
+заебчики data class
+	не может иметь поля не проперти
+	не может иметь пустой конструктор (только если с деф значениями исключение)
+	автогенерация getter, setter, hashcode, equals, toString, copy, componentN - хери при разложении объекта на поля, destructuring declaration
+нюансы kotlin - все классы по умолчанию final, вручную вешаем open, если хотим наследоваться
+kotlin modifiers: private, protected, internal (на уровне модуля в студии), public
+	дефолтный модификатор видимости public
+java
+	Default (package visible)	Private Protected Public
+	
+Object class vs object variable - первое это аналог статиков, второй анонимный класс	
+===
+android old moments
+minsdk мин версия андриод на которой запустится приложение
+target это версия означает, как в рантайме будет вести себя приложение, спросит пермишены по старому или по новому. Те если девайс на 31 апи например, а тагрет 30, то пермишены по старому спросятся. Эта штука рекомендуется гуглом, типа 
+нельзя всегда старый юзать, там от последней - пару версий допускается
+compileSdk это что будет доступно из платформы в ide
+min < target < compile
+android latest 14	
+Как вьюмодель переживает смерть активити
+	При создании viewmodel ей задается viewModelStoreOwner (активити например)
+	ViewModelStore класс который должен переживать смену конфигурации
+	ViewModelStoreOwner хранит ViewModelStore, и если овнер помирает, то новый инстанс овнера должен получить старый инстанс стора, и отправляет clear(), если весь скоуп завершаетсч
+	ViewModelStore подвязан на application класс
+	A сама вьюмодель достается из viewModelStore
+	Вся логика хранения стора лежаит в активити/фрагменте
+		
+чистая арзитектура
+	ui слой, viewmodel
+	use case (интеракторы, бизнес логика)
+	доменный слой модели, entities
+	репозитории
+	db, web
+	
+mvi	
+Actions, States sealed классы, типо не сырые данные во вьюмоделях гоняем, а сгруппированные по действию пользователя и состоянию Ui
+reducer маппинг actions на states
+side effects (actor)(это маппинг action на то, что надо сделать, onClick -> fetchUsers()), команды по сути, результат обновления state
+во фрагменте when с маппингом states на че сделать надо обновить ui там
+
+constructors not allowed for Object Utils { ... }
+
+ContentProvider
+	шарит данные системные в приложение (контакты к примеру)
+	шарит данные нашего приложения с другими
+	отправляет данные на виджеты
+cursor = contentResolver.query()
+каждый провайдер может иметь свой URI content://user_dictionary/words
+CRUD, типа 
+FileProvider это подтип contentProvider для меню выбора файлов системы
+
+===
+solid
+	single responsibility - одно назначение для класса
+	open closed principle - прогр сущности открыты для расширения, но закрыты для изменения (пример с when). суть новый код не требует изменять старый клиентский код, типа пример со switch. делается с интерфейсом и полиморфизмом
+	liskov substitution - потомок должен быть взаимозаменяем с предком, пример с rectangle и payment (проблема с интерфейсом), решается абстракцией, более правильно выносить методы абстрактные, которые реализуют точно все потомки
+	interface segregation - толстые интерфейсы лучше распиливать на небольшие, чтобы лишнего не пришлось реализовывать делая стабы
+	dependecy inversion - нельзя закладываться на реализации, а только на интерфейсы, для упрощения замены/расширения в будущем
+
+ООП
+	абстракция - отбрасываем неважное
+	наследование - понятно тут все
+	инкапсуляция - сокрытие данных private modifiers и это все, также может означать связывание поведения и данных вместе - суть класс
+	полиморфизм - один интерфейс много реализаций, кароче возможность работать с несколькими типами как одним, при этом имея разные поведения
+
+паттерны - 
+структурные, 
+	facad
+	adapter
+	proxy
+поведенческие, 
+	observer
+	composite (пример views)
+	state
+	Template Method
+	iterator
+	Chain of responsibility (handler)
+	Null object
+порождающие
+	builder
+	singleton
+	factory method - обобщенный метод create pizza, который реализовывали потомки
+	factory - множество factory method
+	
+e2e тесты запрос к беку
+ui (component) - мок бека
+
+val lazyValue: String by lazy {
+    println("computed!")
+    "Hello"
+}
+lazy delegate сохраняет результат вызова, и повторно не выполняется блок
+
+dry dont repeat yourself - код выносить в общие модули, не копипастить
+kiss keep it simple stupid - не переусложнять
+yagni you aint gonna need it - не писать что не нужно в данный момент
+окама - не создавайте новые сущности без необходимости
+bduf - big design up front
+apo - avoid premature optimisation
+gof паттерны банды четырех 
+
+stack
+	тут хранятся локальные переменные, которые объявлены в методах и блоках кода (объекты живут в куче, а ссылка на них хранится уже в стеке метода)
+	а также стек вызовов методов. Освобождается сама по мере завершения методов
+	примитивы
+heap
+	тут все объекты ссылочные живут, тут работает сборщик мусора
+	глобальные переменные
+	string pool живет здесь (строки неизменияемые, те в массиве символов там поменять нельзя значение). Это кароче механизм для оптимизации памяти под строки
+	все держится на значении строки "абс", и при повторном создании объекта с таким же значеним новый объект не будет создан, просто ссылка вторая появится
+куча исп-ся всем приложением, а стек отдельным потоком
+
+heap: old gen, new gen (eden + survivor)		 
+ссылки это ClassExample tmp
+
+сборка мусора mark-sweep-compact
+	маркировка stop the world
+	очистка
+	уплотнение объекты пережившие очистку помещаются в спец область - чтобы память не была решетчатой, после прохода осуществляется перенос живых объектов в начало, мусор в конце остается
+	
+в андроиде mark and sweep используется для учета циклических зависимостей
+
+утечки android
+https://tproger.ru/translations/android-memory-leak
+	ссылки на контекст не юзаем не сохраняем
+	не делаем static переменные с ссылками на android view - типо живут дольше, чем активити, столько сколько
+	не забываем занулять ссылки если вдруг что приходится сохранять таким образом	
+	
+finalize выызвается у объекта перед очисткой (но не гарантированно)
+
+jni херь для работы с c++ (ngk сюда же)
+
+подсчет ссылок (reference counting)
+обход графа достижимых объектов	(mark-and-sweep, copying collection)
+
+GC Roots
+	Class loaded by system ClassLoader (static field in JDK classes)
+	active threads
+	stack local variables
+	monitor object
+	JNI references
+	
+Serial Garbage Collection
+Parallel Garbage Collection
+CMS Garbage Collection
+G1 Garbage Collection
+
+StrongReference - классика любой объект имеющий на себя strong ссылку не может быть удален gc
+SoftReference - объекты с soft ссылкой будут собраны только когда JVM очень нужна память
+WeakReference - gc может удалить объект в любой момент если на него указывают только weak ссылки
+PhantomReference - может быть собрана сборщиком мусора, если на объект нет сильных (Strong), слабых ссылок (WeakReference) или мягких (SoftReference).
+				   это безопасный способ узнать, что объект удален из памяти.
+				   вызывается метод finalize() (если он переопределен);
+				   если после работы finalize() ничего не изменилось и объект все еще может быть удален, фантомная ссылка на объект помещается в специальную очередь — ReferenceQueue.
+				   
+вкратце в 2 прохода gc работает
+
+syncronized - синхронизация блока кода или метода по объекту класса. Синхронизация по классу - только один поток сможет использовать весь класс (syncronized static) или synchronized (DemoClass.class)
+sync метод для всех объектов класса синхронизируется
+volatile шарит значение переменной между потоками
+singleton -
+
+object Class { ... } будет singlton'ом!
+
+data object можно сделать синглтон дата класс
+
+static классы могут содержать только static поля и методы
+
+data class in collections moment (val/var check, только поля в primary constructor учитываются)
+не могут быть open (те наследоваться)
+
+Хореограф Coordinates the timing of animations, input and drawing.
+
+Referential equality ('===')
+
+wait сообщает другому потоку, что занятый монитор может быть забран
+notify же говорит, что мол отдай монитор назад (снятие с паузы) - размораживает одну случайную нить 
+
+List<T> immutable по дефолту! MutableList
+
+https://kotlinlang.org/docs/async-programming.html#threading
+асинхронность корутин отличается от потоков, корутина может быть приостановлена. Есть очередь событий. Для одного потока корутины выполнябтся не параллельно
+однако корутина может переключаться по разным потокам внутри пула диспатчера CPU cores (or 64)
+
+пизда ебать чел заложил бомбу в задаче на ревью в тиньке
+типа паттерн синглтон был неправильно реализовать, вследствие чего неправильно синхронизация работала. Ну ебануться, класс. Тут про паттерн помнить надо
+про джавовые syncronized/volatile (при этом дефолтный object Myclass например не потокобезопасным будет)
+кароче потокобезопасный синглтон делается с volatile instance переменной и syncronized getInstance
+https://www.baeldung.com/kotlin/singleton-classes
+
+synchronized method acquires a lock on the whole object. This means no other thread can use any synchronized method in the whole object while the method is being run by one thread.
+	instance блочится
+static syncronyzed class лочится целиком	
+synchronized blocks acquires a lock in the object between parentheses after the synchronized keyword. Meaning no other thread can acquire a lock on the locked object until the synchronized block exits.
+	заданный объект блочится
+https://jenkov.com/tutorials/java-concurrency/synchronized.html
+
+Модификатор volatile накладывает некоторые дополнительные условия на чтение/запись переменной. Важно понять две вещи о volatile переменных:
+
+Операции чтения/записи volatile переменной являются атомарными.
+Результат операции записи значения в volatile переменную одним потоком, становится виден всем другим потокам, которые используют эту переменную для чтения из нее значения.
+
+стек для одного потока, куча для всех общая
+
+hashMap не сохраняет порядок вставки элементов, linkedHashMap сохраняет
+структуры данных все что сказал + деревья (стек, очередь, массив, ассоц массив, мапа, граф, связный список, хеш таблица, дерево)
+
+====
+https://interviewprep.org/android-custom-view-interview-questions/
+https://betulnecanli.medium.com/cancelling-coroutines-e15ebfe28248#:~:text=Cancelling%20Async&text=In%20this%20example%2C%20a%20single,is%20cancelled%20using%20cancelAndJoin(%20).
+https://web-creator.ru/articles/solid
+
+попробовать chatGpt для разработки андроид
+[в резюме добавить в раздел ui тестов - dsl момент, firebase moment, coordinator layout, swiperefresh, ab tests]
+
+чел из паттерны и практики Авитотех попускает комментирование и документаци
+
+INTERVIEW QUESTIONS
+	https://habr.com/ru/articles/736392/
+
+==========================================================
+=====================sber browser========================= (ОК)
+c++ есть в проекте
+java sberbrowser
+80 / 20 java c++
+garbage collect 
+stack`
+weak reference
+collections 
+многопоточка
+syncronized list
+coroutines 
+try catch coroutines
+atomic integer
+data class A( var a:Int, var b:Int, ){ var c:Int } hashmap	// val надо чтобы было для корректной работы коллекций
+val 
+docker
+python scripts
+хореограф
+корутины диспатчер
+main dispatcher 
+onlayoutf
+Троян Сергей
+Python 6 человек
+Внутренний инструмент
+удаленка
+скрам
+безопасность +
+на этапе сбора людей (сбербанк)
+смешанный гибрид
+необычное, (с++)
+
+================павел tinkoff================ (ОК)
+1 залание cod review
+private constructor, getInstance
+immutable коллекции moment
+ассоциация наследавание разница, первое has a связь, ссылку храним на другой класс который хотим переиспользовать, второе это is a
+ассоциация позволяет использовать код без его расширения (final в т.ч.)
+кароче слит изза см описание в телеге
+
+LinkedList ArrayList Mutable коллекции, а List immutable
+ImmutableList
+ImmutableSet
+ImmutableMap
+
+================росбанк====================== (ОК)
+Сергей и Николай (инструменты с продажами в Росбанк онлайн)
+8 человек ios java аналитики 
+Коля по андроид 
+16 человек по одному в команде
+ссылки soft fantom
+default hashcode адрес в памяти
+valueOf 
+boxing unboxking cache Boxing 
+fold метод тоже самое, что и reduce, но с начальным значением
+
+1 inline 2 noinline 3 crossline
+1 кароче inline берет код лямблы и вставляет в код вызывающего метода
+https://medium.com/android-news/inline-noinline-crossinline-what-do-they-mean-b13f48e113c2
+ограничение: 
+	кароче ответ лида по данному вопросу, почему все методы не делать такими - разрастание байткода
+	With inline functions, you will not be able to access private members/methods of your enclosing class
+	A bare return is forbidden inside a lambda because a lambda cannot make the enclosing function - кароче return вернет из вызывающей функции, а не только из встроенной
+2 inline fun higherOrderFunction(aLambda: () -> Unit, noinline dontInlineLambda: () -> Unit, aLambda2: () -> Unit) {}
+тут мы помечаем для нескольких лямбд какую по старинке хотим запускать
+The inline modifier affects both the function itself and the lambdas passed to it: all of those will be inlined into the call site.
+Inlining may cause the generated code to grow. However, if you do it in a reasonable way (avoiding inlining large functions), it will pay off in performance, especially at "megamorphic" call-sites inside loops.	
+идея такая - компилятор после inline модификатора сегнерит чутка другой код
+3 crossinline модификатор запрещает делать return внутри inline лямбды
+inline fun higherOrderFunction(crossinline aLambda: () -> Unit)
+unit object 1 экземпляр
+val const инициалиация только в блоке companion object or top-file (над классом типо, вне него)
+константа известна в компайл-тайм, val можно рассчитать catName = getCompanyName()
+nothing 0 insasntce
+voltile
+syncronized
+stack activity
+launch modes
+https://medium.com/android-news/android-activity-launch-mode-e0df1aa72242
+intent filters
+suspends - приостановка и возобновление корутин реализовано на основе оптимизированных коллбеков и state машины
+	continuation - содержит coroutinesContext, resumeWith(). Также createCoroutine/startCoroutine/suspendCoroutine
+	coroutineContext - содержит хранилище ключей неких типизированных get(), fold(), plus() - хери для складывания контекстов. Тут Job и Dispatchers
+	coroutineScope > coroutineContext (содержит его). Тут статус скоупа, возможность cancel() сделать, launch/async extensions этого класса
+	не блокирующий текущий поток скоуп
+public class MyClass {
+public void start() {
+
+Integer f1 = 1000;	// вот эта ебала под капотом вызывает Integer.valueOf(f1), а он в свою очередь New Integer (blabla)
+Integer s1 = 1000;
+
+checkValues(f1, s1);	// кеш не используется, 2 разных объекта
+
+int f2 = 100;
+int s2 = 100;
+
+checkValues(f2, s2);	// примитивы, однако боксинг кастит в ссылочный тип и тут уже включается кэш
+}
+
+default hashcode - адрес объекта в памяти
+
+public void checkValues(Integer first, Integer second) {
+if (first == second) {
+Log.e("TAG", first + " == " + second);
+} else {
+Log.e("TAG", first + " != " + second);
+}
+}
+}	// true true
+Первое сравнение выведет != тк объекты разные под капотом создадутся 
+блять однако для -128 до 127 кеширование будет как в StringPool, тогда бы вернуло true сравнение (пул не работает, если вызывать =, а не New)
+блять однако если бы это был equals, то тогда кеш бы не ролял
+
+Создание объекта-оболочки из переменной примитивного типа называется упаковкой (boxing)
+а получение значения примитивного типа из объекта-оболочки -- распаковкой (unboxing)
+
+Автоупаковка применяется компилятором Java в следующих условиях:
+Когда значение примитивного типа передается в метод в качестве параметра метода, который ожидает объект соответствующего класса-оболочки.
+Когда значение примитивного типа присваивается переменной, соответствующего класса оболочки.
+
+заеб при работе с числами высокой точности, надо юзать Big decimal либо Numbers
+For example, 0.3 decimal is 0.01001100... binary But a computer has a limited "slots" (bits) to save a number, so it cannot save 
+all the whole infinite representation. It saves only 0.01001100110011001100 
+
+покраска по символам - spanable
+float округления
+big decimal
+фичи, но не говорит платформа не исключается
+удаленка полностью 
+дейлики в 9 / в 2-3 - дейлики ебнутые
+без камеры были
+
+что за продукт 
+кто обычно ведет мероприятия
+с 27 выход
+
+Кураж команда каналы коммуникации в мобилки, сбои, онбординг, продажные - кредиты вклады, итоги года. баннеры всякие, технические баннеры, сторис. заказчик бизнес, аналитик
+Татьяна 
+	ПО
+Рустем 
+	последующий ПО бизнес аналитик
+Александр
+	архитектор - бекенд - нечасто
+дизайнер, qa есть
+	
+сколько существует команда	2021 апрель, 2 года, андроид разраб. Удаленка вне рф. 
+удаленка есть полная	
+	имеется
+безопаснсть душит нет
+команда бизнес, кто делает дизайн система, кор компоненты бывают. Фичи с нуля	
+
+дейлик ведет аналитик - 
+самая ранняя встреча
+на андроиде в 9 
+	не фасилитатор - не 
+отрытость говорить, если что-то не так	
+самая ранняя встреча в 11, раз месяц (с 11 до 20)
+
+==================RUTUBE==================
+Марк
+volatile
+неопределнность syncronzed 2 потока 3, какой первым будет запущен после wait() - неизвестно
+задача на дата класс, задача на полиндром, задача на корутин контекст с try catch
+job dispatchers
+вложенный scope не передает сообщение об ошибке если в try catch scturctured concurency, те один exception отменит другую корутину не упавшую, соотв надо 
+оборачивать корутину с логированием ошибки try catch, а вторая просто launch { }, либо supervised job
+data class val поле equals
+reified - это про дженерики, там в inline функциях можно пометить <reified T>, что будет значит 
+	в теле generic function нельзя получить доступ к типу T, тк он известен только в compile-time, а в рантайме стирание типов происходит, позволяет обращаться к классу типа такого myVar is T
+	not callable from Java 
+стирание типов в дженериках - в runtime инфа о String из List<String> например пропадет, кароче это сделано для обратной совместимости, когда дженериков еще не было
+List<Cat> => List<Object>
+c массивами заеб есть там инфа сохраняется
+кароче workaround MySecretClass.class передавать в аргумент метода дженерика так можно сохранить тип в рантайме
+infix - infix fun Int.shl(x: Int): Int { ... }
+	1.shl(2) => 1 shl 2  // чисто синтакс сахар
+приложение без активити 1 из 4 должен быть appconetxt activity 
+context до oncreate нет
+scope functions
+ let lambda result - можно сохранить значение вызова метода / it / let хитровыебанный, позволяет вызвать метод на самом же объекте в конце цепочки, а также двоеточие ::
+ run lambda result / this
+ with lambda result	/ this
+ apply context object - типа как паттерн билдер	/ this
+ also context object / it
+заебись конструкция, котлин момент(но вроде понятно, но сука как шифрованный манускрипт инопланетян выглядит): inline fun <T> T.takeIf(predicate: (T) -> Boolean): T? 
+takeIf() штука типа filter кароча тока на самом объекте
+oncreate onbind колво вызовов - в логах было одинаковое кол-во onCreate() с onBind() и равно было колву элементов на экране, а потом после скролла еще недостающие довызвались
+после скролла вверх снова повторно такое кол-во вызовов заново	
+ListAdapter async list differ
+задача на палиндром
+задача на дата класс проперти не было в праймари блоке, будет ли true false двух data class при сравнении ==
+13 андроид, есть разделение на фиче тимы
+3 приложение
+как с удаленкой, как с скрам мастерами
+скрам норма
+задачи размазаны по функционалу дизайн система бедная, но экраны не сложные
+
+==========Urent========= [ОФФЕР]
+
+7 человек (3)
+продуктовый бакет и технический (30% спринта бакета)
+дейлик удаленка
+офиса нет
+9-30 командный (+ стек другой, + мелкий проект заебы технические задачи).
+тоже вопрос про data class простой
+кросскомандное код ревью, еженедельные встречи по андроиду, перформанс ревью
+гайдлайны
+mvi compose koin coroutines
+notion 
+koin
+техника мак, но не прям точно
+
+пачка вопросов в тетради 
+про setcontentview - может быть background задан для активити до setcontentview()
+mutex аналог syncronized из java. Содержит методы lock(), tryLock(), unlock(). Типа не Re-entrant (тут поток моет выходить из одного блока sync не теряя блокировки, ну и плюс еще несколько доп функций типа поллинга блокировки)
+14 android нововедения (https://developer.android.com/about/versions/14/summary)
+	Restricting Photo and Video Access
+	Regional Preferences
+	Improved Share Options
+	Non-linear font scaling
+	Per app localisation
+	OpenJdk 17
+pending intent - интент от имени нашего приложения, сделанное каким то другим (типа данные можно так передать из одного приложения в другое)
+bundle это когда несколько extras можно отправить в intent, а объект в свою очередь можно отправить так putExtra() getSerializableExtra() as Class
+активити от контекст наследуется (getSystemService, resourseManager, permissions, это все здесь), просто почитать про контекст
+
+Стаса тимлида, ведет скрам встречи
+9-30 ранний созвон
+Андрей техлид
+Спринт раз в 2 недели
+Дизайн системы нет
+
+Задачи
+	доработки сервисного приложения
+	Убирание фрода
+	кластеризация
+
+=========Альфа банк=========
+разнос
+вопрос про dagger component с переворотом активити - ответ был про использование флагов isFinishing, isChangingConfigurations
+типа component dagger можно подчистить при смене конфигурации (занулить)
+
+data class Dog(val breed: String = "shepherd") {
+     var name = ""
+}
+
+val set2 = hashSetOf(
+        Dog().apply { name = ".Joe" },
+        Dog("sharik"),
+        Dog().apply { name = "Billy" }
+)
+[Dog(breed=shepherd), Dog(breed=sharik)]	// тут особенность дата класса, что поле name не будет учитываться в hashcode/equals, также hashset значения 
+повторные по ключу не вставит, в отличие от мапы, которая перезапишет. Тут если name был в конструкторе, то вставилось бы 3 записи. Также требуется var
+обязательно, тк переприсваиваем значение переменной в apply
+
+из чего вообще состоит hashset - Объект класса Object, каждый раз выступающий в роли значения в HashMap private static final Object PRESENT = new Object();
+можно один null добавить, в мапу null-null однократно можно добавить также
+потеря элемента в hashMap - если положить Class (var smth: String) в мапу, а потом поменять smth state, то объект проебеться, ситуация коллизии, когда два разных ключа имеют одинаковый хеш
+
+Lock implementations provide more extensive locking operations than can be obtained using synchronized methods and statements. 
+кароче обертка над syncronized
+
+inline fun <T> lock(lock: Lock, body: () -> T): T {		// угадать метод нужно было
+    // ...
+}
+
+contract
+https://kt.academy/article/ak-contracts
+The callsInPlace contract expresses the following guarantees:
+the callable won’t be invoked after the owner-function is finished
+it also won’t be passed to another function without the contract
+
+@kotlin.internal.InlineOnly
+public inline fun <T> Lock.withLock(action: () -> T): T {
+    contract { callsInPlace(action, InvocationKind.EXACTLY_ONCE) }
+    lock()
+    try {
+        return action()
+    } finally {
+        unlock()
+    }
+}
+
+sealed class для органичения наследования - абстрактный под капотом, может иметь несколько инстансов подтипов, enum только один для типа
+sealed класс - абстрактный (не может быть инстанса, все методы абстрактные)
+кароче нельзя: SomeClass : Data class ()
+однако можно: data class Test1 : SomeAbstractClass()
+sealed class Result {
+    data class Success(val data: Any) : Result()
+    object Loading : Result()
+}
+
+open class Person(open val name: String, open val age: Int)
+если у класса нет параметров в конструкторе, то будет просто class Test : Test2(), однако если есть, то придется пробрасывать  class Test(val test: String) : Test2(test)
+class Rectangle(val width: Int, val height: Int) {
+    val area: Int // property type is optional since it can be inferred from the getter's return type
+        get() = this.width * this.height
+		set(value) {
+			setCorrectInput(value) // parses the string and assigns values to other properties
+    }
+}	
+
+structured concurrency - про scopes для корутин, про parent-child отношение вложенных корутин, про Job
+Structured concurrency treats groups of related tasks running in different threads as a single unit of work, thereby streamlining error handling and cancellation, improving reliability, and enhancing observabilit
+
+diff util - чтобы не вызывать onBind() для неизменных данных
+	calculateDiff()
+	oldListSize()
+	newListSize()
+	areItemsTheSame()
+	areContentsTheSame()
+	getChangePayload() - херь нужна для tap/flickering эффекта обновления только одного view из элемента списка (favourites example)
+	эта штука потом добавить аргумент в onBind(... ,  payloads: MutableList<Any>) 
+Listadapter  base class for presenting List data including computing diffs between Lists on a background thread.
+	DIFF_CALLBACK 
+
+bounded service - для обмена данными между activity и service
+	own interface by extending Binder class and return an instance of it in onBind() - LocalService
+	bindService() / unbindService() в активити
+	Messenger (Handler) для межпроцессного взаимодействия (AIDL где то тут)
+также можно сделать через Broadcast Receivers	
+
+Виды анимации в Android
+	Property Animation (AnimatorInflater.loadAnimator => ValueAnimator) 
+	из кода делал, также из xml можно
+context solid
+	s context
+	o NotificationHandler
+	l views, resourse xml parser
+	i text watcher, animatorListener
+	d fragments manager impl
+
+=========KION==========
+try catch в coroutines надо делать до launch
+можно задублить extention метод с сигнатурой аналогичной обычному методу (те 2 одинаковых метода сделать один обычный другой extention)
+кароче если сделать в onCreate поток даже пустой (с while (true)), то он утечет все равно, тк рут объект
+прикольные вопрос по жц активити с анимацией, что будет - кароче отличить onCreate-onDestroy c onStart-OnStop можно при скрытии приожения, кадры для первого случая будут разными до скрытия и после
+onResume-onPause соотв при частичном перекрытии при опускании шторки (сам ответил)
+
+архитектуру накидать mvvm
+
+PublishSubject SubjectRelay
+
+suspend fun massiveRun(action: suspend () -> Unit) {
+    val n = 100  // number of coroutines to launch
+    val k = 1000 // times an action is repeated by each coroutine
+    val time = measureTimeMillis {
+        coroutineScope { // scope for coroutines
+            repeat(n) {
+                launch {
+                    repeat(k) { action() }
+                }
+            }
+        }
+    }
+}
+
+var counter = 0	// кароче гонка потоков возможна, надо atomic integer юзать вместе с volatile
+
+fun main() = runBlocking {
+    withContext(Dispatchers.Default) {	// бля а будь здесь main то гонки бы не было
+        massiveRun {
+            counter++
+        }
+    }
+    println("Counter = $counter")
+}
+
+runBlocking // блокирует тред пока корутина не отбежит
+=========VK==========
+(!) дописать
+
+// 2sum
+// Есть массив, нужно проверить есть ли в нем два элемента сумма которых
+// равна N
+fun twoSum(arr: List<Int>, sum: Int): Boolean { 	// set
+    for (i in arr.indices) {
+        for (j in arr.indices) {
+            if (i == j) continue
+            if (arr[i] + arr[j] == sum) {
+                return true
+            }
+        }
+    }
+    return false
+}
+
+fun twoSumOptimized(arr: List<Int>, sum: Int): Boolean { 
+    val seenIds = emptyListOf<Int>	// hashset
+
+    for (i in arr.indices) {    // разность
+        seenIds.add(arr[i])
+      
+        if (arr[i] + ) {      
+        }
+    }
+    return false
+}
+
+[4,2,7,3,2] 5
+true [1,4]
+
+//Задача про роботов
+while (true) {
+    step()
+    if (!isParachuteFound()) {
+        wait()
+    }  
+}
+
+StringBuilder (StringBuffer) позволяют работать с i-ми элементами строк, типа делают их mutable. Меньше засирают память при активных манипуляциях со строками
+Buffer - потокобезопасный, Builder - нет
+Starvation - поток голодает, типо отказ в доступе к ресурсам типа диска	
+2 подхода для работы многопоточных программ - atomics, блокоировки (синхронизация)
+	atomics - compare-and-set / set-and-get
+			  два значения проверяются старое и новое, если старое совпало с текущим, устанавливается новое. set and get сложно там неизвестно старое значение, использует под капотом cas	
+ReentrantLock()
+	опрос о блокировании (lock polling)
+	ожиданием блокирования в течение определенного времени
+	прерывание ожидания блокировки
+	ReentrantLock allows threads to enter into the lock on a resource more than once. When the thread first enters into the lock, a hold count is set to one. 
+	Before unlocking the thread can re-enter into lock again and every time hold count is incremented by one. For every unlocks request,
+	hold count is decremented by one and when hold count is 0, the resource is unlocked. 
+	Reentrant Locks also offer a fairness parameter, by which the lock would abide by the order of the lock request
+
+Content Provider() - запускается раньше, чем Application класс, также может существовать приложение только из CP
+Nothing Unit Any зачем сделали и механизм "наследник всех"
+Fragment жц при различных backstack режимах
+	https://stackoverflow.com/questions/18634207/difference-between-add-replace-and-addtobackstack
+	кароче для add просто фрагменты скрываются в onresume state, при удалении обратно один от onresume до ondestroy и тд
+	кароче для replace идет (1 -> 2)
+				1 onattach oncreate
+				2 onpause ... ondestroyview
+				1 oncreateview ... onresume
+				обратно (2 -> 1)
+				2 onpause ... ondetach
+				1 oncreateview ... onresume
+				
+	кароче поинт следующий для add() фрагменты в активном состоянии лежат в бекстеке (resumed), те при возврате назад у скрытого фр-та не вызывается onCreateView
+	те для replace да будет, при этом сам метод createView служит для инициалиации верстки фр-та и только после него на экране что-то отобразится
+	
+	а так у фрагментов есть viewLifecycleOwner - тут обсервинг livedat имеет смысл только когда ui фрагмента существует, а не для всего жц
+	this mirrors the lifecycle of the Fragment itself, but in cases of detached Fragments, the lifecycle of the Fragment can be considerably longer than the lifecycle of the View itself.
+	detached - This is the same state as when it is put on the back stack: the fragment is removed from the UI, however its state is still being actively managed by the fragment manager
+	
+	addToBackStack() для того, что пачку команд до commit() выполнить сразу при нажатии назад
+	
+========================VK PLAY LIVE==========================
+Игор начальник. Александр разраб
+vk play 25 чел, аналог стима
+видеоплеер не они
+сколько андроид 3-4
+удаленка ок
+пилят игровые механики валюты и прогнозы, платные подписки
+есть ли платформа - пилится самостоятельно
+
+until в цикле невкючительно итерирует
+null задача на hashMap - обычный class без переопределенных hashCode equals при попытке достать из коллекции будет работать не корректно
+data class поменяли модификтор заработало, однако для 
+
+каверзный вопрос про hashcode = 43. тут суть, что hashcode надо определить с учетом полей id name, тогда будет работать корректно, однако если
+equals не переопределить все равно работать будет, правда медленнее
+
+getter setter for data class and java class тут все ок, в java нет, в kotlin class обычном есть
+момент с default value for val в data class
+
+final var val
+
+// Что будет выведено на экран
+data class User(
+    val id: Int,
+    var name: String
+)
+ 
+data class Car(
+    val id: Int,
+    var number: String
+)
+ 
+val hashMap = mutableMapOf<User, Car>()
+ 
+fun main() {		// без data было изначально, ответ Null 4 раза
+    for(index in 0 until 4) {
+        val user = User(index, "Name $index")
+        hashMap[user] = Car(index, "Number $index") // hashMap.put(user, Car(index, "Number $index"))
+    }
+  
+    for(index in 0 until 4) {
+        val user = User(index, "Name $index")
+        println(hashMap[user]) // println(hashMap.get(user))
+    }
+}
+
+// Какой код скомпилируется, а какой не скомпилируется и почему
+ // 1.
+data class User() { // ошибка emptry constr
+}
+ 
+// 2.
+data class User(	// гуд
+    val id: Int,
+    var name: String = ""
+) {
+    var name2: String = ""
+}
+ 
+// 3.
+open data class Car(    // ошибка final data class
+    val id: Int,
+    val name: String,
+    val number: String
+)
+ 
+data class BigCar(val size: Int) : Car(1, "", "")
+ 
+// 4.
+data class User(
+    var id: Int,
+    var name: String
+) {
+    override fun hashCode() = 43    // 32 * (name.code() + id.code())   те работать будет, но дольше
+}
+
+нельзя val/var в качестве аргумента метода сделать, только в констр класса
+
+extention interface *откуда this, что представляет собой под капотом - это статик методы, которые в качестве параметра принимаеют инстанс класса, который и есть reveiver object
+может быть вызвана на объекте класса
+receiver object это this
+fun Foo.sayGoodbye() {
+        // calling the Foo sayBye() function	.// receiver type оттуда откуда вызвали
+        this.sayBye()
+
+        // calling the User sayGoodbye() function
+        this@User.sayGoodbye()
+}
+
+для метода с return обязательно указывать возвращаемый тип
+
+кароче Companion class в java это static class Companion с приватным конструктором
+@JvmStatic заставляет сгенериться static метод указанный в companion object, без него обычный генерится
+Кароче будет вызываться так, либо так
+	Plant.Companion.waterAll();
+	Plant.waterAll();
+
+Lesson 18_2 тут смог запускать произвольный kotlin код вне андроида, обязательно нужен класс с названием как файл, и метод main on top of the file
+fun main() = runBlocking {}
+class TestKtCompile
+корутина запуститься не будет ожидать и блокировать вызывающий код без .join(), типа сразу отпечатается что после launch
+async - отработает также, и будет иметь await() для ожидания получения значения
+те при запуске корутины она асинхронно не блокируя основной thread выполнит задачу, и после продолжит выполнение
+суть - методы могут быть приостановлены и продолжены после, многозадачность в общем
+we often also add join() to wait for the cancellation to finish before we can proceed. Without this, we would have some race conditions
+
+диплинк вопросы ответил
+category android.intent.action.VIEW / DEFAULT / BROWSABLE, тут типо 3 интент фильтра надо указать в manifest
+также атрибут    data android:host="www.myapp.ru"
+                      android:pathPrefix="/test123"
+                      android:scheme="http">
+также в проектах диплинки реализованы по другому, там фабрики, интерфейсы и вот это все, урл в классе задается, и активити которую надо открыть
+
+связь между фрагментами и активити shared viewmodel
+
+// Задача: доработать адаптер, таким образом, чтобы он выводил поочередно зеленые и красные элементы.
+// Всего будет 100 элементов: 50 зеленых и 50 красных.
+// Зеленые - четные.
+// Красные - нечетные.
+ 
+abstract class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {		// check Lesson7
+    abstract fun bind(position: Int)
+}
+
+class RedViewHolder(itemView: View): BaseViewHolder(itemView) {
+    override fun bind(position: Int) {
+        // логика маппинг полей на данные 
+        // itemView.title = item.titleText
+        // itemView.background = R.color.red       [1]
+    }	
+}
+
+class GreenViewHolder(itemView: View): BaseViewHolder(itemView) {
+    override fun bind(position: Int) {
+        // логика маппинг полей на данные 
+        // itemView.title = item.titleText
+        // itemView.background = R.color.green		// тут проеб следующий, либо делать 2 viewholder каждый со своей версткой и цветом (чек пример sber lesson7)
+    }												// либо один, но динамически менять цвет в onCreateViewHolder
+}
+ 
+class ColorAdapter() : RecyclerView.Adapter<BaseViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
+        inflate(R.id.itemAbstract)
+        return when(viewType) {
+            is 0 -> GreenViewHolder() 		//   LengthViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item_length, parent, false))
+            is 1 -> RedViewHolder() 		//   AreaViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item_area, parent, false))
+        }
+    }
+ 
+    override fun getItemViewType(position: Int): Int {
+        if (position % 2 == 0) {
+            return 0
+        } else {
+            return 1
+        }
+    }
+ 
+    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
+        holder.bind(position)
+		itemView.background = R.color.red // динамическая раскраска должна быть здесь скорее, чем в [1]
+    }
+ 
+    override fun getItemCount(): Int {
+        return 100
+    }
+}
+
+======================it one==================
+газпромбанк it one аутстафф, возможность ротации (раз в год, с повторным собесом), зп подрезают
+переключение контекста - один проект газпром
+удаленка предпочтительнее
+кто ведет мероприятия - выделенные команда
+ранняя встреча 
+
+дизайн система compose, старые компоненты переиливаются
+cicerone для навигации
+
+val counter = Counter(0)val runnable1 = Runnable {         for (i in 0..999) {            counter.increment()        }}val runnable2 = Runnable {                for (i in 0..999) {            counter.decrement()        }        }val executor = Executors.newCachedThreadPool()executor.execute(runnable1)executor.execute(runnable2)
+стек кешируется для тредов.
+volatile, не нужен, достаточно sync методов
+
+atomic будет работать
+
+для main диспатчера можно код из джава оставить без синхронизации, не будет гонки, тк диспатчер с 1 потоком
+ключевая фича - корутина не блокируется, а поток блокируется, 
+sleep блочит поток
+delay не блочит поток
+yield - как раз про очередность, говорит другим корутинам, что мол пойду после вас
+меньше ресурсов потребяет
+
+кароче если 2 блока launch с print или async c await() то параллельно выполняться будет
+supervisorScope типа не фейлится, если child coroutines упала
+coroutineScope обычный дожидается завершения всех корутин
+
+coroutines start types Lazy undispatched - можно CoroutineStart.LAZY для async(start = CoroutineStart.LAZY) задать, тогда корутина запустится только после deferred.start() 
+
+launch автоматическая обработка исключений, async ручная (await надо вызвать)
+	launch {	
+		try {
+			longMethod()
+		}
+		catch {}
+	}
+	
+	val result = async { longMethod() }		// все равно приведет к остановке род корутины, для корр работы Кирилл Розов рекомендовал обернуть async в supervisorScope или подкинуть Job() в контекст выполнения async(Job())
+		try {
+			result.await()
+		}
+		catch {}
+	
+	некий подход с оберткой - так мол не проебутся исключения
+		try {
+			coroutineScope { ... }
+		} catch {
+			...
+		}
+		
+CoroutineExceptionHandler для неперехваченных исключений надо делать, иначе падать будет приложение даже с учетом try catch
+cancelException отдельно пробрасывать надо (стрелять будет для двух и более вызовов асинхр методов)
+для вложенных корутин проблема также будет
+	https://habr.com/ru/articles/689256/
+
+про проброс исключений в корутинах
+	https://habr.com/ru/articles/664444/	
+
+RunCatching { }.onSuccess().onFailure()
+joinAll(vararg jobs: Job)
+
+viewModelScope.launch {
+    kotlin.runCatching { repository.getNecessaryData(this) }
+        .onSuccess { liveData.postValue(ViewState.Success(it)) }
+        .onFailure { liveData.postValue(ViewState.Error(it)) }
+}
+
+stateflow equals проверяет не допускает повторные значения (в холодном каждое значение)
+subscibe collect { } каждый раз запускают значения
+горячий поток не завершает потоки сам, типо после подписки endless ожидание пока coroutineScope не отмениться - сторочки после collect нет смысла 
+
+data class (val only)
+data class(val list: List<String>) плохая практика, лучше приватить конструктор и делать companion с фабрикой, где копировать данные из коллекции	
+кароче плохая практика, тк list можно кастануть и чето с ним сделать
+The hashCode of ArrayList is a function of the hashCodes of all the elements stored in the ArrayList
+
+companion object static singleton
+
+api impl для чего solid + время сборка, подцеплять api только 
+список заивимостей собрать можно через пометку @Inject 10 конструкторов и далее один метод в компоненте типо все зависимости в параметры метода и даггер
+сам за нас все создаст
+
+след этап знакомство - могут быть тех вопросы
+
+====================emclid===================
+Ксения
+чья компания, много россиян
+сколько андроидов 3 (4го ищут) разрабы русские
+давно существуете 10 лет из СПБ (серия безвизовый, венгрия виза внж)
+
+этапы тимлид до конца недели , техинтервью, финал с hrd
+
+как общаются по bluetooth
+релоцирование
+вилка ок ли - ок
+
+если ли гибрид, в венгрии
+
+где хх
+
+===================betboom===================
+Никита Рук мобилки
+Вячеслав
+Тарас лид
+
+solid - ok
+koin dagger cyclic не позволяет
+redux block
+use case - как интерактор только поменьше
+modules 
+
+class Restartable {
+
+    private var job: Job? = null
+
+    suspend operator fun invoke(block: suspend () -> Unit) = coroutineScope {
+        job?.cancelAndJoin()
+        job = launch {
+            block()
+        }
+        job?.join()
+    }
+}
+
+val restartable = Restartable()
+fun onClickSendComment() = restartable {
+    sendComment(...)
+}
+
+bob martin метрики
+латинской америки
+betboom vpn
+ставки на спорт, казино 
+игры не их / webview
+бразильский впн
+скрам в команде ()
+сколько анроид 2
+латинская америка (менталитет)
+бразилия релок сан пауло
+дейлики
+mvi
+kmp - что как ktor, shared viewmodel между платформаи, koin, одна активити, swift kmp/ flutter
+compose
+core data domain	
+common compose 	(kmp)
+
+splashscreen вспомнить - делается с в themes в xml style windowSplashScreenBackground, windowSplashScreenAnimatedIcon, postSplashScreenTheme где drawable иконки указывал
+иерархия в многомодульном приложении
+	app modules (зависит от)
+	feature modules (зависит от)
+	core modules (в обратную сторону наоборот зависимости не должно быть)
+	
+clean arch - более высокоуровневые модули не должны зависеть от более низкоуровневых модулей
+каждый уровень использует интерфейсы и абстракции, что позволяет изолировать изменения сверху (DI за нас все инжектит)
+dependencies: data layer (репозиторий тут) -> domain (интерфейс репозитория тут) -> presentation (viewmodel)
+
+===========Госуслуги=========
+кароче собес средне прошел, что-то ответил, что-то нет
+задача на изменение ссылки объекта, mutable коллекции
+
+вопрос на nestedScrollview и recycler внутри, суть работать нехорошо будет, с лагами
+	кароче говорят мол хунта как в сбере делали recycler внутрь nestedScrollview делать!
+	вообще для скролла вложенного элемента, может содерать только один child
+	Never add a RecyclerView or ListView to a scroll view. Doing so results in poor user interface performance and a poor user experience. Костыль - recyclerView.setNestedScrollingEnabled(recyclerView, false);
+	типа высоту child'а считает ресайклер, изза чего RECYCLING WON'T WORK
+	all the views will be loaded at once because wrap_content needs the height of complete RecyclerView so it will draw all child Views at once
+	
+вопрос на init { } блок и порядок вызова конструкторов primary secondary
+	заеб дали, что переменные в блоке init должны быть объявлены выше него!
+	в java { } initialisation block вызывается каждый раз перед конструктором	// кароче повторного вызова не было бы только для java static init block, обычный init kt вызываться будет для каждого инстанса
+	в kt
+		primary constructor class SomeClass(...)
+		secondary constructor (хоть объект создается по вторичному конструктору, но сначала первичный отрабатывает)
+			class SomeClass (...) {
+				constructor ()
+			}
+	кароче primary -> init {} инит кароче часть конструктора -> secondary
+	для обычного класса, порядок поле класса, init {}, затем другое поле класса, потом второй init {}
+	
+	пример для 1-го класса где 2 конструктора: constructor(name: String, parent: Person) : this(name)
+	пример для 2-х классов с наследованием такое будет: constructor(data: String, numberOfData: Int): super(data, numberOfData) {
+	
+	java:
+		1st static init
+		1st instance init
+		No  argument constructor
+		1st instance init
+		ONE argument constructor
+
+nested class 
+	class {
+		class { }	    // val demo = Outer.Nested().foo()
+	}
+inner class
+	class {
+		inner class { } // A class marked as inner can access the members of its outer class
+	}					// val demo = Outer().Inner().foo()
+
+==============topface============ [отбой] 
+всего 25 технарей
+один человек - андроид (старый андроид уходит)
+удаленка далекая. 
+скрам мастер есть 
+вилка ок
+
+steps еще один дейтинг (пользователи америки европы)
+	java - 60/70 котлин, второе приложение на котлине, рефакторинг кода 10 давности нет
+	условия гибкий график
+	офис спб
+	
+этапы отбора, знакомство с андроид тех
+второй с рук проекта 
+отдельное 10 лет, года 1.5
+
+==============Дом РФ============
+
+Лид - мат
+core common feature
+scope dagger руками 
+inject конструктор
+тормоз списка - diffutil, item layout, findviewbyid, recycle не происходит 
+createviewholder bindviewholder (>) разнотипный список
+viewbinding landcape
+fragment factory появился можно инстанс создать фрагмента
+viewmodel persistance
+кол-во recomposition через layout inspector
+	кароче layout inspector более заебский - отобразит значения только если recomposes в верстке будут
+пакет
+sealed interface может быть
+spaghetti extention
+treeset comparator - не юзает equals
+inline class - value class, типа wrapper ссылочного типа данных в примитивы
+	https://kotlinlang.org/docs/inline-classes.html
+context (name dispatchers uncaughtexceptionhandler)
+job внутри контекста поменять можно
+channel как flow launch in scope
+
+atomic
+lock()
+@Synconized и корутин плохо работает
+
+проект Дом Рф (ипотеки), главное банковское приложение
+стек dagger coroutines kotlin, compose first, retrofit
+удаленка есть	
+сколько существует 5 лет
+безопасность не душит
+может оборудование быть а может нет
+сколько андроид 11
+лид senior занимаются 
+3 недельный спринт
+платформа фича, платежи налоги штрафы оплаты услуг
+backend driven мало
+json 	
+
+Платежи
+	уже есть
+	новые фичи - интеграция с другими банками, подгружать карты, фото, счетчики, qr
+	фронт есть
+	2 недельные спринты, дизайн отдельно
+	3 аналитика 2 фронта и 3 бекенда + тестирование
+	Дор
+	фронт получает макет и доку типа
+	ипотечный банк
+	есть андроид, на штат
+
+Продакт
+	удаленка - есть, нет требования к гибриду
+	скока андроидов
+	время начала
+	что делать - 
+		поиск платежи за штрафы - добавить автомобиль 
+		список штрафов
+		
+	церемонии ведет лид, либо аналитик - проджект в будущем
+	демо есть, но ведут разботчик
+	подписки
+	дейлики в 10
+	ретро - нет
+	
+	оборудование, супер
+	сб [требование] предоставить обязательство 3 месяца до конца испытательного срока
+
+Анкета СБ заполнить паспорты скан
+с 10, годовой бонус  месяца в апреле, компенсация спорта, дмс после 3-х месяца, стоматология, компенсация блоьничного 7 дней, техника
+
+======Одноклассники======
+3 этапа, 3 дня - тех скрининг, без задач 30 мин, 1 тех интервью с 1 задача на ревью, финал
+сколько андроид - мобильных ios android, лид андроид, еще 2 андроид
+удаленка - по рф есть
+терриотельный мейл
+
+2 проекта
+	Сервис фото инструенты для обработки фото (задачи вокруг рекомендации), реакции. Медиаконтент / видео / музыка
+	kotlin / java 
+	dagger2
+	rxjava, flow
+	mvvm + mvi
+	верстка compose?
+	мессенжинг легаси
+- коллекции, какие знаешь, особенности? 
+	list (arraylist get 1, add 1, remove n, contains n, linkedlist - remove 1, get n, add index n, peek poll), peek return, poll return and delete
+	queue (priorityqueue, arraydeque - peek poll log n, быстрее, чем linkedlist, под капотом куча),
+	set (hashset, treeset (под капотом красно черное дерево), linkedhashset (hash table + linkedlist)),
+	map (hashmap, hashtable, linkedhashmap)
+- Отличие arrayList от LinkedList? Когда какая эффективней? (для манипуляций с данными лучше linkedlist, для поиска arraylist)
+- set? как гарантируется уникальность? сохраняется порядок? 
+	уникальные элементы тк под капотом hashmap - values of hashset is keys in hashmap, порядок не сохр
+	linkedhashset сохраняет порядок
+	treeset сортирует
+- разница между внутренним и вложенным классом
+	внутренний (inner kt), nested это static // Outer.Nested().foo()
+	в кт inner класс есть, имеет доступ к полям внешнего даже к приватным, в java это был просто class, не может существовать вне внешнего // Outer().Inner().foo()
+- sealed классы 
+	нельзя инстанцировать, сущность для ограничения наследования, потомки в одном файле (пакете)
+- в каких случаях нужно переопределять equals и hashcode? Что это такое? контракт? 
+	всегда по хорошему, кроме data class у котого все проперти в конструкторе праймари
+	объекты равны - хешкоды равны, обратно не работает
+- volitile, даёт ли синхронизацию? 
+	использует общую память, а не кеш процессора (который юзают потоки)
+	на уровне одного значения переменной она будет шариться, да есть эффект как монитора, типо read lock, write unlock с java 5
+	однако недостаточно для ситуаций когда инкременты и декременты, не атомарные операции кароче, там синхронизация нужна
+- Как синхронизировать потоки? 
+	syncronized methods, objects
+- По какому принципу работает synchronized 
+	есть монитор у объекта или у класса
+	happens before для 
+- RaceCondition и DeadLock 
+	starvation
+
+ANDROID
+- Отличие Serializable и Parcelable?
+	кароче чтобы использовать объекты произвольные в активити надо чтобы они были помечены этими интерфейсами, чтобы в putExtra() в intent вложить можно было
+	последний более быстрый, serializable много памяти расходует и временных объектов создает
+	первый работает на основе рефлексии
+	Parcelable сами реализуем, в отличие от первого
+		describeContents()
+		writeToParcel() тут поля пробрасываем в parcel 
+	parcelable используется для native c++ штук
+	за нас это делает аннотация @parcelize и интерфейс Parcelable
+	thread safe parcelable, serializable no
+- Как реализовать Parcelable быстро - анноташка + интерфейс на дата классе, плагин parcelize подключить
+- жц Activity - onCreate, onStart, onResume, onPause, onStop (onRestart), onDestroy
+- когда вызывается onPause и onStop - при перекрытии чатсичном, при скрытии активити с экрана
+- всегда ли вызывается onDestroy - не всегда, сам процесс мб прибит системой, лучше использовать  onPause() or onSaveInstanceState(Bundle)
+	onRestoreInstanceState after onStart()
+- жц Fragment 
+	fragment lifecycle: onAttach, onCreate, onCreateView, onViewCreated, далее как у активити, после stop идет onDestroyView, destroy, detach
+	петля с createView / DestroyView используется для backstack
+	add когда фрагмент на другой ложится, replace именно замена
+- утечка памяти? пример? 
+	поток стартанули, повернули экран и все 
+- Может ли фрагмент иметь не пустой конструктор? 	
+	вообще нет, через get setArguments и Bundle делается это для сохранения данных
+- Как сохранить данные при повороте экрана 
+- invalidate (ondrwa() и requestLayout (для пересчета размера))
+- Способы запустить параллельную задачу 
+- отличие subscribeOn и observeOn 
+- Обработка исключений в корутинах
+
+Вопросы:
+
+final методы
+	else ветка sealed class
+	class interface разницаы
+	load factor hashmap
+	complexity hashmap
+	configuraion
+	onAttachedToWindow()
+	invalidate асинхронный
+	diffutil
+	intent service 	
+	flatMap
+	global scope
+	
+ВТОРОЙ ЭТАП Кор андроид собеседующие
+syncronized на уровне класса монитор класс
+состояния activity initialized, created, started
+interupted exception() - его бросает wait(), interupt() можно вызвать из main thread для стороннего, и он остановится, если в состоянии wait / sleep
+
+subscribeOn observeOnзаеб следующий - 
+	The subscribeOn() operator will have the same effect no matter where you place it in the observable chain;
+	however, you can't use multiple subscribeOn() operators in the same chain. If you do include more than one subscribeOn(),
+	then your chain will only use the subscribeOn() that’s the closest to the source observable (первый самый в цепочке кароче будет учтен).
+	
+	Unlike subscribeOn(), where you place observeOn() in your chain does matter, as this operator only changes the thread that’s used by the observables that appear downstream. 
+	This chain will continue to run on the new thread until it encounters another observeOn() operator, at which point it’ll switch to the thread specified
+	by that operator. You can control the thread where specific observables send their notifications by inserting multiple observeOn() operators
+	into your chain. (может быть много observeOn и кто последний тот и папа) downstream
+	
+	reference
+		https://proandroiddev.com/understanding-rxjava-subscribeon-and-observeon-744b0c6a41ea
+		https://medium.com/codex/rxjava-subscribeon-and-observeon-demystified-62c41736b6e9	
+
+flatMap (1 to N), map (1 to 1) filter
+констукторы активити
+parcelable serializable
+16 ms макс время отрисовки view
+foreground background атрибут надо самим реализовывать в customview (frameLayout)
